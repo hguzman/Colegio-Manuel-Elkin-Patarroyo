@@ -25,31 +25,31 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-md-offset-2 " style="position: absolute; top: 5; right: 0;">
+        <div class="col-md-3 col-md-offset-2 " style="position: absolute; top: 2; right: 0;">
           <% flash.each do |name, msg| %>
             <div class='alert alert-<%= name %> '>
-            <div > 
+            <div >
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong> <%=msg %></strong>
             </div>
-              
+
             </div>
 
           <% end %>
 
         </div>
-       
+
       </div>
        <%= yield %>
 
-      
+
     </div>
 
 
 
+    <%= render "partials/footer" %>
 
-    
 
-    
+
   </body>
 </html>
