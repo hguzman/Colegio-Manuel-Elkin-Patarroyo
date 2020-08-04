@@ -1,0 +1,39 @@
+
+<%= link_to new_curso_path, class: "btn btn-info btn-sm mb-3" do %>
+  Registrar Curso
+  <%= fa_icon "plus" %>
+<% end %>
+
+
+<table class="table table-respnsive">
+    <tr>
+      <thead class="thead-dark">
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </thead>
+    </tr>
+  <% @cursos.each do |curso|  %>
+    <tr>
+      <td> <%= curso.codigo %> </td>
+      <td> <%= curso.nombre %> </td>
+      
+      <td>
+        <%= link_to curso_path(curso), class:"btn btn-success btn-sm" do %>
+          <%= fa_icon "eye" %>
+          Mostrar
+        <% end %>
+
+        <%= link_to edit_curso_path(curso), class: "btn btn-warning btn-sm" do %>
+          <%= fa_icon('pencil') %>
+          Editar
+        <% end %>
+
+        <%= link_to curso_path(curso),method: :delete,class: "btn btn-danger btn-sm", data: {confirm:"¿Desae eliminar este curso?"} do %>
+          <%= fa_icon "trash" %>
+          Eliminar
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

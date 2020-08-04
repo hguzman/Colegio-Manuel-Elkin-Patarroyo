@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+
+  resources :sedes
   get 'inicio/home'
   devise_for :users
-  root to: "estudiantes#index"
+  root to: "inicio#index"
+
+  resources :cursos
 
   # namespace :docentes do
   #   get 'materias/index'

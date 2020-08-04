@@ -1,0 +1,2 @@
+class Sede < ApplicationRecord
+end

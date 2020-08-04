@@ -6,30 +6,43 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="navbar-nav p-1 menu"><%= link_to  "Estudiantes", estudiantes_path %></a>
+        <a class="navbar-nav p-1 menu"></a>
       </li>
       <li class="nav-item ml-2 active">
         <a class="navbar-nav p-1 menu"><%= link_to  "Profesores", docentes_path %></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Registros
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to  "Docentes", docentes_path, class: "dropdown-item" %>
-          <%= link_to  "Estudiantes", estudiantes_path, class: "dropdown-item" %>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+       <li class="nav-item ml-2 active">
+        <a class="navbar-nav p-1 menu"><%= link_to  "Cursos",cursos_path %></a>
       </li>
+      <li class="nav-item ml-2 active">
+       <a class="navbar-nav p-1 menu"><%= link_to  "Sedes",sedes_path %></a>
+     </li>
+
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Registros
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+         <%= link_to  "Estudiantes", estudiantes_path, class: "dropdown-item" %>
+         <%= link_to  "Docentes", docentes_path, class: "dropdown-item" %>
+         <%= link_to  "Cursos", cursos_path, class: "dropdown-item" %>
+         <%= link_to  "Sedes", sedes_path, class: "dropdown-item" %>
+         
+       </div>
+     </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <%if user_signed_in? %>
-        <li>
-          <%=link_to destroy_user_session_path, method: :delete, class: "btn btn-success btn-sm" do %>
-            <%= fa_icon "sign-out" %>
-            Cerrar sesión
-          <% end %>
-        </li>
+      <li class="nav-item dropdown">
+         <a class="dropdown-item"><%=link_to  destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm" do%>
+           <%= fa_icon "sign-out" %>
+           Cerrar sesión
+           <% end %>
+         </a>
+
+      </li>
+
       <%end%>
     </ul>
   </div>

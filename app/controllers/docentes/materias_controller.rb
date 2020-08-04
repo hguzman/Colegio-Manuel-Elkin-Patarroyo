@@ -22,7 +22,7 @@ class Docentes::MateriasController < ApplicationController
   def create
     @materia = @docente.materias.new(materia_params)
     if @materia.save
-      redirect_to docente_materia_path(@docente, @materia)
+      redirect_to docente_materia_path(@docente, @materia), success: "Materia registrada"
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Docentes::MateriasController < ApplicationController
 
   def update
     if @materia.update(materia_params)
-      redirect_to  docente_materia_path(@docente, @materia)
+      redirect_to  docente_materia_path(@docente, @materia), info: "Materia actualizada"
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class Docentes::MateriasController < ApplicationController
 
   def destroy
     @materia.destroy
-    redirect_to docente_materias_path(@docente)
+    redirect_to docente_materias_path(@docente), danger: "Materia eliminada"
   end
 
   private
