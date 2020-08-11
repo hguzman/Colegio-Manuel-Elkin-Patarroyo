@@ -3,7 +3,7 @@
 |Nombre del proyecto|Implementación de aplicativo web para el control de notas del C.M.E.P|
 |-------------------|---------------------------------------------------------------------|
 |Promototres|Michael Menco Cuello
-||Jose Gonzales Villareal|
+||Jose Gonzales Villarreal|
 ||Jhon Rivera Beleño|
 ||Mateo Balza Valega|
 |Patrocinador del proyecto|Servicio Nacional de Aprendizaje (SENA)|

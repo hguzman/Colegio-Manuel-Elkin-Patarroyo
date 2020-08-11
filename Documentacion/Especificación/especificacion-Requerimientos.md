@@ -5,14 +5,14 @@
 
 |Fecha|Versión|Descripción|Autores|
 |------|------|-----------|-------|
-|26-08-19|0|Levantamiento de requerimientos|Mateo Balza, Maikol Menco, Jose Gonzales, Jaime Alvarez|
+|26-08-19|0|Levantamiento de requerimientos|Mateo Balza, Maikol Menco, Jose Gonzalez, Jaime Alvarez|
 |23-09-19|0|Presentación del proyecto|Mateo Balza, Maikol Menco, Jose Gonzales, Jaime Alvarez|
 
 ----
 
 ## Especificacíon de requerimientos:
 
-### 1. Introducción: 
+### 1. Introducción:
 Este proyecto surge con la finalidad, de brindar a la institución educativa C.M.E.P un aplicativo web que le permita al personal de la institución llevar un mejor control de las notas, registro de las reuniones y sobretodo mejorar la comunicación con los acudientes e involucrarlos más en los procesos educativos de sus acudidos.
 
 #### 1.1 Propósito:
@@ -336,7 +336,3 @@ Este sistema permitirá organizar los procesos en la institución, enfocandose e
 |02|Login|1|Se accederá al software segun su rol.|
 |03|Base de datos|1|Se guardara toda la información de los usuarios.|
 |04|Módulo de eventos|1|Se darán a conocer todos los eventos(Culturales y académicos de la institución.)|
-
-
-
-
