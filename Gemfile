@@ -54,3 +54,4 @@ gem 'bootstrap', '~> 4.5.0'
 gem "font-awesome-rails"
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'lightbox2-rails'
