@@ -50,7 +50,7 @@ class Estudiantes::AnotacionesController < ApplicationController
   end
 
   def anotacion_params
-    params.require(:anotacion).permit(:titulo,:fecha)
+    params.require(:anotacion).permit(:titulo,:fecha,:contenido)
   end
 
 end

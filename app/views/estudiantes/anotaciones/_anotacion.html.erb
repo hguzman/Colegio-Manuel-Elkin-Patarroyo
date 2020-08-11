@@ -6,6 +6,9 @@
     <%= anotacion.titulo%>
   </td>
   <td>
+    <%= anotacion.contenido %>
+  </td>
+  <td>
 
     <%= link_to  edit_estudiante_anotacion_path(@estudiante, anotacion), class: "btn btn-warning btn-sm" do %>
       <%= fa_icon('pencil') %>

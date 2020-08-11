@@ -3,7 +3,7 @@
     <%= simple_form_for [@estudiante, @anotacion] do |f| %>
       <%= f.input :fecha %>
       <%= f.input :titulo %>
-
+      <%= f.input :contenido %>
       <%= f.button :submit, class:"btn btn-primary" %>
     <% end %>
   </div>
