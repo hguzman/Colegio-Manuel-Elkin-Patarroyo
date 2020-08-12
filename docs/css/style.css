@@ -109,6 +109,12 @@ h2{
 .escudo{
     display: flex;
     justify-content: center;
+
+}
+
+.escudo img{
+    /*border-radius: 0 0 5% 50%;*/
+    border-bottom: 10px;
 }
 
 span h4{   
@@ -150,7 +156,7 @@ small{
 
 .contenedor .card{
     width: 300px;
-    height: 450px;
+    height: 505px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;

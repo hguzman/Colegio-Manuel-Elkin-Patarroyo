@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_08_11_155256) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "fecha"
-    t.text "contenido"
+    t.string "contenido"
     t.index ["estudiante_id"], name: "index_anotaciones_on_estudiante_id"
   end
 
