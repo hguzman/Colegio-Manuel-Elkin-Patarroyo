@@ -6,6 +6,20 @@
     <script src="https://kit.fontawesome.com/469b5dd35e.js" crossorigin="anonymous"></script>s
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Caso de uso</title>
+
+    <style>
+        
+        .diagrama{
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .diagrama img{
+            /*border-radius: 0 0 5% 50%;*/
+            border-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,13 +34,13 @@
 
                 <table class="table table-striped mt-5">
                     <thead class="thead-dark">
-                        <th>Cod-2020</th>
+                        <th>01</th>
                         <th>Seguimiento de notas y asistencia</th>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Versión:</strong></td>
-                            <td>1.2.1 beta </td>
+                            <td>1.2.2 beta </td>
                         </tr>
                         <tr>
                             <td><strong>Dependencias:</strong></td>
@@ -107,13 +121,13 @@
 
                 <table class="table table-striped">
                     <thead class="thead-dark">
-                        <th>cod-2020-admin</th>
+                        <th>02</th>
                         <th>Usuario administrador</th>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Versión</strong></td>
-                            <td>1.2.1 Beta</td>
+                            <td>1.2.2 Beta</td>
                         </tr>
                         <tr>
                             <td><strong>Dependencias</strong></td>
@@ -169,13 +183,13 @@
 
                 <table class="table table-striped">
                     <thead class="thead-dark">
-                        <th>cod-2020-doc</th>
+                        <th>03</th>
                         <th>Usario Docente</th>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Versión</strong></td>
-                            <td>1.2.1 Beta</td>
+                            <td>1.2.2 Beta</td>
                         </tr>
                         <tr>
                             <td><strong>Dependencias</strong></td>
@@ -222,6 +236,66 @@
                         <tr>
                             <td><strong>Comentarios</strong></td>
                             <td>El Docente deberá ser responsable con las notas y reportes que genere.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--Caso de uso estudiante y acudiente-->
+
+                <h2 class="text-center">Caso de uso estudiante-acudiente</h2>
+                <br>
+
+                <!--<div class="diagrama">
+                    <img src="img/caso_uso_estu.jpg" alt="" width="400">
+                </div>-->
+
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <th>04</th>
+                        <th>Caso de uso estudiante-acudiente</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Versión</strong></td>
+                            <td>1.2.2 Beta</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dependencias</strong></td>
+                            <td>Visualización de contenido de la pagina</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Secuencia normal</strong></td>
+                            <td>
+                                <ol>
+                                    <li>Ingresar al sistema.</li>
+                                    <li>Visualizar los contenidos academicos(Notas, anotaciones etc).</li>
+                                    <li>Poder Visualizar los eventos.</li>
+                                    <li>Poder realizar reclamos o sugerencias.</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Postcondición</strong></td>
+                            <td>El estudiante o acudiente podrán Visualizar los contenidos y dirigirse con respeto al momento de realizar alguna queja o sugerencia.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exepciones</strong></td>
+                            <td>
+                                <ol>
+                                    <li>Que el estudiante o acudiente se encuentre bloqueado.
+                                        <ul>
+                                            <li>Olvide su contraseña</li>
+                                        </ul>
+                                    </li>
+                                    <li>Ninguna</li>
+                                    <li>Ninguna</li>
+                                    <li>Al momento de realizarla sugerencia se equivoque de docente.</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comentarios</strong></td>
+                            <td>Deberán usar un lenguaje formal. sino se veran expuestos a sanciones.</td>
                         </tr>
                     </tbody>
                 </table>
