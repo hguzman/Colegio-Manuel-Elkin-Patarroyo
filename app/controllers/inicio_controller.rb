@@ -1,6 +1,6 @@
 class InicioController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_usuario!
   def home
     
   end

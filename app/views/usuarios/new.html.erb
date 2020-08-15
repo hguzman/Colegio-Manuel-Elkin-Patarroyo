@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <%= simple_form_for @usuario do |d| %>
+      <%= d.input :email %>
+      <%= d.input :nombre %>
+      <%= d.input :password %>
+      <%= d.input :password_confirmation %>
+      <%= d.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

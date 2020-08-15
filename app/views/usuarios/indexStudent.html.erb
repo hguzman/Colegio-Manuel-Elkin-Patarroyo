@@ -1,0 +1,17 @@
+<table class="table table-respnsive">
+    <tr>
+      <thead class="thead-dark">
+        <th>Email</th>
+        <th>Nombre</th>
+      
+      </thead>
+    </tr>
+  <% @usuarios.each do |usuario|  %>
+     <% if usuario.has_role? :estudiante %>
+      <tr>
+        <td> <%= usuario.email %> </td>
+        <td> <%= usuario.nombre %> </td>
+      </tr>
+     <% end %>
+  <% end %>
+</table>

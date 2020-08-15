@@ -55,3 +55,4 @@ gem "font-awesome-rails"
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'lightbox2-rails'
+gem 'rolify'
