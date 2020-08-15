@@ -1,3 +1,4 @@
+
 <div class="container p-3">
   <div class="row">
     <div class="col-md-4 mx-auto">
@@ -11,7 +12,7 @@
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
 
-          <%= f.input :email,
+          <%= f.input :nombre,
                       required: false,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
@@ -26,10 +27,11 @@
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <%= render "usuarios/shared/links" %>
     </div>
   </div>
 </div>
 </div>
 </div>
 </div>
+

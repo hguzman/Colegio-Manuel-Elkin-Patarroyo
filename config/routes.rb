@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
-
+  get 'usuarios/indexStudent'
+  devise_for :usuarios
+  
+  resources :usuarios
   resources :sedes
-  get 'inicio/home'
-  devise_for :users
+ 
+  get 'usuarios/indexStudent'
+ 
+  
   root to: "inicio#index"
 
   resources :cursos

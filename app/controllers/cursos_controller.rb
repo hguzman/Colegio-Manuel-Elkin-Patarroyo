@@ -1,9 +1,12 @@
 class CursosController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_usuario!
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
 
   def index
+   
     @cursos = Curso.all
+
+
   end
 
   def show
@@ -11,13 +14,17 @@ class CursosController < ApplicationController
   end
 
   def new
+    
     @curso = Curso.new
+    
+
   end
 
   def create
     @curso = Curso.new(curso_params)
     if @curso.save
-      redirect_to cursos_path, success: "Curso creado"
+      redirect_to cursos_path
+      flash.notice= 'curso creado'
     else
       render :new
     end
@@ -29,7 +36,8 @@ class CursosController < ApplicationController
 
   def update
     if @curso.update(curso_params)
-      redirect_to cursos_path, info: "Curso actualizado"
+      redirect_to cursos_path
+      flash.notice= 'curso actualizado'
     else
       render :edit
     end
@@ -37,7 +45,8 @@ class CursosController < ApplicationController
 
   def destroy
     @curso.destroy
-    redirect_to cursos_path, danger: "Profesor eliminado"
+    redirect_to cursos_path
+    flash.alert= 'Curso eliminado'
   end
 
   private
