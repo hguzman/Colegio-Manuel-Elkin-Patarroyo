@@ -1,3 +1,3 @@
 class Anotacion < ApplicationRecord
-  belongs_to :estudiante
+  belongs_to :usuario
 end

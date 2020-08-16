@@ -9,12 +9,12 @@
       </thead>
     </tr>
   <% @usuarios.each do |usuario|  %>
-     <% if usuario.has_role? :admin %>
+    
       <tr>
         <td> <%= usuario.email %> </td>
         <td> <%= usuario.nombre %> </td>
       </tr>
-     <% end %>
+     
   <% end %>
 </table>
 

@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_134040) do
+ActiveRecord::Schema.define(version: 2020_08_16_035346) do
 
   create_table "anotaciones", force: :cascade do |t|
+    t.date "fecha"
     t.string "titulo"
-    t.integer "estudiante_id", null: false
+    t.string "contenido"
+    t.integer "usuario_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "fecha"
-    t.string "contenido"
-    t.index ["estudiante_id"], name: "index_anotaciones_on_estudiante_id"
+    t.index ["usuario_id"], name: "index_anotaciones_on_usuario_id"
   end
 
   create_table "cursos", force: :cascade do |t|
@@ -27,32 +27,6 @@ ActiveRecord::Schema.define(version: 2020_08_14_134040) do
     t.string "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "docentes", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "estudiantes", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "telefono"
-    t.string "direccion"
-    t.string "correo"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "materias", force: :cascade do |t|
-    t.string "nombre"
-    t.integer "docente_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["docente_id"], name: "index_materias_on_docente_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -64,37 +38,6 @@ ActiveRecord::Schema.define(version: 2020_08_14_134040) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
-  end
-
-  create_table "sedes", force: :cascade do |t|
-    t.integer "codigo"
-    t.string "direccion"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "name"
-    t.string "permission_level"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "nombre"
-    t.string "apellido"
-    t.string "direccion"
-    t.string "celular"
-    t.string "correo"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -121,6 +64,5 @@ ActiveRecord::Schema.define(version: 2020_08_14_134040) do
     t.index ["usuario_id"], name: "index_usuarios_roles_on_usuario_id"
   end
 
-  add_foreign_key "anotaciones", "estudiantes"
-  add_foreign_key "materias", "docentes"
+  add_foreign_key "anotaciones", "usuarios"
 end

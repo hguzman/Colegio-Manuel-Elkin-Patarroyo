@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
+  
   get 'usuarios/indexStudent'
   devise_for :usuarios
   
   resources :usuarios
-  resources :sedes
  
   get 'usuarios/indexStudent'
  
@@ -12,20 +12,9 @@ Rails.application.routes.draw do
   root to: "inicio#index"
 
   resources :cursos
-
-  # namespace :docentes do
-  #   get 'materias/index'
-  #   get 'materias/show'
-  #   get 'materias/new'
-  #   get 'materias/edit'
-  # end
-
-  resources :docentes do
-    resources :materias, module: :docentes
+  resources :usuarios do
+    resources :anotaciones, module: :usuarios
   end
 
-  resources :estudiantes do
-    resources :anotaciones, module: :estudiantes
-  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,7 +1,5 @@
 class UsuariosController < ApplicationController
 
-
-    before_action :authenticate_usuario!
     before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
 
@@ -23,7 +21,8 @@ class UsuariosController < ApplicationController
     def create
       @usuario = Usuario.new(usuario_params)
       if @usuario.save
-        redirect_to usuarios_path, success: "Usuario creado"
+        redirect_to cursos_path
+        flash.notice= "Usuario creado"
       else
         render :new
       end
@@ -32,7 +31,8 @@ class UsuariosController < ApplicationController
   
     def update
       if @usuario.update(usuario_params)
-        redirect_to usuario_path, info: "Usuario editado"
+        redirect_to usuario_path
+        flash.notice="Usuario Editado"
       else
         render :edit
       end
@@ -41,7 +41,8 @@ class UsuariosController < ApplicationController
     def destroy
       @usuario.destroy
   
-      redirect_to usuarios_path, danger: "Usuario Eliminado"
+      redirect_to usuarios_path
+      flash.alert="Usuario ELiminado"
     end
   
     def edit
@@ -52,6 +53,6 @@ class UsuariosController < ApplicationController
     end
   
     def usuario_params
-      params.require(:usuario).permit(:email,:password,:password_confirmation,:nombre)
+      params.require(:usuario).permit(:email,:password,:password_confirmation,:nombre,:apellido,:direccion,:telefono)
     end
 end
