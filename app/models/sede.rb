@@ -1,2 +1,0 @@
-class Sede < ApplicationRecord
-end

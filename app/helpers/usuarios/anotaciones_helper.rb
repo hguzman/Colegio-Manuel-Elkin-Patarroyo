@@ -1,0 +1,2 @@
+module Usuarios::AnotacionesHelper
+end

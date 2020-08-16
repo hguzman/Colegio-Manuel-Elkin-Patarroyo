@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= link_to anotacion.fecha, usuario_anotacion_path(@usuario, anotacion) %>
+  </td>
+  <td>
+    <%= anotacion.titulo%>
+  </td>
+  <td>
+
+    <%= link_to  edit_usuario_anotacion_path(@usuario, anotacion), class: "btn btn-warning btn-sm" do %>
+      <%= fa_icon('pencil') %>
+      Editar
+    <% end %>
+
+    <%= link_to usuario_anotacion_path(@usuario, anotacion), class: "btn btn-danger btn-sm" , method: :delete, data: {confirm: "Ojo!!"} do %>
+      <%= fa_icon "trash" %>
+      Eliminar
+    <% end %>
+
+
+  </td>
+</tr>
