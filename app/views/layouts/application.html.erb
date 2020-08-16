@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
   <head>
-    <title>Aplicacion</title>
+    <title>NEOPA</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -14,7 +14,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
   </head>
 
   <body>
@@ -26,38 +28,38 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-md-offset-2 " style="position: absolute; top: 5; right: 0;">
-        <% if notice %>
+          <% if notice %>
           <div class="alert alert-success">
             <div >
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong> <%= notice %></strong>
-              
+
             </div>
           </div>
-            
-        <% elsif alert %>  
+
+          <% elsif alert %>
           <div class="alert alert-danger">
             <div>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong> <%= alert %></strong>
-              </div>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong> <%= alert %></strong>
+            </div>
           </div>
-           
-        <% end %> 
-       </div> 
-         
+
+          <% end %>
+        </div>
+
       </div>
-      
-       <%= yield %>
+
+      <%= yield %>
 
 
     </div>
 
 
-<%= render "partials/footer" %>
+    <%= render "partials/footer" %>
 
 
 
 
   </body>
-</html>
+  </html>
