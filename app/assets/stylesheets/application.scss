@@ -4,6 +4,22 @@
 a{
   text-decoration: none !important;
 }
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
 h3{
   text-align: center;
+}
+#Himno{
+  text-align: center;
+}
+footer{
+  width:100%;
+  position: absolute;
+  bottom: 0;
 }
