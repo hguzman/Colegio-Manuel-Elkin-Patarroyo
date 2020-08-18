@@ -6,4 +6,5 @@ class Usuario < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :anotaciones
+  has_many :materias
 end

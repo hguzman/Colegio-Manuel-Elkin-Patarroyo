@@ -6,10 +6,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <% if usuario_signed_in? %>
+    
       <ul class="navbar-nav">
+      <li class="nav-item active">
+          <a class="navbar-nav p-1 menu text-white"><%= link_to  "Iniciar sesión", new_usuario_session_path %></a>
+     </li>
+      <% if usuario_signed_in? %>
         <li class="nav-item active">
           <a class="navbar-nav p-1 menu"><%= link_to  "Estudiantes", usuarios_indexStudent_path %></a>
+        </li>
+
+         <li class="nav-item active">
+          <a class="navbar-nav p-1 menu"><%= link_to  "Docentes", usuarios_indexDocente_path %></a>
         </li>
        
          <li class="nav-item ml-2 active">
