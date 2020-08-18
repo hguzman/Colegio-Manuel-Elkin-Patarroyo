@@ -1,3 +1,3 @@
 class Materia < ApplicationRecord
-  belongs_to :docente
+  belongs_to :usuario
 end

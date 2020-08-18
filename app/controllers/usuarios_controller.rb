@@ -10,6 +10,10 @@ class UsuariosController < ApplicationController
     def indexStudent
       @usuarios=Usuario.all
     end 
+
+    def indexDocente
+      @usuarios=Usuario.all
+    end
   
     def show
     end

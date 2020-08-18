@@ -1,9 +1,17 @@
-<%= link_to new_usuario_anotacion_path(@usuario,@anotacion), class: "btn btn-info btn-sm mb-3" do %>
-  Registrar Anotacion
-  <%= fa_icon "plus" %>
-<% end %>
 
-<h1>Datos del Estudiante</h1>
+
+  <%= link_to new_usuario_anotacion_path(@usuario,@anotacion), class: "btn btn-info btn-sm mb-3" do %>
+    Registrar Anotacion
+    <%= fa_icon "plus" %>
+  <% end %>
+
+   <%= link_to new_usuario_materia_path(@usuario,@materia), class: "btn btn-info btn-sm mb-3" do %>
+    Registrar Materia
+    <%= fa_icon "plus" %>
+  <% end %>
+
+
+<h1>Datos del <%= @usuario.roles.name %></h1>
 
 <p>
   <strong>Nombre:</strong>
@@ -32,3 +40,4 @@
 
 
 <%= link_to  "Anotaciones", usuario_anotaciones_path(@usuario), class: "btn  btn-primary ml-1"  %>
+<%= link_to  "Materias", usuario_materias_path(@usuario), class: "btn  btn-primary ml-1"  %>
