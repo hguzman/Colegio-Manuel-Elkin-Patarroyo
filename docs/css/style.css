@@ -10,7 +10,7 @@ a{
 
 body::-webkit-scrollbar{
     width: 8px;
-    
+
 }
 
 body::-webkit-scrollbar-thumb{
@@ -37,7 +37,7 @@ header nav{
     /* max-width: 1000px; */
     margin: 15px auto;
     background-color: #2980b9;
-    
+
 }
 
 header nav ul{
@@ -60,7 +60,7 @@ header nav ul li a{
     text-decoration: none !important;
     padding: 22px;
     display: block;
-    
+
 }
 
 header nav ul li a i{
@@ -94,7 +94,7 @@ h2{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    
+
 }
 
 .img{
@@ -117,7 +117,7 @@ h2{
     border-bottom: 10px;
 }
 
-span h4{   
+span h4{
     color: #3498db;
     font-size: 30px;
     display: flex;
@@ -132,8 +132,8 @@ small{
     display: flex;
     justify-content: center;
     font-family: 'Krona One', sans-serif;
-    color: #2c3e50; 
-    margin-bottom: 15px;   
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
 .label{
@@ -233,12 +233,12 @@ small{
         color: #c7ecee;
         font-weight: bolder;
 
-        
+
     }
 
     .team_ul{
         display: inline;
-        
+
     }
 
     a{
@@ -262,22 +262,19 @@ small{
 
 }
 .msj{
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     border: solid 1px gray;
-    
-    
-
+    margin:auto;
 }
 .btn{
-    height: 30px;
     background-color: rgb(246, 246, 246);
     border: solid 1px;
     font-family: 'Times New Roman', Times, serif;
     box-shadow:gray 2px 3px 2px;
     margin-left: 40%;
-    margin-top:10px;
-    
+    margin-top:.2pc;
+
 }
 h6{
     color: whitesmoke;
@@ -291,7 +288,7 @@ h6{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 #ar{
-    height: 30px;
+    height: 80px;
 }
 .cor1{
     margin-left: 20px;
