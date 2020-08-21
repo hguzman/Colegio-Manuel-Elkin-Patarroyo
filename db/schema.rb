@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_08_21_001024) do
-=======
-ActiveRecord::Schema.define(version: 2020_08_18_053537) do
->>>>>>> 5b3e49148c8f1b1f0198da0927c0163919af1852
+ActiveRecord::Schema.define(version: 2020_08_21_010215) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -32,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_053537) do
     t.string "informacion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "picture"
   end
 
   create_table "cursos", force: :cascade do |t|

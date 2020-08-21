@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-  <html>
+<!DOCTYPE html >
+  <html lang="es">
   <head>
     <title>NEOPA</title>
+
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -21,11 +22,12 @@
 
   <body>
 
-    <%=render "partials/navigation"%>
+    <header>
+      <%=render "partials/navigation"%>
 
+    </header>
 
-
-    <div class="container">
+    
       <div class="row">
         <div class="col-md-3 col-md-offset-2 " style="position: absolute; top: 5; right: 0;">
           <% if notice %>
@@ -45,20 +47,23 @@
           </div>
 
           <% end %>
+         
         </div>
+       
 
       </div>
 
+      
+      
+    <div>
       <%= yield %>
-
-
+     
     </div>
-
-
     <%= render "partials/footer" %>
+   
 
 
 
-
+  
   </body>
 </html>

@@ -1,9 +1,10 @@
 class ArticulosController < ApplicationController
+  before_action :authenticate_usuario!
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
 
 
     def index
-      @articulos=Articulo.all
+      @articulos=Articulo.paginate(page: params[:page], per_page: 4)
     end
 
     
@@ -17,7 +18,7 @@ class ArticulosController < ApplicationController
     def create
       @articulo = Articulo.new(articulo_params)
       if @articulo.save
-        redirect_to articulo_path
+        redirect_to articulos_path
         flash.notice= "Articulo creado"
       else
         render :new
@@ -49,6 +50,6 @@ class ArticulosController < ApplicationController
     end
   
     def articulo_params
-      params.require(:articulo).permit(:titulo,:descripcion,:informacion)
+      params.require(:articulo).permit(:titulo,:descripcion,:informacion,:picture)
     end
 end

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :usuarios
  
   get 'usuarios/indexStudent'
+  get 'inicio/index'
+ 
  
   
   root to: "inicio#index"
