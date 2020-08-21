@@ -15,13 +15,35 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Estilos del sidebar -->
+    <%= stylesheet_link_tag 'sb-admin-2.min' %>
 
-    
+    <%= favicon_link_tag 'favicon3.ico' %>
   </head>
 
-  <body>
+  <body id="page-top">
+    <% if usuario_signed_in? %>
+      <div id="wrapper">
+        <%= render "partials/sidebar" %>
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+            <%= render "partials/topnav" %>
+            <div class="container">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% else %>
+      <%= render "partials/navigation" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-    <%=render "partials/navigation"%>
+      <%= yield %>
+      <!-- <%= render "partials/footer" %> -->
+    <% end %>
+
+    <!-- <%=render "partials/navigation"%>
 
 
 
@@ -55,8 +77,7 @@
     </div>
 
 
-    <%= render "partials/footer" %>
-
+    <!-- <%= render "partials/footer" %> -->
 
 
 
