@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :articulos
   get 'usuarios/indexStudent'
   devise_for :usuarios
   
