@@ -1,0 +1,53 @@
+
+
+
+<div class="container">
+  <h1 class="text-center"> Noticias Estudiantes</h1>
+ 
+  
+  <div class="row">
+    
+    
+
+    <% @articulos.each do |articulo|  %>
+    
+      <div class="col-md-3 col-sm-6 col-xs-6 wow fadeInLeft">
+        
+          
+        
+        <div class="card border-primary mt-5">
+          <div class="d-flex justify-content-center">
+            <%= image_tag  articulo.picture.thumb.url , class:'card-img-top',:style => "width: 100%; height: 180px;"%>
+
+          </div>
+          
+          <div class="card-body">
+            <h5 class="card-title"><%= articulo.titulo%></h5>
+            <p class="card-text text-justify" style="width:100px; height:100px;"><%= articulo.descripcion%></p>
+            <%= link_to  "Ver más", articulo_path(articulo), class:'btn btn-primary btn-block'%>
+           
+          </div>
+
+        </div>
+        
+        
+            
+            
+    
+      </div>
+      
+    <%end%>   
+
+    <%= will_paginate @posts %>
+  
+  
+
+ 
+  </div>
+</div>
+ 
+
+
+
+
+

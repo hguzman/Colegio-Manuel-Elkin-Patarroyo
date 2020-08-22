@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :articulos
   namespace :usuarios do
     get 'materias/index'
     get 'materias/show'
@@ -14,9 +15,11 @@ Rails.application.routes.draw do
   resources :usuarios
  
   get 'usuarios/indexStudent'
+  get 'inicio/index'
+ 
  
   
-  root to: "inicio#index"
+  root to: "articulos#index"
 
   resources :cursos
   resources :usuarios do

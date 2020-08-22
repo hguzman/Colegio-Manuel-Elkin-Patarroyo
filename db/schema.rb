@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_053537) do
+ActiveRecord::Schema.define(version: 2020_08_22_181523) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2020_08_18_053537) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["usuario_id"], name: "index_anotaciones_on_usuario_id"
+  end
+
+  create_table "articulos", force: :cascade do |t|
+    t.string "titulo"
+    t.string "descripcion"
+    t.string "informacion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "picture"
   end
 
   create_table "cursos", force: :cascade do |t|
@@ -61,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_053537) do
     t.string "apellido"
     t.string "telefono"
     t.string "direccion"
+    t.string "picture"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end

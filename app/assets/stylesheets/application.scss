@@ -20,7 +20,35 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 80px;
+ 
 }
 #Himno{
   text-align: center;
+}
+
+.contenedor{
+  width: 100%;
+  max-width: 1200px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.contenedor .card{
+  width: 300px;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  transition: all 0.25s;
+}
+
+.contenedor .card:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
