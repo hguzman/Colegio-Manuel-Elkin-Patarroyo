@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_010215) do
+ActiveRecord::Schema.define(version: 2020_08_22_181523) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_010215) do
     t.string "apellido"
     t.string "telefono"
     t.string "direccion"
+    t.string "picture"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end

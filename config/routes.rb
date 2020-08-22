@@ -19,7 +19,7 @@ Rails.application.routes.draw do
  
  
   
-  root to: "inicio#index"
+  root to: "articulos#index"
 
   resources :cursos
   resources :usuarios do
