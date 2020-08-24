@@ -1,13 +1,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <%= simple_form_for @articulo do |c| %>
-        <%= c.input :titulo %>
-        <%= c.input :descripcion %>
-        <%= c.input :informacion %>
-        <%= c.input :picture %>
-        <%= c.button :submit, class: "btn btn-primary" %>
-        <% end %>
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <div class="box">
+              <h2>Crear noticia</h2>
+              <%= simple_form_for @articulo do |c| %>
+              <%= c.input :titulo %>
+              <%= c.input :descripcion %>
+              <%= c.input :informacion %>
+              <%= c.input :picture %>
+              <%= c.button :submit, class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>   
-  </div>   
+    </div>
+  </div>
