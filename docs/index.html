@@ -21,29 +21,37 @@
 </head>
 <body>
 
+        <nav class="navbar navbar-expand-lg navbar-light hover" style="background-color: #3498db;">
+          <a class="navbar-brand text-uppercase font-italic" href="#">A.E.S</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    <header>
-        <div class="menu_bar">
-            <a href="#" class="bt_menu"><i class="fas fa-list-ul"></i>A.E.S</a>
-        </div>
-        <nav>
-
-            <div class="logo">
-                A.E.S
-            </div>
-            <ul>
-                <li><a href="#contenido"><i class="fas fa-home"></i>Inicio</a></li>
-                <li><a href="documentacion.html"><i class="fas fa-file-alt"></i>Documentación</a></li>
-                <li><a href="diagramas.html"><i class="fas fa-share-alt-square"></i>Diagramas</a></li>
-                <li><a href="#equipo"><i class="fas fa-users"></i>Equipo</a></li>
-                <li><a href="#equipo"><i class="fas fa-id-card-alt"></i>Contacto</a></li>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#contenido" style="color: #e67e22;"><i class="fas fa-home mr-2"></i>Inicio<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="documentacion.html" style="color: #e67e22; "><i class="fas fa-file-alt mr-2"></i>Documentación</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="diagramas.html" style="color: #e67e22;"><i class="fas fa-share-alt-square mr-2"></i>Diagramas</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#equipo" style="color: #e67e22;"><i class="fas fa-users mr-2"></i>Equipo</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#contacto" style="color: #e67e22;"><i class="fas fa-id-card-alt mr-2"></i>Contacto</a>
+              </li>
             </ul>
+          </div>
         </nav>
-    </header>
+
 
 
     <div class="container-fluid">
-        
+
         <section id="contenido">
             <div class="escudo">
                 <img src="https://scontent.fctg1-2.fna.fbcdn.net/v/t1.0-9/52759643_258166001781596_1754681289320955904_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=9JE8z8jw6FcAX-OOywR&_nc_ht=scontent.fctg1-2.fna&oh=91dc5e7acc41e329eb895f970ac5823b&oe=5F5A0113" alt="" width="400">
@@ -55,6 +63,7 @@
                     <h4 class="mt-1">Misión:</h4>
                     <p>Formar al alumno en el respeto por los demás, la solidaridad, la responsabilidad, la participación democrática, amar a la naturaleza, valorar el patrimonio cultural, siendo crítico, creativo y reflexivo, constructor de un ambiente agradable dándole el uso adecuado a su tiempo libre. </p>
                 </div>
+
 
                 <div class="card">
                     <img src="img/vision.jpg" alt="">
@@ -91,7 +100,7 @@
                                     <div class="d-flex justify-content-center">
                                         <img class="img" src="img/Imagen mateo.jpg"  alt="">
                                     </div>
-                             
+
                                     <h4 class="mr-50" ><a href="mateo.html"> <span class="navy">Mateo</span> Balza</h4></a>
                                     <p>Aprendiz SENA.</p>
                                     <ul class="list-inline social-icon">
@@ -121,7 +130,7 @@
                                         </li>
                                         <li><a href="https://www.facebook.com/locheMC" target="_blank"><i class="fa fa-facebook mr-3"></i></a>
                                         </li>
-                                        <li><a href="https://www.instagram.com/loche_10/?hl=es-la" target="_blank"><i class="fa fa-instagram mr-3"></i></a>
+                                        <li><a href="https://www.instagram.com/lochemc/?hl=es-la" target="_blank"><i class="fa fa-instagram mr-3"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -135,9 +144,9 @@
                                     <div class="d-flex justify-content-center">
                                         <img class="img" src="img/Imagen jhon.jpg" class="img-responsive img-circle img-small" alt="">
                                     </div>
-                                    
+
                                     <a href="jhon.html"><h4><span class="navy"> Jhon </span> Rivera</h4></a>
-        
+
                                     <p>Aprendiz SENA. </p>
                                     <ul class="list-inline social-icon">
                                         <li><a href="https://github.com/riverajhon02" target="_blank"><i class="fa fa-github mr-3"></i></a>
@@ -155,15 +164,15 @@
             </div>
 
         </section>
-        <section>
+        <section id="contacto">
         <h1 class="text-center">Contactanos</h1>
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="card border-primary">
-                    <div class="card-header"><h4 class="text-center font-italic">Si tienes alguna inquietud puedes contactarnos</h4> 
+                    <div class="card-header"><h4 class="text-center font-italic">Si tienes alguna inquietud puedes contactarnos</h4>
                         <div class="card-body">
                             <div class="box">
-                                <form action="guardar.php" method="POST">  
+                                <form action="guardar.php" method="POST">
                                     <div class="form-group">
                                       <label class="font-weight-bold text-primary" for="">Correo</label>
                                       <input class="form-control" type="email" name="correos" placeholder="Example@gmail.com" required><br>
@@ -190,4 +199,3 @@
 
 </body>
 </html>
-

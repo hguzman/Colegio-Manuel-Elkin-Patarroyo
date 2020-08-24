@@ -1,15 +1,22 @@
 <div class="row">
   <div class="col-md-6">
-    <%= simple_form_for @usuario do |f| %>
-    <%= f.input :nombre %>
-    <%= f.input :apellido %>
-    <%= f.input :telefono %>
-    <%= f.input :direccion %>
-    <%= f.input :email %>
-    <%= f.input :password %>
-     <%= f.input :picture %>
-     <%= f.input :password_confirmation %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <h2>Registrar usuario</h2>
+          <%= simple_form_for @usuario do |f| %>
+          <%= f.input :nombre %>
+          <%= f.input :apellido %>
+          <%= f.input :telefono %>
+          <%= f.input :direccion %>
+          <%= f.input :email %>
+          <%= f.input :password %>
+           <%= f.input :picture %>
+           <%= f.input :password_confirmation %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
