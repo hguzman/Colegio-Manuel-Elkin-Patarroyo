@@ -11,8 +11,9 @@
           <%= f.input :direccion %>
           <%= f.input :email %>
           <%= f.input :password %>
-           <%= f.input :picture %>
-           <%= f.input :password_confirmation %>
+          <%= f.input :password_confirmation %>
+          <%= f.input :picture %>
+          <%= f.association :roles , as: :check_boxes   %>
           <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>
