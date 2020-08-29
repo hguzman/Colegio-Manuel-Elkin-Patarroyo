@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_181523) do
+ActiveRecord::Schema.define(version: 2020_08_29_190528) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
     t.string "titulo"
-    t.string "contenido"
-    t.integer "usuario_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["usuario_id"], name: "index_anotaciones_on_usuario_id"
+    t.text "contenido"
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_anotaciones_on_user_id"
   end
 
   create_table "articulos", force: :cascade do |t|
@@ -41,10 +39,10 @@ ActiveRecord::Schema.define(version: 2020_08_22_181523) do
   create_table "materias", force: :cascade do |t|
     t.integer "codigo"
     t.string "nombre"
-    t.integer "usuario_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["usuario_id"], name: "index_materias_on_usuario_id"
+    t.index ["user_id"], name: "index_materias_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -58,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_08_22_181523) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
-  create_table "usuarios", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -71,18 +69,18 @@ ActiveRecord::Schema.define(version: 2020_08_22_181523) do
     t.string "telefono"
     t.string "direccion"
     t.string "picture"
-    t.index ["email"], name: "index_usuarios_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "usuarios_roles", id: false, force: :cascade do |t|
-    t.integer "usuario_id"
+  create_table "users_roles", id: false, force: :cascade do |t|
+    t.integer "user_id"
     t.integer "role_id"
-    t.index ["role_id"], name: "index_usuarios_roles_on_role_id"
-    t.index ["usuario_id", "role_id"], name: "index_usuarios_roles_on_usuario_id_and_role_id"
-    t.index ["usuario_id"], name: "index_usuarios_roles_on_usuario_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  add_foreign_key "anotaciones", "usuarios"
-  add_foreign_key "materias", "usuarios"
+  add_foreign_key "anotaciones", "users"
+  add_foreign_key "materias", "users"
 end

@@ -3,7 +3,7 @@ class CreateMaterias < ActiveRecord::Migration[6.0]
     create_table :materias do |t|
       t.integer :codigo
       t.string :nombre
-      t.references :usuario, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= materia.codigo %>
+  </td>
+  <td>
+    <%= materia.nombre%>
+  </td>
+  <td>
+
+    <%= link_to  edit_user_materia_path(@user, materia), class: "btn btn-warning btn-sm" do %>
+      <%= fa_icon('pencil') %>
+      Editar
+    <% end %>
+
+    <%= link_to user_materia_path(@user, materia), class: "btn btn-danger btn-sm" , method: :delete, data: {confirm: "Ojo!!"} do %>
+      <%= fa_icon "trash" %>
+      Eliminar
+    <% end %>
+
+
+  </td>
+</tr>

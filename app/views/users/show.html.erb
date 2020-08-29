@@ -1,11 +1,11 @@
 
 
-  <%= link_to new_usuario_anotacion_path(@usuario,@anotacion), class: "btn btn-info btn-sm mb-3" do %>
+  <%= link_to new_user_anotacion_path(@user,@anotacion), class: "btn btn-info btn-sm mb-3" do %>
     Registrar Anotacion
     <%= fa_icon "plus" %>
   <% end %>
 
-   <%= link_to new_usuario_materia_path(@usuario,@materia), class: "btn btn-info btn-sm mb-3" do %>
+   <%= link_to new_user_materia_path(@user,@materia), class: "btn btn-info btn-sm mb-3" do %>
     Registrar Materia
     <%= fa_icon "plus" %>
   <% end %>
@@ -15,36 +15,36 @@
     <div class="card shadow-lg">
       <div class="card-body">
         <div class="box">
-          <h1>Datos del <%= @usuario.roles.name %></h1>
+          <h1>Datos del <%= @user.roles.name %></h1>
 
           <p>
             <strong>Nombre:</strong>
-            <%= @usuario.nombre %>
+            <%= @user.nombre %>
           </p>
 
           <p>
             <strong>Apellido:</strong>
-            <%= @usuario.apellido %>
+            <%= @user.apellido %>
           </p>
 
           <p>
             <strong>Direccion:</strong>
-            <%= @usuario.direccion %>
+            <%= @user.direccion %>
           </p>
 
           <p>
             <strong>Telefono:</strong>
-            <%= @usuario.telefono %>
+            <%= @user.telefono %>
           </p>
 
           <p>
             <strong>Direccion:</strong>
-            <%= @usuario.direccion %>
+            <%= @user.direccion %>
           </p>
 
 
-          <%= link_to  "Anotaciones", usuario_anotaciones_path(@usuario), class: "btn  btn-primary ml-1"  %>
-          <%= link_to  "Materias", usuario_materias_path(@usuario), class: "btn  btn-primary ml-1"  %>
+          <%= link_to  "Anotaciones", user_anotaciones_path(@user), class: "btn  btn-primary ml-1"  %>
+          <%= link_to  "Materias", user_materias_path(@user), class: "btn  btn-primary ml-1"  %>
         </div>
       </div>
     </div>
