@@ -1,0 +1,53 @@
+
+  <h3>Anotaciones del Alumno(a) <%= @user.nombre %>  <%= @user.apellido %></h3>
+  <%= link_to new_user_anotacion_path(@user,@anotacion), class: "btn btn-info btn-sm mb-3" do %>
+  Nueva Anotacion
+  <%= fa_icon "plus" %>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="box">
+            <table class="table">
+              <tr>
+                <th>Fecha</th>
+                <th>Anotacion</th>
+                <th>Acciones</th>
+              </tr>
+
+
+              <tr>
+                <% @anotaciones.each do |anotacion| %>
+                <td>
+                <%= link_to anotacion.fecha, user_anotacion_path(@user, anotacion) %>
+              </td>
+              <td>
+              <%= anotacion.titulo%>
+            </td>
+            <td>
+
+              <%= link_to  edit_user_anotacion_path(@user, anotacion), class: "btn btn-warning btn-sm" do %>
+              <%= fa_icon('pencil') %>
+              Editar
+              <% end %>
+
+              <%= link_to user_anotacion_path(@user, anotacion), class: "btn btn-danger btn-sm" , method: :delete, data: {confirm: "Ojo!!"} do %>
+              <%= fa_icon "trash" %>
+              Eliminar
+              <% end %>
+
+
+            </td>
+          </tr>
+
+          <% end %>
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>

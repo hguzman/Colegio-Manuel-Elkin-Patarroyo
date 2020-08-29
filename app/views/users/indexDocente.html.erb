@@ -1,5 +1,5 @@
-<%= link_to new_usuario_path, class: "btn btn-info btn-sm mb-3" do %>
-  Registrar Estudiante
+<%= link_to new_user_path, class: "btn btn-info btn-sm mb-3" do %>
+  Registrar Docente
   <%= fa_icon "plus" %>
 <% end %>
 
@@ -21,27 +21,27 @@
 
                 </thead>
               </tr>
-            <% @usuarios.each do |usuario|  %>
-               <% if usuario.has_role? :estudiante %>
+            <% @users.each do |user|  %>
+               <% if user.has_role? :docente %>
                 <tr>
-                  <td> <%= usuario.email %> </td>
-                  <td> <%= usuario.nombre %> </td>
-                  <td> <%= usuario.apellido %> </td>
-                   <td> <%= usuario.direccion %> </td>
-                    <td> <%= usuario.telefono %> </td>
-                     <td> <%= usuario.email %> </td>
+                  <td> <%= user.email %> </td>
+                  <td> <%= user.nombre %> </td>
+                  <td> <%= user.apellido %> </td>
+                   <td> <%= user.direccion %> </td>
+                    <td> <%= user.telefono %> </td>
+                     <td> <%= user.email %> </td>
                   <td>
-                  <%= link_to usuario_path(usuario), class:"btn btn-success btn-sm" do %>
+                  <%= link_to user_path(user), class:"btn btn-success btn-sm" do %>
                     <%= fa_icon "eye" %>
                     Mostrar
                   <% end %>
 
-                  <%= link_to edit_usuario_path(usuario), class: "btn btn-warning btn-sm" do %>
+                  <%= link_to edit_user_path(user), class: "btn btn-warning btn-sm" do %>
                     <%= fa_icon('pencil') %>
                     Editar
                   <% end %>
 
-                  <%= link_to usuario_path(usuario),method: :delete,class: "btn btn-danger btn-sm", data: {confirm:"¿Desae eliminar este estudiante?"} do %>
+                  <%= link_to user_path(user),method: :delete,class: "btn btn-danger btn-sm", data: {confirm:"¿Desae eliminar este estudiante?"} do %>
                     <%= fa_icon "trash" %>
                     Eliminar
                   <% end %>

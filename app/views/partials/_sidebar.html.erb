@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark navbar-static-side sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
@@ -12,7 +12,7 @@
 
   <div class="sidebar-brand-text mx-3">
     <h5 class="nav-link text-white ml-4">
-      <%= current_usuario.nombre  %> <%= current_usuario.apellido  %>
+      <%= current_user.nombre  %> <%= current_user.apellido  %>
     </h5>
   </div>
 
@@ -39,7 +39,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Registros:</h6>
           <%= link_to  "Cursos", new_curso_path, class:'collapse-item'  %>
-          <%= link_to  "Usuario", new_usuario_path, class: 'collapse-item'  %>
+          <%= link_to  "user", new_user_path, class: 'collapse-item'  %>
         </div>
       </div>
     </li>
@@ -63,16 +63,16 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios" aria-expanded="true" aria-controls="collapseUsuarios">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseusers" aria-expanded="true" aria-controls="collapseusers">
       <i class="fa fa-user" aria-hidden="true"></i>
 
-      <span>Usuarios</span>
+      <span>users</span>
     </a>
-    <div id="collapseUsuarios" class="collapse" aria-labelledby="headingUsuarios" data-parent="#accordionSidebar">
+    <div id="collapseusers" class="collapse" aria-labelledby="headingusers" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Información:</h6>
-        <%= link_to  "Estudiantes", usuarios_indexStudent_path, class:'collapse-item' %>
-        <%= link_to  "Docentes", usuarios_indexDocente_path, class:'collapse-item' %>
+        <%= link_to  "Estudiantes", users_indexStudent_path, class:'collapse-item' %>
+        <%= link_to  "Docentes", users_indexDocente_path, class:'collapse-item' %>
 
 
       </div>

@@ -1,5 +1,5 @@
-<h3>Materias del Docente <%= @usuario.nombre %>  <%= @usuario.apellido %></h3>
-<%= link_to new_usuario_materia_path(@usuario,@materia), class: "btn btn-info btn-sm mb-3" do %>
+<h3>Materias del Docente <%= @user.nombre %>  <%= @user.apellido %></h3>
+<%= link_to new_user_materia_path(@user,@materia), class: "btn btn-info btn-sm mb-3" do %>
   Nueva Materia
   <%= fa_icon "plus" %>
 <% end %>

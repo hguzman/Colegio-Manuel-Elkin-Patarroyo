@@ -1,9 +1,9 @@
-class Usuarios::MateriasController < ApplicationController
-  before_action :set_usuario
+class Users::MateriasController < ApplicationController
+  before_action :set_user
   before_action :set_materia, only: [:show, :edit, :update, :destroy]
 
   def index
-    @materias = @usuario.materias
+    @materias = @user.materias
   end
 
   def show
@@ -13,14 +13,14 @@ class Usuarios::MateriasController < ApplicationController
   end
 
   def new
-    @materia = @usuario.materias.new
+    @materia = @user.materias.new
   end
 
   def create
-    @materia = @usuario.materias.new(materia_params)
+    @materia = @user.materias.new(materia_params)
     if @materia.save
       flash.notice = "Materia creada"
-      redirect_to usuario_materia_path(@usuario, @materia)
+      redirect_to user_materia_path(@user, @materia)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Usuarios::MateriasController < ApplicationController
   def update
     if @materia.update(materia_params)
       flash.notice="Materia Actualizada"
-      redirect_to  usuario_materia_path(@usuario, @materia)
+      redirect_to  user_materia_path(@user, @materia)
     else
       render :edit
     end
@@ -38,17 +38,17 @@ class Usuarios::MateriasController < ApplicationController
   def destroy
     @materia.destroy
     flash.alert="Materia Eliminada"
-    redirect_to usuario_materias_path(@usuario)
+    redirect_to user_materias_path(@user)
   end
 
   private
 
   def set_materia
-    @materia = @usuario.materias.find(params[:id])
+    @materia = @user.materias.find(params[:id])
   end
 
-  def set_usuario
-    @usuario = Usuario.find(params[:usuario_id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def materia_params
