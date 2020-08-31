@@ -51,7 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gemas de estilos y herramientas
 gem 'bootstrap', '~> 4.5.0'
-gem "font-awesome-rails"
+gem 'font_awesome5_rails'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'jquery-rails', '~> 4.4'
 gem 'lightbox2-rails', '~> 2.8', '>= 2.8.2.1'

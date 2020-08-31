@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="box">
+          <h2>Registrar Rol</h2>
+          <%= simple_form_for @role do |r| %>
+          <%= r.input :name %>
+          <%= r.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
