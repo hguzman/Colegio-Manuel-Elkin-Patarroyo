@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
 
     def index
+      authorize User
       @users=User.all
     end
 
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 
     def new
       @user= User.new
+      authorize @user
     end
 
     def create

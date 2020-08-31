@@ -52,10 +52,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Gemas de estilos y herramientas
 gem 'bootstrap', '~> 4.5.0'
 gem "font-awesome-rails"
-gem 'simple_form'
-gem 'jquery-rails'
-gem 'lightbox2-rails'
-gem 'rolify'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'jquery-rails', '~> 4.4'
+gem 'lightbox2-rails', '~> 2.8', '>= 2.8.2.1'
+gem 'rolify', '~> 5.3'
+gem 'pundit', '~> 2.1'
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'will_paginate', '~> 3.1.0'
