@@ -1,5 +1,6 @@
 class Role < ApplicationRecord
-  has_and_belongs_to_many :usuarios, :join_table => :usuarios_roles
+  validates :name, uniqueness:true
+  has_and_belongs_to_many :users, :join_table => :users_roles
   
   belongs_to :resource,
              :polymorphic => true,
@@ -11,4 +12,5 @@ class Role < ApplicationRecord
             :allow_nil => true
 
   scopify
+  
 end
