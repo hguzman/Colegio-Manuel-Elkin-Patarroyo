@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_190528) do
+ActiveRecord::Schema.define(version: 2020_08_31_005259) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
     t.string "titulo"
-    t.text "contenido"
+    t.string "contenido"
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_anotaciones_on_user_id"
   end
