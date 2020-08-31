@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+ resources :roles
   resources :articulos
   # namespace :users do
   #   get 'materias/index'
