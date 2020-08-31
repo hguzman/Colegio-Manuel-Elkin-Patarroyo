@@ -3,7 +3,8 @@ class Users::MateriasController < ApplicationController
   before_action :set_materia, only: [:show, :edit, :update, :destroy]
 
   def index
-    @materias = @user.materias
+    authorize Materia
+    @materia = Materia.all
   end
 
   def show
@@ -13,7 +14,8 @@ class Users::MateriasController < ApplicationController
   end
 
   def new
-    @materia = @user.materias.new
+    @materia = Materia.new
+    authorize @materia
   end
 
   def create
