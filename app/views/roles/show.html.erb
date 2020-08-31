@@ -1,2 +1,22 @@
-<h1>Roles#show</h1>
-<p>Find me in app/views/roles/show.html.erb</p>
+
+<%= link_to roles_path, class: "btn btn-primary" do %>
+  <i class="fas fa-arrow-circle-left"></i>
+  Atrás
+<% end %>
+<br>
+<br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <div class="box">
+          <h3>Información del rol</h3>
+          <div class="d-flex justify-content-center">
+            <p>
+              <strong>Nombre:</strong>
+              <%= @role.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

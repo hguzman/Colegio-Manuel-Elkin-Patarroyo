@@ -38,9 +38,9 @@
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Registros:</h6>
-          <%= link_to  "Cursos", new_curso_path, class:'collapse-item'  %>
+          <%= link_to  "Cursos", cursos_path, class:'collapse-item'  %>
           <%= link_to  "user", new_user_path, class: 'collapse-item'  %>
-          <%= link_to  "Roles", new_role_path, class: 'collapse-item'  %>
+          <%= link_to  "Roles", roles_path, class: 'collapse-item'  %>
         </div>
       </div>
     </li>
@@ -48,7 +48,7 @@
   <!-- Nav Item - Utilities Collapse Menu -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-      <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+      <i class="fa fa-newspaper" aria-hidden="true"></i>
 
       <span>Noticias</span>
     </a>
