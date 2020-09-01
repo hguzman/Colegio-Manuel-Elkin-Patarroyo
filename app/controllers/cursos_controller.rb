@@ -56,6 +56,6 @@ class CursosController < ApplicationController
   end
 
   def curso_params
-    params.require(:curso).permit(:codigo,:nombre)
+    params.require(:curso).permit(:codigo,:nombre,users_ids: [])
   end
 end
