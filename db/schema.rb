@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_005259) do
+ActiveRecord::Schema.define(version: 2020_09_01_192042) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_08_31_005259) do
     t.string "telefono"
     t.string "direccion"
     t.string "picture"
+    t.integer "curso_id"
+    t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -83,4 +85,5 @@ ActiveRecord::Schema.define(version: 2020_08_31_005259) do
 
   add_foreign_key "anotaciones", "users"
   add_foreign_key "materias", "users"
+  add_foreign_key "users", "cursos"
 end
