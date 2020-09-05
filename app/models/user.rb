@@ -9,6 +9,7 @@ class User < ApplicationRecord
   belongs_to :curso, optional: true
   has_many :anotaciones
   has_many :materias
+  has_many :notas
 
   # Roles con rolify
 

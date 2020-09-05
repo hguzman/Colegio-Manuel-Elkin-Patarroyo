@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  # namespace :users do
+  #   get 'notas/index'
+  #   get 'notas/show'
+  #   get 'notas/new'
+  #   get 'notas/edit'
+  # end
  resources :roles
   resources :articulos
   # namespace :users do
@@ -26,6 +32,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :anotaciones, module: :users
     resources :materias, module: :users
+    resources :notas, module: :users
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

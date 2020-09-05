@@ -1,18 +1,39 @@
-<h2>Forgot your password?</h2>
+<!-- <br>
+<br> -->
+<!-- <br> -->
+<div class="container p-3">
+  <div class="row">
+    <div class="col-md-4 col-sm-3 mx-auto">
+      <div class="card border-dark shadow-lg">
+        <div class="card-body">
+          <div class="box">
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+              <div class="image d-flex justify-content-center">
+                <%= image_tag("logo_neopa.jpeg", :alt => "Logo neopa", :style => "width: 120px; height: 120px;border-radius: 55%;")%>
+              </div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+
+              <h3>Recupera tú contraseña</h3>
+
+              <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" } %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Send me reset password instructions" %>
+                </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

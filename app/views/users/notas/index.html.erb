@@ -1,0 +1,7 @@
+<h3>Notas del Estudiante <%= @user.nombre %>  <%= @user.apellido %></h3>
+<%= link_to new_user_nota_path(@user,@nota), class: "btn btn-info btn-sm mb-3" do %>
+  Nueva nota
+  <%= fa_icon "plus" %>
+<% end %>
+
+<%= render "table" %>

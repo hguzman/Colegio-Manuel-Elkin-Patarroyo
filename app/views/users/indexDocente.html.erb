@@ -11,14 +11,22 @@
           <table class="table">
               <tr>
                 <thead class="thead-dark">
-                  <th>Email</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Direccion</th>
-                  <th>Telefono</th>
-                  <th>Email</th>
-                  <th>Acciones</th>
-
+                  <% if @users.empty? %>
+                    <th>Email</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                  <% else %>
+                    <th>Email</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                  <% end %>
                 </thead>
               </tr>
             <% @users.each do |user|  %>
