@@ -55,10 +55,12 @@
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Noticias Estudiantiles:</h6>
-        <%= link_to  "Nueva noticia", new_articulo_path, class:'collapse-item' %>
-        <%= link_to  "Ultimas noticias", articulos_path, class:'collapse-item' %>
-
-
+        <% if current_user.has_role? :Docente %>
+          <%= link_to  "Ultimas noticias", articulos_path, class:'collapse-item' %>
+        <% else %>
+          <%= link_to  "Nueva noticia", new_articulo_path, class:'collapse-item' %>
+          <%= link_to  "Ultimas noticias", articulos_path, class:'collapse-item' %>
+        <% end %>
       </div>
     </div>
   </li>

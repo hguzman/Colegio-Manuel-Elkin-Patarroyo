@@ -1,12 +1,12 @@
-<h1 align="center">Colegio Manuel Elkin Patarroyo<h1>
+<h1 align="center">Colegio Colegio Alfred Nobel<h1>
 
 
-## Implementación de aplicativo web para el control de notas del C.M.E.P
+## Implementación de aplicativo web para el control de notas del C.A.N
 <h1 align="center">Logo del Software<h1>
 
 <p align="center">
   <a href="">
-    <img src="https://github.com/matking2001/Colegio-Manuel-Elkin-Patarroyo/raw/master/img/readme_logo.jpeg" alt="logo" width="200" height="200">
+    <img src="app/assets/images/logo_neopa.jpeg" alt="logo" width="200" height="200">
   </a>
 </p>
 

@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="box">
           <h2>Registrar usuario</h2>
-          <%= simple_form_for @user do |f| %>
+          <%= simple_form_for @user, html: {multipart: true} do |f| %>
             <%= f.input :nombre %>
             <%= f.input :apellido %>
             <%= f.input :telefono %>
@@ -13,6 +13,7 @@
             <%= f.input :password %>
             <%= f.input :password_confirmation %>
             <%= f.input :picture %>
+            <%= f.input :picture_cache , as: :hidden %>
             <%= f.association :roles , as: :check_boxes    %>
             <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>

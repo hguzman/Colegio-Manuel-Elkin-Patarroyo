@@ -1,20 +1,62 @@
 
- 
-<table class="table table-respnsive">
-    <tr>
-      <thead class="thead-dark">
-        <th>Email</th>
-        <th>Nombre</th>
-      
-      </thead>
-    </tr>
-  <% @users.each do |user|  %>
-    
-      <tr>
-        <td> <%= user.email %> </td>
-        <td> <%= user.nombre %> </td>
-      </tr>
-     
-  <% end %>
-</table>
+<%= link_to new_user_path, class: "btn btn-info btn-sm mb-2" do %>
+  <%= fa_icon "plus" %>
+  Registrar usuario
+<% end %>
 
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <div class="table-responsive">
+            <table class="table">
+
+                  <thead class="thead-dark">
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                    <th colspan="3" >Acciones</th>
+                  </thead>
+
+                  <tbody>
+                    <% @users.each do |user|  %>
+
+                        <tr>
+                          <td> <%= user.nombre %> </td>
+                          <td><%= user.apellido %></td>
+                          <td> <%= user.telefono %> </td>
+                          <td> <%= user.email %> </td>
+                          <td> <%= user.direccion %> </td>
+                          <td>
+                            <%= link_to user_path(user), class:"btn btn-success btn-sm" do %>
+                              <%= fa_icon "eye" %>
+                              Mostrar
+                            <% end %>
+                          </td>
+
+                          <td>
+                            <%= link_to edit_user_path(user), class: "btn btn-warning btn-sm" do %>
+                              <%= fa_icon "pencil-alt" %>
+                              Editar
+                            <% end %>
+                          </td>
+
+                          <td>
+                            <%= link_to user_path(user), class: "btn btn-danger btn-sm", method: :delete, data:{confirm: "Ojo"} do %>
+                              <%= fa_icon "trash" %>
+                              Eliminar
+                            <% end %>
+                          </td>
+                        </tr>
+                    <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
