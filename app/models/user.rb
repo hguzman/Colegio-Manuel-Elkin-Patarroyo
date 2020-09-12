@@ -9,6 +9,10 @@ class User < ApplicationRecord
   belongs_to :curso, optional: true
   has_many :anotaciones
   has_many :materias
+  #Validaciones
+
+  validates :identificacion, :nombre, :apellido, :telefono, :direccion, :email, :password, presence: true
+  validates :telefono,:identificacion, numericality: { only_integer: true }
 
   # Roles con rolify
 

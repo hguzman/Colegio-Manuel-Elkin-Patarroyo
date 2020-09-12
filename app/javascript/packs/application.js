@@ -8,6 +8,10 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+global.toastr = require("toastr")
+
+import "../stylesheets/application"
+
 $(document).ready(function() {
 
     $("#notice_wrapper").fadeIn("slow").delay(2000).fadeOut("slow");
