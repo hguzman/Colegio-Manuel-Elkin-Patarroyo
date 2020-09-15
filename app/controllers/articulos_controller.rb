@@ -19,7 +19,7 @@ class ArticulosController < ApplicationController
       @articulo = Articulo.new(articulo_params)
       if @articulo.save
         redirect_to articulos_path
-        flash.notice= "Articulo creado"
+        flash.notice = 'Articulo creado'
       else
         render :new
       end

@@ -1,15 +1,25 @@
-<h1>Datos Materia</h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <h2>Datos de la materia</h2>
 
-<p>
-  <strong>Codigo:</strong>
-  <%= @materia.codigo %>
+          <p>
+            <strong>Codigo:</strong>
+            <%= @materia.codigo %>
 
-</p>
+          </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @materia.nombre %>
+          <p>
+            <strong>Nombre:</strong>
+            <%= @materia.nombre %>
 
-</p>
+          </p>
 
-<%= link_to  "Materias", user_materias_path %>
+          <%= link_to  "Atras", user_materias_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
