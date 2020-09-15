@@ -24,7 +24,7 @@ class CursosController < ApplicationController
     @curso = Curso.new(curso_params)
     if @curso.save
       redirect_to cursos_path
-      flash.notice= 'curso creado'
+      flash[:success]= 'curso creado'
     else
       render :new
     end

@@ -11,9 +11,9 @@ class User < ApplicationRecord
   has_many :materias
   #Validaciones
 
-  validates :identificacion, :nombre, :apellido, :telefono, :direccion, :email, :password, presence: true
-  validates :telefono,:identificacion, numericality: { only_integer: true }
-
+  validates :nombre, :apellido, :telefono, :direccion, :email, :password, presence: true
+  validates :telefono,numericality: { only_integer: true }
+  validates :email, uniqueness: true
   # Roles con rolify
 
   #attr_accessible :role_ids

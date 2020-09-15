@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Anotaciones") do |sheet|
+sheet.add_row ['Id', 'Fecha', 'Titulo']
+@anotaciones.each do |anotacion|
+    sheet.add_row [anotacion.id, anotacion.fecha, anotacion.titulo]
+  end
+end
