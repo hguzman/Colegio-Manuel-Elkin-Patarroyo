@@ -4,6 +4,16 @@ class Users::AnotacionesController < ApplicationController
 
   def index
     @anotaciones = @user.anotaciones
+    respond_html_and_csv
+  end
+
+  def respond_html_and_csv
+    respond_to do |format|
+      format.html
+      format.xlsx do
+        response.headers['Content-Disposition'] = 'attachment; filename="anotaciones.xlsx"'
+      end
+    end
   end
 
   def show
