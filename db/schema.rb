@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_192042) do
+ActiveRecord::Schema.define(version: 2020_09_14_211149) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
     t.string "titulo"
-    t.string "contenido"
+    t.text "contenido"
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_anotaciones_on_user_id"
   end
 
   create_table "articulos", force: :cascade do |t|
     t.string "titulo"
-    t.string "descripcion"
-    t.string "informacion"
+    t.text "descripcion"
+    t.text "informacion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_192042) do
     t.string "direccion"
     t.string "picture"
     t.integer "curso_id"
+    t.integer "identificacion"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

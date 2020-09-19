@@ -60,5 +60,8 @@ gem 'pundit', '~> 2.1'
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 # gem 'will_paginate', '~> 3.1.0'
-
+gem 'listen'
 gem 'will_paginate-bootstrap4'
+gem 'toastr-rails'
+#Gema de excel
+gem 'caxlsx_rails', '~> 0.6.2'

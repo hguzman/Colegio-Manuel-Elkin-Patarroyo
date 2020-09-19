@@ -31,7 +31,7 @@ class Users::MateriasController < ApplicationController
   def update
     if @materia.update(materia_params)
       flash.notice="Materia Actualizada"
-      redirect_to  user_materia_path(@user, @materia)
+      redirect_to  user_materias_path(@user, @materia)
     else
       render :edit
     end
