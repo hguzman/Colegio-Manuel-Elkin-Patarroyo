@@ -7,7 +7,7 @@
           <%= simple_form_for @curso do |c| %>
           <%= c.input :codigo %>
           <%= c.input :nombre %>
-          <%= c.association :users, as: :check_boxes, collection: User.where(curso_id: nil), label_method: :nombre %>
+          <%= c.association :users, as: :check_boxes, collection: User.where(curso_id: nil), label_method: :email%>
           <%= c.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>

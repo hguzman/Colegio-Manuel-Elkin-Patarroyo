@@ -6,11 +6,10 @@ class CursosController < ApplicationController
     authorize Curso
     @cursos = Curso.all
 
-
   end
 
   def show
-
+    
   end
 
   def new
@@ -56,6 +55,6 @@ class CursosController < ApplicationController
   end
 
   def curso_params
-    params.require(:curso).permit(:codigo,:nombre,users_ids: [])
+    params.require(:curso).permit(:codigo,:nombre,user_ids: [])
   end
 end
