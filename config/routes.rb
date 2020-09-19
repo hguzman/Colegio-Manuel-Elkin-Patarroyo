@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
  resources :roles
   resources :articulos
   # namespace :users do
@@ -26,6 +27,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :anotaciones, module: :users
     resources :materias, module: :users
+  end
+
+  resources :materias do
+    resources :notas, module: :materias
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

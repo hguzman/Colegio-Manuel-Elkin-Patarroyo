@@ -4,7 +4,7 @@
 <div class="container">
   <h1 class="text-center"> Noticias Estudiantes</h1>
 
-<%= will_paginate @articulos, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+
   <div class="row">
 
 
@@ -44,4 +44,8 @@
 
 
   </div>
+  <div class="mt-2 d-flex justify-content-center">
+    <%= will_paginate @articulos, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+  </div>
+
 </div>
