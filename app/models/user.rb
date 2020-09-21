@@ -19,4 +19,5 @@ class User < ApplicationRecord
   #attr_accessible :role_ids
 
   # accepts_nested_attributes_for
+  accepts_nested_attributes_for :curso
 end
