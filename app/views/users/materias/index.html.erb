@@ -4,27 +4,4 @@
   <%= fa_icon "plus" %>
 <% end %>
 
-<div class="row">
-  <div class="col-md-12">
-    <div class="card shadow-lg">
-      <div class="card-body">
-        <div class="box">
-          <div class="table-responsive">
-            <table class="table">
-              <tr class="thead-dark">
-                <th>Codigo</th>
-                 <th>Nombre</th>
-                 <th colspan="3">Acciones</th>
-              </tr>
-
-
-              <%= render @materia %>
-
-
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "tabla" %>

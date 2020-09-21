@@ -1,0 +1,100 @@
+
+  <h3>Notas del Alumno(a) <%= @materia.user.nombre %>  <%= @materia.user.apellido %></h3>
+
+  <div class="mb-3">
+    <%= link_to new_materia_nota_path(@materia,@nota), class: "btn btn-info btn-sm" do %>
+    Crear nota
+    <%= fa_icon "plus" %>
+    <% end %>
+
+    <%= link_to materia_notas_path(format: 'xlsx'), class: "btn btn-success btn-sm" do %>
+      <i class="fas fa-file-excel"></i>
+      Descargar excel
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="box">
+            <div class="table-responsive">
+              <table class="table">
+                <tr class="thead-dark" >
+                  <th>Logro</th>
+                  <th>Nota</th>
+                  <th colspan="3">Acciones</th>
+                </tr>
+
+
+                <tr>
+                  <% @notas.each do |nota| %>
+                  <td>
+                    <%= nota.logro %>
+                  </td>
+                  <td>
+                    <%= nota.nota %>
+                  </td>
+
+                  <td>
+                    <%= link_to  materia_nota_path(@materia, nota), class: "btn btn-success btn-sm" do %>
+                      <%= fa_icon "eye" %>
+                      Mostrar
+                    <% end %>
+                  </td>
+                  <td>
+
+                    <%= link_to  edit_materia_nota_path(@materia, nota), class: "btn btn-warning btn-sm" do %>
+                      <%= fa_icon "pencil-alt" %>
+                      Editar
+                    <% end %>
+                  </td>
+
+                  <td>
+
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                      <%= fa_icon "trash" %>
+                      Eliminar
+                    </button>
+
+
+
+                  </td>
+                </tr>
+
+                  <!-- Button trigger modal -->
+
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar nota</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="mr-1">Estas seguro de eliminar esta nota</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info btn-sm" data-dismiss="modal"><i class="fas fa-times-circle mr-1"></i>Cancelar</button>
+                          <%= link_to materia_nota_path(@materia, nota), class: "btn btn-danger btn-sm" , method: :delete do %>
+                            <%= fa_icon "trash" %>
+                            Eliminar
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% end %>
+
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

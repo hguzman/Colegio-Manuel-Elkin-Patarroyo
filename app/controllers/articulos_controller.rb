@@ -4,7 +4,7 @@ class ArticulosController < ApplicationController
 
 
     def index
-      @articulos=Articulo.paginate(page: params[:page], per_page: 4)
+      @articulos=Articulo.order(created_at: :desc).paginate(page: params[:page], per_page: 4)
     end
 
 
@@ -28,7 +28,7 @@ class ArticulosController < ApplicationController
 
     def update
       if @articulo.update(articulo_params)
-        redirect_to articulo_path
+        redirect_to articulos_path
         flash.notice="Articulo Editado"
       else
         render :edit
