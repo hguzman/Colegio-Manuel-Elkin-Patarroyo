@@ -4,7 +4,7 @@ class Users::MateriasController < ApplicationController
 
   def index
     authorize Materia
-    @materia = Materia.all
+    @materias = @user.materias
   end
 
   def show
@@ -14,7 +14,7 @@ class Users::MateriasController < ApplicationController
   end
 
   def new
-    @materia = Materia.new
+    @materia = @user.materias.new
     authorize @materia
   end
 

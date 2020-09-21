@@ -1,0 +1,2 @@
+module Materias::NotasHelper
+end

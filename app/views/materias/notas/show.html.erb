@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <h2>Datos de la nota</h2>
+          <div>
+            <p><strong>Logro:</strong> <%= @nota.logro %></p>
+            <p><strong class="mr-1">Nota:</strong><%= @nota.nota%></p>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= link_to "Atras", materia_notas_path, class: "btn btn-primary btn-block" %>
+            </div>
+            <div class="col">
+              <%= link_to "Editar", edit_materia_nota_path(@materia,@nota), class: "btn btn-warning btn-block" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
