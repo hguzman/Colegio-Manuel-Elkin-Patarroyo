@@ -17,7 +17,7 @@ class CursoPolicy
   end
 
   def show?
-    @users.has_role? :amin
+    @users.has_role? :admin
 
   end
 
