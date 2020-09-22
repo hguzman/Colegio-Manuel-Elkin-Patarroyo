@@ -29,6 +29,7 @@ class UsersController < ApplicationController
       if @user.save
         redirect_to cursos_path
         flash.notice= "user creado"
+      
       else
         render :new
       end

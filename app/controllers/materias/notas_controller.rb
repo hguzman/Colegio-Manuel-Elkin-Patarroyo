@@ -4,17 +4,20 @@ class Materias::NotasController < ApplicationController
 
   def index
     @notas = @materia.notas
-    respond_html_and_csv
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf:"Documento",
+        template: "materias/notas/pdf.html.erb"
+      
+      end
+     
+    end
 
   end
 
   def respond_html_and_csv
-    respond_to do |format|
-      format.html
-      format.xlsx do
-        response.headers['Content-Disposition'] = 'attachment; filename="notas.xlsx"'
-      end
-    end
+    
   end
 
   def show

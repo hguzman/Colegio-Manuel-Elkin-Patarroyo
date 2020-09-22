@@ -65,3 +65,6 @@ gem 'will_paginate-bootstrap4'
 gem 'toastr-rails'
 #Gema de excel
 gem 'caxlsx_rails', '~> 0.6.2'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary', '~> 0.12.6.1'
+

@@ -10,43 +10,34 @@
     <%= fa_icon "plus" %>
   <% end %>
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="card shadow-lg">
-      <div class="card-body">
-        <div class="box">
-          <h1>Datos del <%= @user.roles.name %></h1>
 
-          <p>
-            <strong>Nombre:</strong>
-            <%= @user.nombre %>
-          </p>
 
-          <p>
-            <strong>Apellido:</strong>
-            <%= @user.apellido %>
-          </p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3 pt-3 shadow" style="width: 200px; height: 300%;">
+      <div style="width: 200px; height: 300px; float: left;">
+        <%= image_tag  @user.picture.thumb.url, class:'float-left', :style=>"width:200px;height:100%" %>
+      </div>
 
-          <p>
-            <strong>Direccion:</strong>
-            <%= @user.direccion %>
-          </p>
+      <div style="position: absolute; left: 400px;">
+      
+        <p><%= @user.identificacion %></p>
+        <p> <%= @user.nombre %></p>
+        <p><%= @user.apellido %></p>
+        <p> <%= @user.telefono %></p>
+        <p> <%= @user.direccion %></p>
+        <p> <%= @user.email %></p>
+     
+      </div>
+      
 
-          <p>
-            <strong>Telefono:</strong>
-            <%= @user.telefono %>
-          </p>
+    </div>
+  </div>
+</div>
 
-          <p>
-            <strong>Direccion:</strong>
-            <%= @user.direccion %>
-          </p>
 
 
           <%= link_to  "Anotaciones", user_anotaciones_path(@user), class: "btn  btn-primary ml-1"  %>
           <%= link_to  "Materias", user_materias_path(@user), class: "btn  btn-primary ml-1"  %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+  
