@@ -4,15 +4,7 @@ class Materias::NotasController < ApplicationController
 
   def index
     @notas = @materia.notas
-<<<<<<< HEAD
-=======
-    @promedio_estudiante = promedio_notas
-    respond_html_and_csv
-
-  end
-
-  def respond_html_and_csv
->>>>>>> 6ec8bc69651d4332db7df1197b098246e9167d48
+    
     respond_to do |format|
       format.html
       format.pdf do
@@ -20,14 +12,15 @@ class Materias::NotasController < ApplicationController
         template: "materias/notas/pdf.html.erb"
       
       end
+
+      
      
     end
+    @promedio_estudiante = promedio_notas
 
   end
 
-  def respond_html_and_csv
-    
-  end
+ 
 
   def show
 

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   belongs_to :curso, optional: true, dependent: :destroy
   has_many :anotaciones, dependent: :destroy
   has_many :materias, dependent: :destroy
-  belongs_to :asistencia, optional: true, dependent: :destroy
+  has_and_belongs_to_many :asistencias
   #Validaciones
 
   #validates :identificacion, :nombre, :apellido, :telefono, :direccion, :email, :password, presence: true

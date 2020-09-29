@@ -53,8 +53,14 @@
       </a>
       <div id="collapseCurso" class="collapse" aria-labelledby="headingCurso" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Usuarios:</h6>
-          <%= link_to  "Cursos", cursos_path, class:'collapse-item'  %>
+          <h6 class="collapse-header">Cursos:</h6>
+           <%= link_to  "Crear curso", new_curso_path, class:'collapse-item'  %>
+           <%= link_to  "Cursos", cursos_path, class:'collapse-item'  %>
+           
+          <%@cursos.each do |curso| %>
+            <%= link_to  curso.nombre, curso_path(curso), class:'collapse-item'  %>
+          <%end %>
+          
          
           
         </div>

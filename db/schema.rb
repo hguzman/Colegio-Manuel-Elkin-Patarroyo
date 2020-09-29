@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_153712) do
+ActiveRecord::Schema.define(version: 2020_09_29_191410) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 2020_09_29_153712) do
     t.date "fecha"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "asistencias_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "asistencia_id", null: false
+    t.index ["asistencia_id"], name: "index_asistencias_users_on_asistencia_id"
+    t.index ["user_id"], name: "index_asistencias_users_on_user_id"
   end
 
   create_table "cursos", force: :cascade do |t|
