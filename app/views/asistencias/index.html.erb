@@ -1,0 +1,47 @@
+
+<%= link_to new_asistencia_path, class: "btn btn-info btn-sm mb-3" do %>
+  Registrar Asistencia
+  <%= fa_icon "plus" %>
+<% end %>
+
+
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+                <tr>
+                  <thead class="thead-dark">
+                    <th>Fecha</th>
+                    <th colspan="3">Acciones</th>
+
+                  </thead>
+                </tr>
+              <% @asistencias.each do |asistencia|  %>
+                <tr>
+                  <td> <%= asistencia.fecha %> </td>
+                  
+                  <td>
+                    <%= link_to asistencia_path(asistencia), class:"btn btn-success btn-sm" do %>
+                      <%= fa_icon "eye" %>
+                      Mostrar
+                    <% end %>
+                    <%= link_to edit_asistencia_path(asistencia), class: "btn btn-warning btn-sm" do %>
+                      <%= fa_icon('pencil') %>
+                      Editar
+                    <% end %>
+                
+                    <%= link_to asistencia_path(asistencia),method: :delete,class: "btn btn-danger btn-sm", data: {confirm:"¿Desae eliminar este curso?"} do %>
+                      <%= fa_icon "trash" %>
+                      Eliminar
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

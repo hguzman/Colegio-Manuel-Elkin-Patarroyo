@@ -4,19 +4,23 @@ class Materias::NotasController < ApplicationController
 
   def index
     @notas = @materia.notas
-    @promedio_estudiante = promedio_notas
-    respond_html_and_csv
-
-  end
-
-  def respond_html_and_csv
+    
     respond_to do |format|
       format.html
-      format.xlsx do
-        response.headers['Content-Disposition'] = 'attachment; filename="notas.xlsx"'
+      format.pdf do
+        render pdf:"Documento",
+        template: "materias/notas/pdf.html.erb"
+      
       end
+
+      
+     
     end
+    @promedio_estudiante = promedio_notas
+
   end
+
+ 
 
   def show
 

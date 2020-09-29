@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_161933) do
+ActiveRecord::Schema.define(version: 2020_09_29_191410) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 2020_09_16_161933) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture"
+  end
+
+  create_table "asistencias", force: :cascade do |t|
+    t.date "fecha"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "asistencias_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "asistencia_id", null: false
+    t.index ["asistencia_id"], name: "index_asistencias_users_on_asistencia_id"
+    t.index ["user_id"], name: "index_asistencias_users_on_user_id"
   end
 
   create_table "cursos", force: :cascade do |t|
@@ -80,6 +93,8 @@ ActiveRecord::Schema.define(version: 2020_09_16_161933) do
     t.string "picture"
     t.integer "curso_id"
     t.integer "identificacion"
+    t.integer "asistencia_id"
+    t.index ["asistencia_id"], name: "index_users_on_asistencia_id"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -96,5 +111,6 @@ ActiveRecord::Schema.define(version: 2020_09_16_161933) do
   add_foreign_key "anotaciones", "users"
   add_foreign_key "materias", "users"
   add_foreign_key "notas", "materias"
+  add_foreign_key "users", "asistencias"
   add_foreign_key "users", "cursos"
 end

@@ -21,7 +21,7 @@
       <div class="dropdown-menu dropdown-menu-right shadow " aria-labelledby="userDropdown">
         <a class="dropdown-item" href="#">
           <%= fa_icon "user", class: "mr-2" %>
-          Mi perfil
+          <%= link_to 'Perfil', user_path(current_user.id), class:'dropdown-item' %>
         </a>
 
         <div class="dropdown-divider"></div>

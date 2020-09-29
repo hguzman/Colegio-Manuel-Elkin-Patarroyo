@@ -1,22 +1,18 @@
 
   <h3>Notas del Alumno(a) <%= @materia.user.nombre %>  <%= @materia.user.apellido %></h3>
 
-  <div class="col-md-4">
-    <div class="row">
-      <div class="col">
-      <%= link_to new_materia_nota_path(@materia,@nota), class: "btn btn-info btn-sm btn-block" do %>
-      Crear nota
-      <%= fa_icon "plus" %>
-      <% end %>
-      </div>
+  <div class="mb-3">
+    <%= link_to new_materia_nota_path(@materia,@nota), class: "btn btn-info btn-sm" do %>
+    Crear nota
+    <%= fa_icon "plus" %>
+    <% end %>
 
-      <div class="col">
-      <%= link_to materia_notas_path(format: 'xlsx'), class: "btn btn-success btn-sm btn-block" do %>
-        <i class="fas fa-file-excel"></i>
-        Descargar excel
-      <% end %>
-      </div>
-    </div>
+    <%= link_to materia_notas_path(format: 'pdf'), class: "btn btn-danger btn-sm" do %>
+      <i class="fas fa-file-pdf"></i>
+      Descargar pdf
+    <% end %>
+
+    
   </div>
   <% if @notas.empty? %>
     <h3>Promedio: 0</h3>
@@ -57,25 +53,25 @@
                       <%= fa_icon "eye" %>
                       Mostrar
                     <% end %>
-                  </td>
-                  <td>
+                
+                  
 
                     <%= link_to  edit_materia_nota_path(@materia, nota), class: "btn btn-warning btn-sm" do %>
                       <%= fa_icon "pencil-alt" %>
                       Editar
                     <% end %>
-                  </td>
+                  
 
-                  <td>
+                  
 
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
                       <%= fa_icon "trash" %>
                       Eliminar
                     </button>
-
-
-
                   </td>
+
+
+                  
                 </tr>
 
                   <!-- Button trigger modal -->

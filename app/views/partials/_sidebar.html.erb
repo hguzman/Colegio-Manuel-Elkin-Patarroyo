@@ -33,26 +33,67 @@
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fa fa-plus" aria-hidden="true"></i>
 
-        <span>Registros</span>
+        <span>Usuarios</span>
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Registros:</h6>
-          <%= link_to  "Cursos", cursos_path, class:'collapse-item'  %>
-          <%= link_to  "user", new_user_path, class: 'collapse-item'  %>
-          <%= link_to  "Roles", roles_path, class: 'collapse-item'  %>
+          <h6 class="collapse-header">Usuarios:</h6>
+          <%= link_to  "Listar usuarios", users_path, class:'collapse-item'  %>
+          <%= link_to  "crear usuario", new_user_path, class: 'collapse-item'  %>
+          
+        </div>
+      </div>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCurso" aria-expanded="true" aria-controls="collapseCurso">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+
+        <span>Cursos</span>
+      </a>
+      <div id="collapseCurso" class="collapse" aria-labelledby="headingCurso" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Cursos:</h6>
+           <%= link_to  "Crear curso", new_curso_path, class:'collapse-item'  %>
+           <%= link_to  "Cursos", cursos_path, class:'collapse-item'  %>
+           
+          <%@cursos.each do |curso| %>
+            <%= link_to  curso.nombre, curso_path(curso), class:'collapse-item'  %>
+          <%end %>
+          
+         
+          
         </div>
       </div>
     </li>
 
+    <!-- Nav Item - Pages Collapse Rol -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRole" aria-expanded="true" aria-controls="collapseRole">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+
+        <span>Roles</span>
+      </a>
+      <div id="collapseRole" class="collapse" aria-labelledby="headingRole" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Rol:</h6>
+          <%= link_to  "Listar Roles", roles_path, class:'collapse-item'  %>
+          <%= link_to  "crear usuario", new_role_path, class: 'collapse-item'  %>
+          
+        </div>
+      </div>
+    </li>
+
+
   <!-- Nav Item - Utilities Collapse Menu -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNoticia" aria-expanded="true" aria-controls="collapseNoticia">
       <i class="fa fa-newspaper" aria-hidden="true"></i>
 
       <span>Noticias</span>
     </a>
-    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+    <div id="collapseNoticia" class="collapse" aria-labelledby="headingNotiicia" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Noticias Estudiantiles:</h6>
         <%= link_to  "Nueva noticia", new_articulo_path, class:'collapse-item' %>
