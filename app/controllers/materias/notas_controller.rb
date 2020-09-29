@@ -4,6 +4,7 @@ class Materias::NotasController < ApplicationController
 
   def index
     @notas = @materia.notas
+    @promedio_estudiante = promedio_notas
     respond_html_and_csv
 
   end
@@ -28,7 +29,7 @@ class Materias::NotasController < ApplicationController
   def create
     @nota = @materia.notas.new(nota_params)
     if @nota.save
-      flash.notice = "Nota creada"
+      flash[:success] = "Nota creada"
       redirect_to materia_nota_path(@materia, @nota)
     else
       render :new
@@ -42,7 +43,7 @@ class Materias::NotasController < ApplicationController
   def update
     if @nota.update(nota_params)
       flash.notice = "Nota Actualizada"
-      redirect_to materia_notas_path(@materia,@nota)
+      redirect_to materia_nota_path(@materia,@nota)
     else
       flash.alert = "Error al actualizar"
       render edit
@@ -67,5 +68,22 @@ class Materias::NotasController < ApplicationController
 
   def nota_params
     params.require(:nota).permit(:logro,:nota)
+  end
+
+  def promedio_notas
+    nota = @materia.notas.empty?
+    
+    if nota
+
+    elsif
+
+      promedio_nota = 0
+
+      Nota.all.each do |n|
+        promedio_nota += n.nota
+      end
+
+      return promedio_nota/Nota.all.length
+    end
   end
 end
