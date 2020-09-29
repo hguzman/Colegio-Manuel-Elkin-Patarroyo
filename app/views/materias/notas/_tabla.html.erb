@@ -1,17 +1,28 @@
 
   <h3>Notas del Alumno(a) <%= @materia.user.nombre %>  <%= @materia.user.apellido %></h3>
 
-  <div class="mb-3">
-    <%= link_to new_materia_nota_path(@materia,@nota), class: "btn btn-info btn-sm" do %>
-    Crear nota
-    <%= fa_icon "plus" %>
-    <% end %>
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col">
+      <%= link_to new_materia_nota_path(@materia,@nota), class: "btn btn-info btn-sm btn-block" do %>
+      Crear nota
+      <%= fa_icon "plus" %>
+      <% end %>
+      </div>
 
-    <%= link_to materia_notas_path(format: 'xlsx'), class: "btn btn-success btn-sm" do %>
-      <i class="fas fa-file-excel"></i>
-      Descargar excel
-    <% end %>
+      <div class="col">
+      <%= link_to materia_notas_path(format: 'xlsx'), class: "btn btn-success btn-sm btn-block" do %>
+        <i class="fas fa-file-excel"></i>
+        Descargar excel
+      <% end %>
+      </div>
+    </div>
   </div>
+  <% if @notas.empty? %>
+    <h3>Promedio: 0</h3>
+  <% elsif %>
+    <h3>Promedio: <span><%= @promedio_estudiante %></span></h3>
+  <% end %>
 
   <div class="row">
     <div class="col-md-12">
@@ -21,9 +32,14 @@
             <div class="table-responsive">
               <table class="table">
                 <tr class="thead-dark" >
-                  <th>Logro</th>
-                  <th>Nota</th>
-                  <th colspan="3">Acciones</th>
+                  <% if @notas.empty? %>
+                    <th>Logro</th>
+                    <th>Nota</th>
+                  <% elsif %>
+                    <th>Logro</th>
+                    <th>Nota</th>
+                    <th colspan="3">Acciones</th>
+                  <% end %>
                 </tr>
 
 
