@@ -7,6 +7,11 @@
     <%= fa_icon "plus" %>
     <% end %>
 
+    <%= link_to materia_notas_path(format: 'pdf'), class: "btn btn-danger btn-sm" do %>
+      <i class="fas fa-file-pdf"></i>
+      Descargar pdf
+    <% end %>
+
     <%= link_to materia_notas_path(format: 'xlsx'), class: "btn btn-success btn-sm" do %>
       <i class="fas fa-file-excel"></i>
       Descargar excel
@@ -41,25 +46,25 @@
                       <%= fa_icon "eye" %>
                       Mostrar
                     <% end %>
-                  </td>
-                  <td>
+                
+                  
 
                     <%= link_to  edit_materia_nota_path(@materia, nota), class: "btn btn-warning btn-sm" do %>
                       <%= fa_icon "pencil-alt" %>
                       Editar
                     <% end %>
-                  </td>
+                  
 
-                  <td>
+                  
 
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
                       <%= fa_icon "trash" %>
                       Eliminar
                     </button>
-
-
-
                   </td>
+
+
+                  
                 </tr>
 
                   <!-- Button trigger modal -->

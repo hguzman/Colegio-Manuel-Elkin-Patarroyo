@@ -21,7 +21,7 @@ class CursosController < ApplicationController
 
   def create
     @curso = Curso.new(curso_params)
-    if @curso.save
+    if @curso.save(validate: false)
       redirect_to cursos_path
       flash[:success]= 'curso creado'
     else

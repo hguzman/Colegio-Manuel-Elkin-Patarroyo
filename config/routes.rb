@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
 
+  namespace :cursos do
+    get 'users/index'
+  end
  resources :roles
   resources :articulos
   # namespace :users do
@@ -23,10 +26,14 @@ Rails.application.routes.draw do
 
   root to: "articulos#index"
 
-  resources :cursos
+
   resources :users do
     resources :anotaciones, module: :users
     resources :materias, module: :users
+  end
+
+  resources :cursos do
+    resources :users, module: :cursos
   end
 
   resources :materias do

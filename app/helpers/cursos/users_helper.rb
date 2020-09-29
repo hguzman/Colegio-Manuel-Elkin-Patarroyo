@@ -1,0 +1,2 @@
+module Cursos::UsersHelper
+end
