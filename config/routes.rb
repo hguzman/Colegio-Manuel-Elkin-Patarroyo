@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
 
 
-
-  namespace :cursos do
+  namespace :asistencias do
     get 'users/index'
   end
+resources :asistencias
  resources :roles
   resources :articulos
-  # namespace :users do
-  #   get 'materias/index'
-  #   get 'materias/show'
-  #   get 'materias/edit'
-  #   get 'materias/new'
-  # end
   get 'users/indexStudent'
   get 'users/indexDocente'
   devise_for :users
@@ -34,6 +28,11 @@ Rails.application.routes.draw do
 
   resources :cursos do
     resources :users, module: :cursos
+  end
+
+
+  resources :asistencias do
+    resources :users, module: :asistencias
   end
 
   resources :materias do

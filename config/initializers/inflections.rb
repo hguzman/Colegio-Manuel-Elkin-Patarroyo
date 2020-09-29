@@ -9,6 +9,7 @@
    inflect.irregular "anotacion" , "anotaciones"
    inflect.irregular "materia" , "materias"
    inflect.irregular "nota" , "notas"
+   inflect.irregular "asistencia" , "asistencias"
 #   inflect.uncountable %w( fish sheep )
  end
 

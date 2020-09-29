@@ -1,0 +1,19 @@
+<h1>Datos de la Asistencia</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <p>
+            <strong>Fecha:</strong>
+            <%= @asistencia.fecha %>
+
+          </p>
+
+           <%= link_to  "Estudiantes", asistencia_users_path(@asistencia), class: "btn  btn-primary ml-1"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
