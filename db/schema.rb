@@ -93,8 +93,6 @@ ActiveRecord::Schema.define(version: 2020_09_29_191410) do
     t.string "picture"
     t.integer "curso_id"
     t.integer "identificacion"
-    t.integer "asistencia_id"
-    t.index ["asistencia_id"], name: "index_users_on_asistencia_id"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -111,6 +109,5 @@ ActiveRecord::Schema.define(version: 2020_09_29_191410) do
   add_foreign_key "anotaciones", "users"
   add_foreign_key "materias", "users"
   add_foreign_key "notas", "materias"
-  add_foreign_key "users", "asistencias"
   add_foreign_key "users", "cursos"
 end

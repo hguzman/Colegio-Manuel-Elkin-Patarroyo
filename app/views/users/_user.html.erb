@@ -1,0 +1,52 @@
+
+  <tr>
+
+    <td><%= user.identificacion %></td>
+    <td><%= user.nombre %></td>
+    <td><%= user.apellido %></td>
+    <td><%= user.telefono %></td>
+    <td><%= user.direccion %></td>
+    <td><%= user.email %></td>
+
+    <td>
+      <%= link_to  user_path(user), class: "btn btn-success btn-sm" do %>
+      <%= fa_icon "eye" %>
+      Mostrar
+      <% end %>
+    </td>
+    <td>
+      <%= link_to  edit_user_path(user), class: "btn btn-warning btn-sm" do %>
+      <%= fa_icon "pencil-alt" %>
+      Editar
+      <% end %>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+        <%= fa_icon "trash" %>
+        Eliminar
+      </button>
+    </td>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar usuario</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="mr-1">Estas seguro de eliminar este usuario</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info btn-sm" data-dismiss="modal"><i class="fas fa-times-circle mr-1"></i>Cancelar</button>
+            <%= link_to user_path(user), class: "btn btn-danger btn-sm" , method: :delete do %>
+            <%= fa_icon "trash" %>
+            Eliminar
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </tr>

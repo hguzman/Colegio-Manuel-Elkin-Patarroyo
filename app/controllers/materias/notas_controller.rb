@@ -4,23 +4,26 @@ class Materias::NotasController < ApplicationController
 
   def index
     @notas = @materia.notas
-    
+
     respond_to do |format|
-      format.html
+      format.html do
+        @promedio_estudiante = @materia.notas.average(:nota) || 0
+        # @suma_estudiante = @materia.notas.sum(:nota) || 0
+      end
       format.pdf do
         render pdf:"Documento",
         template: "materias/notas/pdf.html.erb"
-      
+
       end
 
-      
-     
+
+
     end
-    @promedio_estudiante = promedio_notas
+
 
   end
 
- 
+
 
   def show
 
@@ -49,7 +52,7 @@ class Materias::NotasController < ApplicationController
       flash.notice = "Nota Actualizada"
       redirect_to materia_nota_path(@materia,@nota)
     else
-      flash.alert = "Error al actualizar"
+
       render edit
     end
   end
@@ -74,20 +77,4 @@ class Materias::NotasController < ApplicationController
     params.require(:nota).permit(:logro,:nota)
   end
 
-  def promedio_notas
-    nota = @materia.notas.empty?
-    
-    if nota
-
-    elsif
-
-      promedio_nota = 0
-
-      Nota.all.each do |n|
-        promedio_nota += n.nota
-      end
-
-      return promedio_nota/Nota.all.length
-    end
-  end
 end
