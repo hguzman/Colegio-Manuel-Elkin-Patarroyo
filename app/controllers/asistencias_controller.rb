@@ -3,21 +3,21 @@ class AsistenciasController < ApplicationController
   before_action :set_asistencia, only: [:show, :edit, :update, :destroy]
 
   def index
-   
+
     @asistencias = Asistencia.all
 
   end
 
   def show
 
-    
-    
+
+
   end
 
   def new
 
     @asistencia = Asistencia.new
-   
+
 
   end
 
@@ -38,7 +38,7 @@ class AsistenciasController < ApplicationController
   def update
     if @asistencia.update(asistencia_params)
       redirect_to asistencias_path
-      flash.notice= 'asistencia actualizado'
+      flash.notice= 'Asistencia actualizado'
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class AsistenciasController < ApplicationController
   def destroy
     @asistencia.destroy
     redirect_to asistencias_path
-    flash.alert= 'asistencia eliminado'
+    flash.alert= 'Asistencia eliminado'
   end
 
   private

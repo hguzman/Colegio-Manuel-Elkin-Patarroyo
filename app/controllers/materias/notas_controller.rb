@@ -49,7 +49,7 @@ class Materias::NotasController < ApplicationController
 
   def update
     if @nota.update(nota_params)
-      flash.notice = "Nota Actualizada"
+      flash.notice = "Nota actualizada"
       redirect_to materia_nota_path(@materia,@nota)
     else
 

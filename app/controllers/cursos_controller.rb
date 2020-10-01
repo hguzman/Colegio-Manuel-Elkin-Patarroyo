@@ -23,7 +23,7 @@ class CursosController < ApplicationController
     @curso = Curso.new(curso_params)
     if @curso.save(validate: false)
       redirect_to cursos_path
-      flash[:success]= 'curso creado'
+      flash[:success]= 'Curso creado'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class CursosController < ApplicationController
   def update
     if @curso.update(curso_params)
       redirect_to cursos_path
-      flash.notice= 'curso actualizado'
+      flash.notice= 'Curso actualizado'
     else
       render :edit
     end

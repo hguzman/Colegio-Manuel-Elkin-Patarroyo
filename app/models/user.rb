@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :picture, PictureUploader
-  belongs_to :curso, optional: true, dependent: :destroy
+  belongs_to :curso, optional: true
   has_many :anotaciones, dependent: :destroy
   has_many :materias, dependent: :destroy
   has_and_belongs_to_many :asistencias
