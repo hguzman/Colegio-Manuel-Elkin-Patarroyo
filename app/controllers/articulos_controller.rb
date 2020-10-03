@@ -29,7 +29,7 @@ class ArticulosController < ApplicationController
     def update
       if @articulo.update(articulo_params)
         redirect_to articulos_path
-        flash.notice="Articulo Editado"
+        flash.notice="Articulo editado"
       else
         render :edit
       end
@@ -39,7 +39,7 @@ class ArticulosController < ApplicationController
       @articulo.destroy
 
       redirect_to articulos_path
-      flash.alert="Articulo ELiminado"
+      flash.alert="Articulo eliminado"
     end
 
     def edit

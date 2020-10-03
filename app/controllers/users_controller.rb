@@ -28,8 +28,8 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         redirect_to cursos_path
-        flash.notice= "user creado"
-      
+        flash.notice= "User creado"
+
       else
         render :new
       end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     def update
       if @user.update(user_params)
         redirect_to user_path
-        flash.notice="user Editado"
+        flash.notice="User editado"
       else
         render :edit
       end
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       @user.destroy
 
       redirect_to users_path
-      flash.alert="user ELiminado"
+      flash.alert="User eliminado"
     end
 
     def edit
