@@ -19,12 +19,16 @@
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
+
+                <% if current_user.has_role? :admin%>
                     <li><a><%= link_to "Últimas noticias", noticias_path %></a></li>
-
                     <li><a><%= link_to "Crear noticia", new_noticia_path%></a></li>
-
+                <% elsif  %>
+                    <li><a><%= link_to "Últimas noticias", noticias_path %></a></li>
+                <% end %>
                 </ul>
             </li>
+            <% if current_user.has_role? :admin %>
             <li>
                 <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Cursos</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -34,6 +38,7 @@
 
                 </ul>
             </li>
+            <% end %>
             <li>
                 <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -49,11 +54,6 @@
                     <li><a><%= link_to  "Listado Roles", roles_path %></a></li>
 
                 </ul>
-            </li>
-            <li class="<%= 'active' if current_page?('/home/minor') %>">
-                <%= link_to "/home/minor" do %>
-                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
-                <% end %>
             </li>
         </ul>
 
