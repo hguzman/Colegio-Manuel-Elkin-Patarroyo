@@ -1,43 +1,38 @@
 Rails.application.routes.draw do
+ 
 
-
-  namespace :asistencias do
+  namespace :materias do
     get 'users/index'
   end
-resources :asistencias
- resources :roles
-  resources :articulos
-  get 'users/indexStudent'
-  get 'users/indexDocente'
+  namespace :cursos do
+    get 'users/index'
+  end
+  # Ruta por defecto
+  root to: 'noticias#index'
+ 
   devise_for :users
-
-  resources :users
-
-  get 'users/indexStudent'
-  get 'inicio/index'
+  resources :noticias
+  resources :roles
+  resources :materias
 
 
-
-  root to: "articulos#index"
-
-
+  # Rutas anidadas
   resources :users do
     resources :anotaciones, module: :users
-    resources :materias, module: :users
   end
 
   resources :cursos do
     resources :users, module: :cursos
   end
 
-
-  resources :asistencias do
-    resources :users, module: :asistencias
-  end
-
   resources :materias do
-    resources :notas, module: :materias
+    resources :users, module: :materias
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+
+
+
+  
+
 end

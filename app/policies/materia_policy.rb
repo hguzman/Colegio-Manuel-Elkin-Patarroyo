@@ -1,26 +1,27 @@
 class MateriaPolicy
+    attr_reader :user, :materia
 
-   attr_reader :user, :materia
+    def initialize(user, materia)
+      @user = user
+      @materia = materia
+    end
 
-  def initialize(user, materia)
-    @user = user
-    @users = materia
-  end
+    def index?
+      @user.has_role? :admin
+    end
 
-  def index?
-    @user.has_role? :admin
-  end
-  def new?
-    @user.has_role? :admin
-  end
+    def new?
+      @user.has_role? :admin
+    end
 
-  def show?
-    @users.has_role? :amin
+    def show?
+      @user.has_role? :admin
+    end
+    
 
-  end
-
-  def edit?
-    @users.has_role? :admin
-
-  end
+    def edit?
+      @user.has_role? :admin
+    end
+    
+    
 end

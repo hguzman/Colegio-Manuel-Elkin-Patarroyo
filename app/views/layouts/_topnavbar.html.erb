@@ -1,0 +1,16 @@
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-success " href="#"><i class="fas fa-align-left"></i></a>
+            <form role="search" class="navbar-form-custom" action="#">
+            </form>
+        </div>
+           <ul class="nav navbar-top-links navbar-right">
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-nar text-danger" do %>
+                    <i class="fas fa-sign-out-alt"></i>Cerrar sesión
+                <%end%>
+            </li>
+        </ul>
+    </nav>
+</div>

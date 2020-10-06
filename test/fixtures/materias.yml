@@ -3,9 +3,7 @@
 one:
   codigo: 1
   nombre: MyString
-  usuario: one
 
 two:
   codigo: 1
   nombre: MyString
-  usuario: two

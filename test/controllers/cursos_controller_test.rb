@@ -11,13 +11,13 @@ class CursosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get cursos_edit_url
+  test "should get new" do
+    get cursos_new_url
     assert_response :success
   end
 
-  test "should get new" do
-    get cursos_new_url
+  test "should get edit" do
+    get cursos_edit_url
     assert_response :success
   end
 

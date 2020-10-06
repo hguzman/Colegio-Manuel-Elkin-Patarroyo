@@ -10,36 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_191410) do
+ActiveRecord::Schema.define(version: 2020_10_06_055554) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
     t.string "titulo"
     t.text "contenido"
     t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_anotaciones_on_user_id"
-  end
-
-  create_table "articulos", force: :cascade do |t|
-    t.string "titulo"
-    t.text "descripcion"
-    t.text "informacion"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "picture"
-  end
-
-  create_table "asistencias", force: :cascade do |t|
-    t.date "fecha"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "asistencias_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "asistencia_id", null: false
-    t.index ["asistencia_id"], name: "index_asistencias_users_on_asistencia_id"
-    t.index ["user_id"], name: "index_asistencias_users_on_user_id"
   end
 
   create_table "cursos", force: :cascade do |t|
@@ -52,19 +32,16 @@ ActiveRecord::Schema.define(version: 2020_09_29_191410) do
   create_table "materias", force: :cascade do |t|
     t.integer "codigo"
     t.string "nombre"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_materias_on_user_id"
   end
 
-  create_table "notas", force: :cascade do |t|
-    t.string "logro"
-    t.decimal "nota"
-    t.integer "materia_id", null: false
+  create_table "noticias", force: :cascade do |t|
+    t.string "titulo"
+    t.text "informacion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["materia_id"], name: "index_notas_on_materia_id"
+    t.date "fecha"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -86,15 +63,17 @@ ActiveRecord::Schema.define(version: 2020_09_29_191410) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "nombre"
-    t.string "apellido"
-    t.string "telefono"
+    t.integer "identifiacion"
+    t.string "nombres"
+    t.string "apellidos"
+    t.integer "telefono"
     t.string "direccion"
-    t.string "picture"
     t.integer "curso_id"
-    t.integer "identificacion"
+    t.string "avatar"
+    t.integer "materia_id"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["materia_id"], name: "index_users_on_materia_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -107,7 +86,6 @@ ActiveRecord::Schema.define(version: 2020_09_29_191410) do
   end
 
   add_foreign_key "anotaciones", "users"
-  add_foreign_key "materias", "users"
-  add_foreign_key "notas", "materias"
   add_foreign_key "users", "cursos"
+  add_foreign_key "users", "materias"
 end

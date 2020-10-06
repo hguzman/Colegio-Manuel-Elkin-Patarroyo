@@ -1,38 +1,40 @@
-<div class="row">
-  <div class="col-md-7">
-    <div class="card shadow-lg">
-      <div class="card-body">
-        <div class="box">
-          <h2 class="text-primary">Registrar usuario</h2>
-          <%= simple_form_for @user do |f| %>
+<div>
+    <div class="row">
+        <div class="col-md-7 mx-auto mt-2">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <div class="box">
+                        <h2 class="text-primary">Registrar usuario</h2>
+                        <%= simple_form_for @user do |f| %>
 
-          <h4>Datos Personales</h4>
-          <div class="row">
-            <div class="col"><%= f.input :identificacion %></div>
-            <div class="col"><%= f.input :nombre %></div>
-            <div class="col"><%= f.input :apellido %></div>
-          </div>
+                        <h4>Datos Personales</h4>
+                        <div class="row">
+                            <div class="col"><%= f.input :identifiacion %></div>
+                            <div class="col"><%= f.input :nombres %></div>
+                            <div class="col"><%= f.input :apellidos %></div>
+                        </div>
 
-          <h4>Información de contacto</h4>
-          <div class="row">
-            <div class="col"><%= f.input :telefono %></div>
-            <div class="col"><%= f.input :direccion %></div>
-          </div>
+                        <h4>Información de contacto</h4>
+                        <div class="row">
+                            <div class="col"><%= f.input :telefono %></div>
+                            <div class="col"><%= f.input :direccion %></div>
+                        </div>
 
-          <%= f.input :email %>
+                        <%= f.input :email %>
 
-          <div class="row">
-            <div class="col"><%= f.input :password %></div>
-            <div class="col"><%= f.input :password_confirmation %></div>
-          </div>
-          <%= f.input :picture %>
+                        <div class="row">
+                            <div class="col"><%= f.input :password %></div>
+                            <div class="col"><%= f.input :password_confirmation %></div>
+                        </div>
+                        <%= f.input :avatar %>
 
-          <h4>Añadir rol</h4>
-          <%= f.association :roles , as: :check_boxes    %>
-          <%= f.button :submit, class: "btn btn-primary" %>
-          <% end %>
+                        <h4>Añadir rol</h4>
+                        <%= f.association :roles , as: :check_boxes    %>
+                        <%= f.button :submit, class: "btn btn-primary" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

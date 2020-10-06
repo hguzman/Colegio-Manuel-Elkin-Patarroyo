@@ -9,19 +9,17 @@ class CursosController < ApplicationController
   end
 
   def show
-
+    authorize @curso
   end
 
   def new
-
     @curso = Curso.new
     authorize @curso
-
   end
 
   def create
     @curso = Curso.new(curso_params)
-    if @curso.save(validate: false)
+    if @curso.save
       redirect_to cursos_path
       flash[:success]= 'Curso creado'
     else
@@ -30,7 +28,7 @@ class CursosController < ApplicationController
   end
 
   def edit
-
+    authorize @curso
   end
 
   def update
@@ -55,6 +53,6 @@ class CursosController < ApplicationController
   end
 
   def curso_params
-    params.require(:curso).permit(:codigo,:nombre,user_ids: [])
+    params.require(:curso).permit(:codigo,:nombre,user_ids: [], materia_ids: [])
   end
 end
