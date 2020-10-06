@@ -22,6 +22,7 @@ Atras
                     <hr>
                     <div class="row">
                         <div class="col-md-6">
+                        <% if current_user.has_role? :admin%>
                             <h5>Acciones:</h5>
                             <!--<button class="btn btn-primary btn-xs" type="button">Publicado</button>-->
                             <%= link_to edit_noticia_path(@noticia), class:'btn btn-warning btn-xs' do %>
@@ -34,7 +35,7 @@ Atras
                                 <%= fa_icon "trash" %>
                                 Eliminar
                             </button>
-
+                         <% end %>   
 
                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
