@@ -1,0 +1,74 @@
+<%= link_to noticias_path, class: "btn btn-success mt-2" do %>
+<i class="fas fa-long-arrow-alt-left"></i>
+Atras
+<% end %>
+
+<div class="wrapper wrapper-content  animated fadeInRight article">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-10">
+            <div class="ibox">
+                <div class="ibox-content">
+
+                    <div class="text-center article-title">
+                        <span class="text-muted"><i class="far fa-clock"></i> <%= @noticia.fecha %></span>
+                        <h1 class="text-capitalize">
+                            <%= @noticia.titulo%>
+                        </h1>
+                    </div>
+                    <p>
+                        <%= sanitize @noticia.informacion%>
+                    </p>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Acciones:</h5>
+                            <!--<button class="btn btn-primary btn-xs" type="button">Publicado</button>-->
+                            <%= link_to edit_noticia_path(@noticia), class:'btn btn-warning btn-xs' do %>
+                            <%= fa_icon "pencil-alt" %>
+                            Editar
+                            <% end %>
+
+                            <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
+                                data-target="#exampleModalCenter">
+                                <%= fa_icon "trash" %>
+                                Eliminar
+                            </button>
+
+
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLongTitle">Eliminar noticia</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="mr-1">Estas seguro de eliminar esta noticia</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-info btn-sm" data-dismiss="modal"><i class="fas fa-times-circle mr-1"></i>Cancelar</button>
+                                      <%= link_to noticia_path(@noticia.id),method: :delete,class: "btn btn-danger btn-sm" do %>
+                                      <%= fa_icon "trash" %>
+                                      Eliminar
+                                      <% end %>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

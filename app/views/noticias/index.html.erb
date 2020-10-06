@@ -1,0 +1,42 @@
+<div id="container">
+    <div class="wrapper ">
+    <h1>Noticias Estudiantiles</h1>
+        <div class="row">
+          
+            <% @noticias.each do |noticia|  %>
+            <div class="col-lg-4">
+
+                <div class="ibox mt-3">
+                  
+                    <div class="ibox-content">
+                        <a href="article.html" class="btn-link">
+                            <h2>
+                                <%= link_to  noticia.titulo, noticia_path(noticia), class:'text-capitalize' %>
+                            </h2>
+                        </a>
+                        <div class="small m-b-xs">
+                            <strong>Administrador </strong> <span class="text-muted"><i class="far fa-clock"></i> <%=noticia.fecha%></span>
+                        </div>
+                        <p class="text-justify">
+                            <%= sanitize noticia.informacion%>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Estado:</h5>
+                                <button class="btn btn-primary btn-xs" type="button">Publicado</button>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <%end%>
+        </div>
+    </div>
+    <div class="mt-2 d-flex justify-content-center">
+        <%= will_paginate @noticias, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+    </div>
+</div>

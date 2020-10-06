@@ -1,0 +1,2 @@
+module Materias::UsersHelper
+end

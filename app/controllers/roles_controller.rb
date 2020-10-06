@@ -3,6 +3,7 @@ class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
 
   def index
+    authorize Role
    
     @roles = Role.all
 
@@ -10,12 +11,15 @@ class RolesController < ApplicationController
   end
 
   def show
+    authorize @role
 
   end
 
   def new
     
     @role = Role.new
+    authorize @role
+
     
 
   end
@@ -31,6 +35,8 @@ class RolesController < ApplicationController
   end
 
   def edit
+    authorize @role
+
 
   end
 
