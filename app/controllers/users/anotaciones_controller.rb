@@ -34,7 +34,7 @@ class Users::AnotacionesController < ApplicationController
     def update
       if @anotacion.update(anotacion_params)
         flash.notice = "Anotación actualizada"
-        redirect_to  user_anotacion_path(@user)
+        redirect_to  user_anotacion_path(@user, @anotacion)
       else
         render :edit
       end
