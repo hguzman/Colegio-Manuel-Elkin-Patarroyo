@@ -1,17 +1,2 @@
-<div class="row">
-  <div class="col-md-6 mx-auto mt-3">
-    <div class="card">
-      <div class="card-body">
-        <div class="box">
-          <h2>Registrar Materia</h2>
-          <%= simple_form_for @materia do |m| %>
-           <%= m.input :codigo %>
-          <%= m.input :nombre %>
-          <%= m.association :users, as: :check_boxes, label_method: :email%>
-          <%= m.button :submit, class: "btn btn-primary" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<h2 class="text-center">Registrar Materia</h2>
+<%= render "form" %>
