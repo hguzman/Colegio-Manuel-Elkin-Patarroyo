@@ -10,6 +10,7 @@
     inflect.irregular "materia" , "materias"
     inflect.irregular "nota" , "notas"
     inflect.irregular "anotacion" , "anotaciones"
+    inflect.irregular "comentario" , "comentarios"
   #   inflect.uncountable %w( fish sheep )
  end
 

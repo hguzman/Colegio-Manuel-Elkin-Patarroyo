@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="col-md-6 col-sm-12 col-xs-12 mx-auto mt-5">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <%= simple_form_for [@anotacion, @comentario]  do |f| %>
+            <%= f.label :Comentario%>
+            <%= f.hidden_field :comentario, id: "Tcomentario" %>
+            <trix-editor input="Tcomentario"></trix-editor>
+            <%= f.button :submit, class:"btn btn-primary mt-2" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

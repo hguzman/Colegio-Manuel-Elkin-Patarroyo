@@ -29,6 +29,9 @@ Rails.application.routes.draw do
     resources :users, module: :materias
   end
 
+  resources :anotaciones do
+    resources :comentarios, module: :anotaciones
+  end
   
 
 
