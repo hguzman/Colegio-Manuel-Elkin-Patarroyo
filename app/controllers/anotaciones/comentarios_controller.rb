@@ -29,7 +29,7 @@ class Anotaciones::ComentariosController < ApplicationController
   def update
     if @comentario.update(comentario_params)
       flash[:notice] = "Comentario actualizado"
-      redirect_to materia_nota_path(@anotacion, @comentario)
+      redirect_to anotacion_comentarios_path(@anotacion, @comentario)
     else
       render edit
     end
