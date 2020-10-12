@@ -7,8 +7,7 @@
                 </div>
                 <div>
                     <div class="ibox-content no-padding border-left-right">
-                        
-                         <%= image_tag @user.avatar.thumb.url,class: "img-fluid ml-4"%>
+                            <%= image_tag @user.avatar.thumb.url,class: "img-fluid ml-0"%>
                     </div>
                     <div class="ibox-content profile-content">
                         <h4 class="text-capitalize"><strong><%=@user.nombres%> <%=@user.apellidos%></strong></h4>
@@ -73,6 +72,11 @@
                                     <%= link_to user_anotacion_path(@user, anotacion),method: :delete,class: "btn btn-danger btn-xs" do %>
                                     <%= fa_icon "trash" %>
                                     Eliminar
+                                    <% end %>
+
+                                    <%= link_to anotacion_comentarios_path(anotacion),class: "btn btn-info btn-xs" do %>
+                                    <i class="fas fa-comment-dots"></i>
+                                    Comentarios
                                     <% end %>
                                 </div>
 

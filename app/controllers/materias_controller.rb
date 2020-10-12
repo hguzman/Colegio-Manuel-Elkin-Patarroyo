@@ -1,6 +1,6 @@
 class MateriasController < ApplicationController
   before_action :authenticate_user!
-  # before_action :set_materia, only: [:show, :edit, :update, :destroy]
+  before_action :set_materia, only: [:show, :edit, :update, :destroy]
 
   def index
     authorize Materia
@@ -47,11 +47,11 @@ class MateriasController < ApplicationController
 
   private
 
-  def set_meteria
+  def set_materia
     @materia = Materia.find(params[:id])
   end
 
   def materia_params
-    params.require(:materia).permit(:codigo, :nombre, user_ids: [])
+    params.require(:materia).permit(:codigo, :nombre)
   end
 end

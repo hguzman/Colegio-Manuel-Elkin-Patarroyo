@@ -1,0 +1,33 @@
+<%= render 'cabecera' %>
+
+<%= link_to new_anotacion_comentario_path(@anotacion, @comentario), class: "btn btn-info btn-md mt-1 mb-2" do %>
+    <%= fa_icon "plus" %>
+<% end%>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <div class="box">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <% if @comentarios.empty? %>
+                                <th>Id</th>
+                                <th>Comentario</th>
+                                <% elsif %>
+                                <th>Id</th>
+                                <th>Comentario</th>
+                                <th colspan="3">Acciones</th>
+                                <% end %>
+                            </thead>
+                            <tbody>
+                                <%= render @comentarios %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

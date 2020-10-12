@@ -1,50 +1,46 @@
+<h2 class="text-center">Todos los usuarios</h2>
 
-<div class="mt-5">
-    <table id="myTable" class="display" style="">
-        <thead>
-            <tr class="bg-dark text-white">
-                <th>Identificacion</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Email</th>
-                <th colspan="3">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
+<%= link_to new_user_path(@user), class: "btn btn-info btn-sm mt-2 mb-3" do %>
+    Nuevo usuario
+    <%= fa_icon "plus" %>
+<% end %>
 
-            <% @users.each do |user|  %>
-
-            <tr>
-                <td class="text-capitalize"><%=user.identifiacion%></td>
-                <td class="text-capitalize"><%=user.nombres%></td>
-                <td class="text-capitalize"><%=user.apellidos%></td>
-                <td class="text-capitalize"><%=user.direccion%></td>
-                <td class="text-capitalize"><%=user.telefono%></td>
-                <td ><%=user.email%></td>
-                <td class="text-capitalize">
-                    <%= link_to user_anotaciones_path(user,@anotacion), class:"btn btn-success btn-sm" do %>
-                    <%= fa_icon "eye" %>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <div class="box">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <% if @users.empty?%>
+                                        <th>Identificacion</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>Direccion</th>
+                                        <th>Telefono</th>
+                                        <th>Email</th>
+                                    <% elsif %>
+                                        <th>Identificacion</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>Direccion</th>
+                                        <th>Telefono</th>
+                                        <th>Email</th>
+                                        <th colspan="3">Acciones</th> 
+                                    <% end %>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%= render @users %>
+                            </tbody>
                     
-                    <% end %>
-                
-                    <%= link_to edit_user_path(user), class: "btn btn-warning btn-xs" do %>
-                    <i class="fas fa-pencil-alt"></i>
-                    
-                  <% end %>
-
-                  <%= link_to user_path(user),method: :delete,class: "btn btn-danger btn-sm", data: {confirm:"¿Desae eliminar este user?"} do %>
-                    <%= fa_icon "trash" %>
-                    
-                  <% end %>
-                </td>
-
-            </tr>
-
-            <%end%>
-
-        </tbody>
-
-    </table>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+

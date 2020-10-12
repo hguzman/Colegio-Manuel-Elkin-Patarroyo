@@ -1,49 +1,35 @@
-<div class="mt-5">
-    <table id="myTable" class="display" style="">
-        <thead>
-            <tr class="bg-dark text-white">
-                <th>Codigo</th>
-                <th>Nombre</th>
-
-                <th colspan="3">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <% @cursos.each do |curso|  %>
-
-            <tr>
-                <td class="text-capitalize"><%=curso.codigo%></td>
-                <td class="text-capitalize"><%=curso.nombre%></td>
-                <td class="text-capitalize">
-                    <%= link_to edit_curso_path(curso), class:"btn btn-warning btn-sm" do %>
-                    <%= fa_icon "pencil-alt" %>
-                    Editar
-                    <% end %>
-
-                    <%= link_to curso_path(curso),method: :delete,class: "btn btn-danger btn-sm", data: {confirm:"¿Desae eliminar este curso?"} do %>
-                    <%= fa_icon "trash" %>
-                    Eliminar
-                    <% end %>
-
-                    <%= link_to curso_users_path(curso), class:"btn btn-primary btn-sm" do %>
-                    <%= fa_icon "user-graduate" %>
-                    Estudiantes
-                    <% end %>
-
-                   
-
-                     
-
-
-
-
-                </td>
-            </tr>
-
-            <%end%>
-
-        </tbody>
-
-    </table>
+<%= link_to new_curso_path(@curso), class: "btn btn-info btn-sm mb-3 mt-5" do %>
+  Nuevo curso
+  <%= fa_icon "plus" %>
+<% end %>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <div class="box">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <% if @cursos.empty?%>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <% elsif %>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th colspan="3">Acciones</th>
+                                    <% end %>
+                                </tr>
+                            </thead>
+                            <tbody>                   
+                                <%= render @cursos %>                
+                            </tbody>                   
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
