@@ -39,6 +39,18 @@
                 </ul>
             </li>
             <% end %>
+
+            <% if current_user.has_role? :admin %>
+            <li>
+                <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Asistencias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to "Crear Asistencia", new_asistencia_path %></a></li>
+
+                    <li><a><%= link_to "Listado Asistencias", asistencias_path%></a></li>
+
+                </ul>
+            </li>
+            <% end %>
             <li>
                 <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">

@@ -13,4 +13,5 @@ class User < ApplicationRecord
          belongs_to :materia, optional: true
 
   has_many :anotaciones, dependent: :destroy   
+  has_and_belongs_to_many :asistencias
 end
