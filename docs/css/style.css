@@ -72,6 +72,8 @@ header nav ul li a:hover{
     border-bottom: 5px solid #f39c12;
 }
 
+
+
 .menu_bar{
     display: none;
 }
@@ -79,6 +81,7 @@ header nav ul li a:hover{
 section{
     padding: 20px;
 }
+
 
 /*#contenido{
     background: #67c7f0;
