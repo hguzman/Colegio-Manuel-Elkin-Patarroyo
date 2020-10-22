@@ -5,16 +5,14 @@
             <div class="card-body">
             <div class="box">
                 <div class="table-responsive">
-                    <table class="table">
-                        <tr class="thead-dark" >
-                            
-                            <th>Identificacion</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                                
-                        </tr>
-
-
+                    <table id="show-asistencia" class="table">
+                        <thead>
+                            <tr>  
+                                <th>Identificacion</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>       
+                            </tr>
+                        </thead>
                         <tr>
                             <% @users.each do |user| %>
                             <td>
@@ -26,16 +24,12 @@
 
                             <td>
                                 <%= user.apellidos %>
-                            </td>
-                            
+                            </td> 
                         </tr> 
                         <%end %>
 
-                    </table>
-
-                    
+                    </table> 
                 </div>
-            
             </div>
         </div>    
     </div>

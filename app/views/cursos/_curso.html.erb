@@ -2,21 +2,18 @@
     <td class="text-capitalize"><%=curso.codigo%></td>
     <td class="text-capitalize"><%=curso.nombre%></td>
     <td class="text-capitalize">
-        <%= link_to edit_curso_path(curso), class:"btn btn-warning btn-sm" do %>
+        <%= link_to edit_curso_path(curso), class:"btn btn-warning btn-md" do %>
         <%= fa_icon "pencil-alt" %>
-        Editar
         <% end %>
     </td>
     <td>
-        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#exampleModalCenter">
             <%= fa_icon "trash" %>
-            Eliminar
         </button>
     </td>
     <td>
-        <%= link_to curso_users_path(curso), class:"btn btn-primary btn-sm" do %>
+        <%= link_to curso_users_path(curso), class:"btn btn-success btn-md" do %>
         <%= fa_icon "user-graduate" %>
-        Estudiantes
         <% end %>
     </td>
 </tr>

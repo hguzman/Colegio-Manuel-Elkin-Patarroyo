@@ -3,19 +3,20 @@
     <td class="text-uppercase"> <%= asistencia.fecha %></td>
 
     <td>
-        <%= link_to asistencia_path(asistencia), class:"btn btn-success btn-sm" do %>
+        <%= link_to asistencia_path(asistencia), class:"btn btn-success btn-md" do %>
         <%= fa_icon "eye" %>
-        Mostrar
         <% end %>
-    
-        <%= link_to edit_asistencia_path(asistencia), class: "btn btn-warning btn-sm" do %>
+    </td>
+
+    <td>
+        <%= link_to edit_asistencia_path(asistencia), class: "btn btn-warning btn-md" do %>
         <i class="fas fa-pencil-alt"></i>
-        Editar
         <% end %>
-   
-        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+    </td>
+
+    <td>
+        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#exampleModalCenter">
             <%= fa_icon "trash" %>
-            Eliminar
         </button>
     </td>
 </tr>

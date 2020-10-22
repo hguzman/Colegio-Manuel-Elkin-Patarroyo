@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         redirect_to users_path
-        flash.notice= "User creado"
+        flash[:success] = "User creado"
 
       else
         render :new
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     def update
       if @user.update(user_params)
         redirect_to users_path
-        flash.notice="User editado"
+        flash.notice = "User editado"
       else
         render :edit
       end

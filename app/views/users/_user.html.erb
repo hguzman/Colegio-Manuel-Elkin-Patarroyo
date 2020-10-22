@@ -6,21 +6,18 @@
     <td class="text-capitalize"><%=user.telefono%></td>
     <td><%=user.email%></td>
     <td class="text-capitalize">
-        <%= link_to user_path(user), class:"btn btn-primary btn-sm" do %>
+        <%= link_to user_path(user), class:"btn btn-success btn-md" do %>
         <%= fa_icon "eye" %>
-        Mostrar
         <% end %>
     </td>
     <td>
-        <%= link_to edit_user_path(user), class: "btn btn-warning btn-sm" do %>
+        <%= link_to edit_user_path(user), class: "btn btn-warning btn-md" do %>
         <i class="fas fa-pencil-alt"></i>
-        Editar
         <% end %>
     </td>
     <td>
-        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#exampleModalCenter">
             <%= fa_icon "trash" %>
-            Eliminar
         </button>
     </td>
 
