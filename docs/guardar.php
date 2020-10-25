@@ -3,11 +3,11 @@
 
     $correos = $_POST["correos"];
     $mensajes = $_POST["mensajes"];
-    $fechareg = date("d/mm/y");
+    $fechareg = date("d/m/y");
 
     $query = "INSERT INTO inquietudes
                          (correo, mensaje, fecha_inquietud)
-                    VALUES ('$correos','$mensajes','$fechareg')";
+                VALUES ('$correos','$mensajes','$fechareg')";
 
     $insert = mysqli_query($conexion,$query);
             if($insert == true){
