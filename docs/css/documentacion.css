@@ -14,17 +14,21 @@
 .nav-link{
   font-size: 1.1em !important;
 }
+#atras{
+  margin-bottom: 20px;
+}
 .plan{
-  margin-left: 300px;
+  margin-left: 350px;
   justify-content: center;
-  color: white;
+  color: black;
   font-size: 35px;
   font-family: 'Krona One', sans-serif;
 }
 .plan1{
-  margin-left: 400px;
+  margin-left: 450px;
+  margin-top: 10px;
   justify-content: center;
-  color: white;
+  color: black;
   font-size: 35px;
   font-family: 'Krona One', sans-serif;
 }
