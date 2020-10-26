@@ -6,7 +6,6 @@ html, body{
   font-family: 'Poppins', sans-serif;
   color: #222;
 }
-
 /*---Navegación --*/
 .navbar{
   padding: .8rem;
@@ -190,11 +189,11 @@ hr.Light-100{
   .carousel-caption{
     top: 50%;
   }
-  
+
   .carousel-caption h1{
     font-size: 350%;
   }
-  
+
   .carousel-caption h3{
     font-size: 140%;
     font-weight: 400;
@@ -215,30 +214,30 @@ hr.Light-100{
     font-weight: 600;
     font-family: 'Krona One', sans-serif;
   }
-  
+
   .contenedor .card p{
     padding:  1rem 1rem;
     font-size: 16px;
     font-weight: 300;
     font-family: 'Krona One', sans-serif;
   }
-  
+
 }
 @media (max-width: 576px) {
-  
-  
+
+
   .contenedor .card h3{
     font-weight: 600;
     font-family: 'Krona One', sans-serif;
   }
-  
+
   .contenedor .card p{
     padding:  0 1rem;
     font-size: 13.5px;
     font-weight: 300;
     font-family: 'Krona One', sans-serif;
   }
-  
+
 }
 
 
@@ -304,11 +303,3 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
-
-
-
-
-
-
-
-
