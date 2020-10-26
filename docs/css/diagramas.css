@@ -1,11 +1,17 @@
-*{
-    box-sizing: border-box;
-}
-
 body{
     margin: 0;
 }
+.navbar{
+  padding: 1rem;
+}
 
+.navbar-nav li{
+  padding-right: 10px;
+}
+
+.nav-link{
+  font-size: 1.1em !important;
+}
 img{
     display: block;
     max-width: 100%;
@@ -29,27 +35,13 @@ img{
     list-style: none;
 }
 
-nav{
-    background: #2980b9;
-    border-radius: 8px;
-    height: 60px;
-    width: 90%;
-    margin: auto;
-    margin-top: 5px;
-}
-
 a{
-    height: 40px;
-    width: 80px;
-    display: flex;
-    border-radius: 5px;
-    background-color: #00b894;
-    margin-top: 10px;
-    margin-left: 6%;
-    font-size: 20px;
-    font-family: 'Krona One', sans-serif;
-    color: white;
-    text-decoration: none !important;
+  margin-top: 10px;
+  margin-left: 6%;
+  font-size: 20px;
+  font-family: 'Krona One', sans-serif;
+  color: white;
+  text-decoration: none !important;
 }
 
 .label{
