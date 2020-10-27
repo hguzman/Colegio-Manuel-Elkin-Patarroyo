@@ -52,6 +52,6 @@ class MateriasController < ApplicationController
   end
 
   def materia_params
-    params.require(:materia).permit(:codigo, :nombre)
+    params.require(:materia).permit(:codigo, :nombre, :user_id)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_125044) do
+ActiveRecord::Schema.define(version: 2020_10_27_230414) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2020_10_13_125044) do
     t.string "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_materias_on_user_id"
   end
 
   create_table "noticias", force: :cascade do |t|
@@ -91,10 +93,8 @@ ActiveRecord::Schema.define(version: 2020_10_13_125044) do
     t.string "direccion"
     t.integer "curso_id"
     t.string "avatar"
-    t.integer "materia_id"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["materia_id"], name: "index_users_on_materia_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -108,6 +108,6 @@ ActiveRecord::Schema.define(version: 2020_10_13_125044) do
 
   add_foreign_key "anotaciones", "users"
   add_foreign_key "comentarios", "anotaciones"
+  add_foreign_key "materias", "users"
   add_foreign_key "users", "cursos"
-  add_foreign_key "users", "materias"
 end
