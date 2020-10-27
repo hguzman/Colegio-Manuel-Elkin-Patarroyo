@@ -10,8 +10,9 @@ class User < ApplicationRecord
 
          mount_uploader :avatar, AvatarUploader, optional: true
 
-         belongs_to :materia, optional: true
+         has_many :materias, dependent: :destroy  
 
-  has_many :anotaciones, dependent: :destroy   
-  has_and_belongs_to_many :asistencias
+         has_many :anotaciones, dependent: :destroy   
+          
+         has_and_belongs_to_many :asistencias
 end

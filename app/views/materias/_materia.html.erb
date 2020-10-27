@@ -7,23 +7,20 @@
     </td>
     <td>
 
-        <%= link_to materia_path(materia),class: "btn btn-success btn-sm" do %>
+        <%= link_to materia_path(materia),class: "btn btn-success btn-md" do %>
           <%= fa_icon "eye" %>
-          Mostrar
         <% end %>
     
       </td>
 
         <td>
-            <%= link_to  edit_materia_path(materia), class: "btn btn-warning btn-sm" do %>
+            <%= link_to  edit_materia_path(materia), class: "btn btn-warning btn-md" do %>
             <%= fa_icon('pencil-alt') %>
-            Editar
             <% end %>
         </td>
         <td>
-            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#exampleModalCenter">
               <%= fa_icon "trash" %>
-              Eliminar
             </button>
         </td>    
 </tr>

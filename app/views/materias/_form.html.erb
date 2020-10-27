@@ -5,10 +5,10 @@
       <div class="card-body">
         <div class="box">
           <%= simple_form_for @materia do |m| %>
-           <%= m.input :codigo %>
-          <%= m.input :nombre %>
-          <%= m.association :users, as: :check_boxes, label_method: :email%>
-          <%= m.button :submit, class: "btn btn-primary" %>
+            <%= m.input :codigo %>
+            <%= m.input :nombre %>
+            <%= m.association :user , label_method: :nombres %>
+            <%= m.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
