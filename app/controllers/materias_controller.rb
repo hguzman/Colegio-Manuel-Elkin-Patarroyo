@@ -20,7 +20,7 @@ class MateriasController < ApplicationController
     @materia= Materia.new(materia_params)
     if @materia.save
       redirect_to materias_path
-      flash[:success]= 'Materia creada'
+      flash[:success] = "Materia creada"
     else
       render :new
     end
@@ -52,6 +52,6 @@ class MateriasController < ApplicationController
   end
 
   def materia_params
-    params.require(:materia).permit(:codigo, :nombre, :user_id)
+    params.require(:materia).permit(:codigo, :nombre, :user_id, :curso_id)
   end
 end
