@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <div class="box">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr class="thead-dark">
+
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Curso</th>
+                                <th>Estudiantes</th>
+
+
+                            </tr>
+
+
+                            <tr>
+                                <% @materias.each do |materia| %>
+                                <td>
+                                    <%= materia.codigo%>
+                                </td>
+                                <td>
+                                    <%= materia.nombre%>
+                                </td>
+                                <td>
+                                    <%= materia.curso.nombre%>
+                                </td>
+                                <td>
+                                    <%= link_to curso_users_path(materia.curso), class:"btn btn-success btn-md" do %>
+                                    <%= fa_icon "user-graduate" %>
+                                    Estudiantes
+                                    <% end %>
+                                </td>
+
+
+                            </tr>
+                            <%end %>
+
+                        </table>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
