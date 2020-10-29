@@ -3,8 +3,7 @@ class Materias::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = @materia.users
-    
+    @users = User.all
   end
 
   private

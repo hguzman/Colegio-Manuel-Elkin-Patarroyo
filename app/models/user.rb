@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
          has_many :materias, dependent: :destroy  
 
+         has_many :notas, dependent: :destroy
+
          has_many :anotaciones, dependent: :destroy   
           
          has_and_belongs_to_many :asistencias

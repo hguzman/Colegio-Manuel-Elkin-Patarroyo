@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_131644) do
+ActiveRecord::Schema.define(version: 2020_10_28_231605) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2020_10_28_131644) do
     t.integer "curso_id"
     t.index ["curso_id"], name: "index_materias_on_curso_id"
     t.index ["user_id"], name: "index_materias_on_user_id"
+  end
+
+  create_table "notas", force: :cascade do |t|
+    t.string "logro"
+    t.decimal "nota"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_notas_on_user_id"
   end
 
   create_table "noticias", force: :cascade do |t|
@@ -112,5 +121,6 @@ ActiveRecord::Schema.define(version: 2020_10_28_131644) do
   add_foreign_key "comentarios", "anotaciones"
   add_foreign_key "materias", "cursos"
   add_foreign_key "materias", "users"
+  add_foreign_key "notas", "users"
   add_foreign_key "users", "cursos"
 end
