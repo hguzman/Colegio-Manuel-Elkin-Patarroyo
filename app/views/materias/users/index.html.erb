@@ -1,0 +1,28 @@
+<h2>Estudiantes de la materia <%= @materia.nombre %></h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <div class="box">
+                    <div  class="table-responsive">
+                        <table id="mat_users" class="table">
+                            <thead>
+                                <th>Identificacion</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>Email</th>
+                                <th class="text-warning">Nota</th>
+                            </thead>
+                            <tbody>
+                                <%= render @users %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

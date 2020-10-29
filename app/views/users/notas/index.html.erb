@@ -1,0 +1,46 @@
+<h1>Todas las notas</h1>
+
+<div class="col-md-4 mb-2">
+  <div class="row">
+    <div class="col">
+      <%= link_to new_user_nota_path(@user,@nota), class: "btn btn-info btn-block" do %>
+        Nueva nota
+        <%= fa_icon "plus" %>
+      <% end %>
+    </div>
+
+    <div class="col">
+      <%= link_to user_notas_path(format: 'xlsx'), class: "btn btn-primary btn-block" do %>
+        <i class="fas fa-file-excel"></i>
+         Generar Excel
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <div class="card card-shadow">
+      <div class="card-body">
+        <div class="box">
+          <div class="table-responsive">
+            <table id="notas" class="table">
+            <thead>
+                <tr>
+                    <th>Logro</th>
+                    <th>Nota</th>
+                    <th class="text-success">Mostrar</th>
+                    <th class="text-warning">Editar</th>
+                    <th class="text-danger">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                    <%= render @notas %>
+              </tbody>            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

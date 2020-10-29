@@ -1,0 +1,8 @@
+
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Notas") do |sheet|
+sheet.add_row ['Id', 'Logro', 'Nota']
+@notas.each do |nota|
+    sheet.add_row [nota.id, nota.logro, nota.nota]
+  end
+end
