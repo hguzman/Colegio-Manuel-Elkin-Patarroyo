@@ -9,7 +9,7 @@ class Materias::UsersController < ApplicationController
   private
 
   def set_materia
-    @materia =Materia.find(params[:materia_id])
+    @materia = Materia.find(params[:materia_id])
   end
 
   def set_user
