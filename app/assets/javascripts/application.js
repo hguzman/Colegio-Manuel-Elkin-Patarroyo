@@ -146,7 +146,7 @@ $(document).ready(function() {
         }
     } );
 });
-   
+
 $(document).ready(function() {
     $('#cursos').DataTable();
     $('#users').DataTable();
