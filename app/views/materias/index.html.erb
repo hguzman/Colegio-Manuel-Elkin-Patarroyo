@@ -1,8 +1,9 @@
 <h2 class="text-center">Todas las materias</h2>
-
-<%= link_to new_materia_path(@materia), class: "btn btn-info btn-sm mb-3" do %>
-  Nueva Materia
-  <%= fa_icon "plus" %>
+ <% if current_user.has_role? :admin %>
+    <%= link_to new_materia_path(@materia), class: "btn btn-info btn-sm mb-3" do %>
+    Nueva Materia
+    <%= fa_icon "plus" %>
+    <% end %>
 <% end %>
 
 <div class="row">
