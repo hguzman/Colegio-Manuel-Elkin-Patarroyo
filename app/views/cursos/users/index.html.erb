@@ -18,7 +18,7 @@
                         <tr>
                             <% @users.each do |user| %>
                             <td>
-                                <%= user.identifiacion%>
+                               <%= link_to  user.identifiacion, new_user_nota_path(user) %>
                             </td>
                             <td>
                                 <%= user.nombres%>

@@ -2,19 +2,21 @@
 
 <div class="col-md-4 mb-2">
   <div class="row">
+   <% if current_user.has_role? :admin %>
     <div class="col">
       <%= link_to new_user_nota_path(@user,@nota), class: "btn btn-info btn-block" do %>
         Nueva nota
         <%= fa_icon "plus" %>
       <% end %>
     </div>
-
+   <%end%>
     <div class="col">
       <%= link_to user_notas_path(format: 'xlsx'), class: "btn btn-primary btn-block" do %>
         <i class="fas fa-file-excel"></i>
          Generar Excel
       <% end %>
     </div>
+ 
   </div>
 </div>
 

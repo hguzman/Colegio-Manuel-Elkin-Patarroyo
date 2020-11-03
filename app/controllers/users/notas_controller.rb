@@ -1,5 +1,6 @@
 class Users::NotasController < ApplicationController
   before_action :set_user
+ 
   before_action :set_nota, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -27,7 +28,7 @@ class Users::NotasController < ApplicationController
     @nota = @user.notas.new(nota_params)
     if @nota.save
       flash[:success] = "Nota creada"
-      redirect_to user_nota_path(@user, @nota)
+      redirect_to user_notas_path(@user,@nota)
     else
       render :new
     end
@@ -56,6 +57,7 @@ class Users::NotasController < ApplicationController
   def set_user
     @user = User.find(params[:user_id])
   end
+
 
   def set_nota
     @nota = @user.notas.find(params[:id])
