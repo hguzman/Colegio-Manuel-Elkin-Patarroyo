@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     def index
       authorize User
       @users=User.all
+      @grafica_user = User.group_by_day(:created_at, format: "%a").count
     end
   
     def show

@@ -1,9 +1,19 @@
+ <!--- Graficas -->
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-9 mx-auto">
+        <div class="table-responsive">
+            <%= line_chart  @grafica_asistencia %>
+        </div>
+    </div>
+</div>
+<!--- Fin --->
+
+<div class="row">
+    <div class="col-md-12">
         <div class="card shadow-lg mt-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="asistencias" class="table">
+                    <table id="asistencias" class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
