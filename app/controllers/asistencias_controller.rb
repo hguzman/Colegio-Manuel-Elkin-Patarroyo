@@ -6,7 +6,7 @@ class AsistenciasController < ApplicationController
     
    
     @asistencias = Asistencia.all
-
+    @grafica_asistencia = Asistencia.group_by_day(:created_at).count
 
   end
 

@@ -22,6 +22,8 @@
 //= require inspinia.js
 //= require toastr/toastr.min.js
 //= require trix
+//= require chartkick
+//= require Chart.bundle
 
 // Datatables
 
