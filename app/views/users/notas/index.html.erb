@@ -1,5 +1,6 @@
 <h1>Todas las notas</h1>
 
+<%= pie_chart @grafica_notas %>
 <div class="col-md-4 mb-2">
   <div class="row">
    <% if current_user.has_role? :admin %>
@@ -26,7 +27,7 @@
       <div class="card-body">
         <div class="box">
           <div class="table-responsive">
-            <table id="notas" class="table">
+            <table id="notas" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
                     <th>Logro</th>

@@ -1,10 +1,10 @@
 class Users::NotasController < ApplicationController
   before_action :set_user
- 
   before_action :set_nota, only: [:show, :edit, :update, :destroy]
 
   def index
     @notas = @user.notas
+    @grafica_notas = Nota.group_by_day(:created_at).count
     respond_html_and_csv
   end
 
@@ -40,7 +40,7 @@ class Users::NotasController < ApplicationController
   def update
     if @nota.update(nota_params)
       flash.notice = "Nota actualizada"
-      redirect_to user_nota_path(@user,@nota)
+      redirect_to edit_user_nota_path(@user,@nota)
     else
       render edit
     end

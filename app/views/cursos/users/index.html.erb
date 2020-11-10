@@ -5,7 +5,7 @@
             <div class="card-body">
             <div class="box">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-bordered table-striped table-hover">
                         <tr class="thead-dark" >
                             
                             <th>Identificacion</th>
@@ -18,7 +18,7 @@
                         <tr>
                             <% @users.each do |user| %>
                             <td>
-                               <%= link_to  user.identifiacion, new_user_nota_path(user) %>
+                               <%= link_to user.identifiacion, new_user_nota_path(user) %>
                             </td>
                             <td>
                                 <%= user.nombres%>
