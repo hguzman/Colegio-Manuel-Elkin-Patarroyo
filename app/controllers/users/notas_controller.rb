@@ -28,7 +28,7 @@ class Users::NotasController < ApplicationController
     @nota = @user.notas.new(nota_params)
     if @nota.save
       flash[:success] = "Nota creada"
-      redirect_to user_notas_path(@user,@nota)
+      redirect_to user_notas_path(@user,@notas)
     else
       render :new
     end
