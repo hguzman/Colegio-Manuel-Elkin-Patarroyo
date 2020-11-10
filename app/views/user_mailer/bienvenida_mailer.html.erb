@@ -1,11 +1,17 @@
-<h2>Bienvenido a NEOPA</h2>
-<strong><%= @user.nombres %> <b></b> <%= @user.apellidos %> </strong>
-<p>¡Un nuevo Año, un nuevo curso escolar! Una nueva oportunidad para construir, para renovar, para recrear, para aprender, para crecer... para escribir... El nuevo Año y curso es una página en blanco. Escribir en ella es una experiencia colectiva que nos
-    convoca a todos y genera la comunión de alumnos y alumnas, profesores y profesoras, padres y madres, de toda la COMUNIDAD EDUCATIVA. ES TIEMPO de escribir con atención, con esmero y con esperanza. Atención a la historia. La historia nos enseña para
-    el horizonte. Mirar atrás nos desafía, nos motiva, nos lanza. Al escribir evoquemos la historia. Como alumnos, qué luces acompañaron la vida que pueden seguir guiando el interior; como docentes qué experiencias fueron significativas y alimentaron
-    la vocación del ser maestro al potenciar el alma de los rostros que día tras día nos miran en el aula; como padres qué vínculos fortalecieron los lazos, qué palabras fueron tan sabias que merecen ser repetidas. Esmero para el día a día. Cada mañana,
-    al repuntar el sol, inician 24 horas que son una oportunidad para esforzarse en llegar, esforzarse en lograr. Cada una de las 24 horas vamos haciendo camino, creando lazos, construyendo puentes. O lamentablemente en ocasiones construyendo muros, creando
-    barreras, haciendo ondonadas. Frente a esto, al repuntar el sol, miremos a nuestro interior e iniciemos “las líneas ” con el esmero de un corazón en búsqueda de trascender, de mover al otro, de llegar a Dios. Si con atención hemos visto la historia;
-    si con esmero caminamos cada instante del ahora, seremos PERSONAS de esperanza. Línea tras línea la vida irá tomando un rumbo de “vida”. Día tras día la esperanza arropará, y es la gran responsabilidad que debemos asumir en medio de una sociedad con
-    tantos asomos de desesperanza. La esperanza indica que un cambio es posible, porque nos asumimos como parte de ese cambio. Alumnos, profesores y padres, todo un núcleo humano “sembradores de esperanza”. ¡Bienvenidos y bienvenidas a escribir! Sólo
-    las frases de todos nos darán el mejor libro.</p>
+
+<div class="contenedor">
+    <h1 style="text-align: center;">Bienvenido a NEOPA</h1>
+
+    <div style="display: flex; justify-content: center;">
+        <img src="https://raw.githubusercontent.com/hguzman/Colegio-Manuel-Elkin-Patarroyo/master/app/assets/images/logo_neopa.jpeg" alt="Logo NEOPA" width="200" height="200" style="border-radius: 50%; margin: auto;"> 
+        <img src="https://github.com/matking2001/certgit/blob/master/escudo_colegio.png?raw=true" alt="Logo Colegio Alfred Nobel" width="200" height="200" style="margin: auto;">
+        <br>
+    </div>
+    
+    <h2><strong>Hola! <%= @user.nombres %> <b></b> <%= @user.apellidos %> </strong></h2> 
+    <p>El aplicativo NEOPA y colegio Alfred Nobel te dan la bienvenida a nuestra plataforma que mejorará tú experiencia educativa, gracias por hacer parte de esta comunidad. </p>
+    Se le ha asignado el siguiente usuario y contraseña:
+    <br>
+    <strong>Email: <b></b> <%= @user.email %></strong> <br></br> 
+    <strong>Contraseña: <b></b> <%= @user.identifiacion %></strong> 
+</div>

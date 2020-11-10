@@ -7,6 +7,6 @@ class UserMailer < ApplicationMailer
 
     def bienvenida_mailer(user)
       @user = User.last
-      mail(to: @user.email, subject: 'Bienvenido(a) al sistema')
+      mail(to: @user.email, subject: 'Bienvenido(a) a NEOPA')
     end
 end
