@@ -8,8 +8,8 @@
             <%= m.input :codigo %>
             <%= m.input :nombre %>
             <div class="row">
-              <div class="col"><%= m.association :user , label_method: :nombres %></div>
-              <div class="col"><%= m.association :curso , label_method: :nombre %></div>
+              <div class="col"><%= m.association :user , prompt: "Seleccionar docente", label_method: :nombres %></div>
+              <div class="col"><%= m.association :curso , prompt: "Seleccionar curso", label_method: :nombre %></div>
             </div>            
             <%= m.button :submit, class: "btn btn-primary" %>
           <% end %>
