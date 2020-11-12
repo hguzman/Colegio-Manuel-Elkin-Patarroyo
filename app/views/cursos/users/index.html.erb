@@ -5,34 +5,20 @@
             <div class="card-body">
             <div class="box">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
-                        <tr class="thead-dark" >
-                            
-                            <th>Identificacion</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                                
-                        </tr>
-
-
-                        <tr>
-                            <% @users.each do |user| %>
-                            <td>
-                               <%= link_to user.identifiacion, new_user_nota_path(user) %>
-                            </td>
-                            <td>
-                                <%= user.nombres%>
-                            </td>
-
-                            <td>
-                                <%= user.apellidos %>
-                            </td>
-                            
-                        </tr> 
-                        <%end %>
-
+                    <table id="curso_users" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Identificacion</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Correo</th>
+                                <th>Dirección</th>
+                            </tr>    
+                        </thead>
+                        <tbody>
+                            <%= render @users %>
+                        </tbody>
                     </table>
-
                     
                 </div>
             

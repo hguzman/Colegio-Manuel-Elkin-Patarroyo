@@ -5,6 +5,7 @@ class Users::NotasController < ApplicationController
   def index
     @notas = @user.notas
     @grafica_notas = Nota.group_by_day(:created_at).count
+    @promedio_estudiante = @user.notas.average(:nota) || 0
     respond_html_and_csv
   end
 
@@ -28,7 +29,7 @@ class Users::NotasController < ApplicationController
     @nota = @user.notas.new(nota_params)
     if @nota.save
       flash[:success] = "Nota creada"
-      redirect_to user_notas_path(@user,@notas)
+      redirect_to edit_user_nota_path(@user,@nota)
     else
       render :new
     end

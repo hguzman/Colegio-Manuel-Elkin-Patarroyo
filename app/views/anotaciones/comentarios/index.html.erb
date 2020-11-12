@@ -1,33 +1,80 @@
-<%= render 'cabecera' %>
 
-<%= link_to new_anotacion_comentario_path(@anotacion, @comentario), class: "btn btn-info btn-md mt-1 mb-2" do %>
-    <%= fa_icon "plus" %>
-<% end%>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="card shadow-lg">
-            <div class="card-body">
-                <div class="box">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <% if @comentarios.empty? %>
-                                <th>Id</th>
-                                <th>Comentario</th>
-                                <% elsif %>
-                                <th>Id</th>
-                                <th>Comentario</th>
-                                <th colspan="3">Acciones</th>
-                                <% end %>
-                            </thead>
-                            <tbody>
-                                <%= render @comentarios %>
-                            </tbody>
-                        </table>
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-md-4">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5><span>Datos de la anotacion</span></h5>
+                </div>
+                <div>
+                    <div class="ibox-content profile-content">
+                        <p><strong>Id:</strong> <%= @anotacion.id %></p>
+                        <p><strong>Fecha:</strong> <%= @anotacion.fecha %></p>
+                        <p><strong>Titulo:</strong> <%= @anotacion.titulo %></p>
+                        <h5>
+                            Descripción: 
+                        </h5>
+                        <%= sanitize @anotacion.contenido %>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="col-md-8">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <% if current_user.has_role? :admin %>
+                    <%= link_to new_anotacion_comentario_path(@anotacion, @comentario), class: "btn btn-primary" do %>
+                    <%= fa_icon "plus" %>
+                    <% end %>
+                    <%end%>
+
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+
+
+                        </a>
+
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <% @comentarios.each do |comentario| %>
+
+                    <div class="feed-activity-list">
+
+                        <div class="feed-element">
+
+                            <div class="media-body ">
+                                <strong><h4>Comentario:</h4></strong>
+                                <p><%= sanitize comentario.comentario%></p>
+                                <div class="actions">
+                                    <% if current_user.has_role? :admin %>
+                                    <%= link_to  edit_anotacion_comentario_path(@anotacion, comentario), class: "btn btn-xs btn-warning" do %>
+                                    <%= fa_icon "pencil-alt" %>
+                                    Editar
+                                    <% end %>
+
+
+                                    <%= link_to anotacion_comentario_path(@anotacion, comentario),method: :delete,class: "btn btn-danger btn-xs" do %>
+                                    <%= fa_icon "trash" %>
+                                    Eliminar
+                                    <% end %>
+                                    <%end%>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <%end%>
+                </div>
+
+            </div>
+        </div>
