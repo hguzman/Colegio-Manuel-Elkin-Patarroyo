@@ -39,6 +39,35 @@
                 </ul>
             </li>
             <% end %>
+
+            <% if current_user.has_role? :admin %>
+            <li>
+                <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Asistencias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to "Crear Asistencia", new_asistencia_path %></a></li>
+
+                    <li><a><%= link_to "Listado Asistencias", asistencias_path%></a></li>
+
+                </ul>
+            </li>
+            <% end %>
+
+            <% if current_user.has_role? :estudiante %>
+            <li>
+                <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Notas</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to "Mis notas", user_notas_path(current_user.id) %></a></li>
+                </ul> 
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Anotaciones</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to "Mis anotaciones", user_anotaciones_path(current_user.id) %></a></li>
+                </ul> 
+            </li>
+            <% end %>
+            <% if current_user.has_role? :admin %>
             <li>
                 <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -47,14 +76,26 @@
 
                 </ul>
             </li>
-            <li>
-                <a href="index.html"><i class="fas fa-key"></i><span class="nav-label">Roles</span> <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li><a><%= link_to  "Nuevo Rol", new_role_path %></a></li>
-                    <li><a><%= link_to  "Listado Roles", roles_path %></a></li>
 
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Materias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Mis materias", user_materias_path(current_user.id) %></a></li>
+                    
+                    <li><a><%= link_to  "Crear materia", new_materia_path() %></a></li>
                 </ul>
             </li>
+            <%end%>
+             <% if current_user.has_role? :admin %>
+                <li>
+                    <a href="index.html"><i class="fas fa-key"></i><span class="nav-label">Roles</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a><%= link_to  "Nuevo Rol", new_role_path %></a></li>
+                        <li><a><%= link_to  "Listado Roles", roles_path %></a></li>
+
+                    </ul>
+                </li>
+            <%end%>
         </ul>
 
     </div>

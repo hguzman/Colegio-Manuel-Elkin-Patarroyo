@@ -6,8 +6,6 @@ html, body{
   font-family: 'Poppins', sans-serif;
   color: #222;
 }
-
-
 /*---Navegación --*/
 .navbar{
   padding: .8rem;
@@ -164,11 +162,11 @@ hr.Light-100{
   .carousel-caption{
     top: 50%;
   }
-  
+
   .carousel-caption h1{
     font-size: 350%;
   }
-  
+
   .carousel-caption h3{
     font-size: 140%;
     font-weight: 400;
@@ -189,23 +187,23 @@ hr.Light-100{
     font-weight: 600;
     font-family: 'Krona One', sans-serif;
   }
-  
+
   .contenedor .card p{
     padding:  1rem 1rem;
     font-size: 16px;
     font-weight: 300;
     font-family: 'Krona One', sans-serif;
   }
-  
+
 }
 @media (max-width: 576px) {
-  
-  
+
+
   .contenedor .card h3{
     font-weight: 600;
     font-family: 'Krona One', sans-serif;
   }
-  
+
   .contenedor .card p{
     padding:  0 1rem;
     font-size: 13.5px;
@@ -234,3 +232,20 @@ hr.Light-100{
 [class*="col-"] {
     padding: 1rem;
 }
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/

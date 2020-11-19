@@ -8,30 +8,26 @@
     <title>NEOPA</title>
 
     <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
-            <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <%= csp_meta_tag %>
+            
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Jquery -->
 
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <!-- Main css styles -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-            <!-- Main css styles -->
-            <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Main javascript files -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-                <!-- Main javascript files -->
-                <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-                    <!-- Favicón -->
-                    <%= favicon_link_tag 'favicon.ico' %>
+    <!-- Favicón -->
+    <%= favicon_link_tag 'favicon.ico' %>                
 </head>
 
-<body>
-
-    <!-- Wrapper-->
-    <% if user_signed_in? %>
-        <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
-
-
-            <!-- Navigation -->
-            <%= render 'layouts/navigation' %>
+    <body>
+        <!-- Wrapper-->
+        <% if user_signed_in? %>
+            <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+                <!-- Navigation -->
+                <%= render 'layouts/navigation' %>
 
                 <!-- Page wraper -->
                 <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
@@ -39,33 +35,33 @@
                     <!-- Page wrapper -->
                     <%= render 'layouts/topnavbar' %>
 
-                        <!-- Main view  -->
-                        <%= custom_bootstrap_flash %>
-                            <%= yield %>
-
-
+                    <!-- Main view  -->
+                    <!-- Notificaciones toastr -->
+                    <%= custom_bootstrap_flash %>
+                    <%= yield %>
 
                 </div>
                 <!-- End page wrapper-->
 
-        </div>
-        <!-- End wrapper-->
+            </div>
+            <!-- End wrapper-->
 
         <% else %>
-            <%= render 'layouts/nav' %>
-            <%= custom_bootstrap_flash %>
-            <%= yield %>
 
+                <%= render 'layouts/nav' %>
+                <%= custom_bootstrap_flash %>
+                <%= yield %>
+                
+        <%end%>
 
+                       
+        <!-- Include javascript per-view -->
+        <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
+        <%= yield :javascript %>
 
-                <%end%>
-
-                    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-                    <!-- Include javascript per-view -->
-                    <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
-                    <%= yield :javascript %>
-
-                        
-</body>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script> <!-- Jquery DataTables -->
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> <!-- DataTables Boostrap js -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"> <!-- DataTables Boostrap css -->     
+    </body>
 
 </html>

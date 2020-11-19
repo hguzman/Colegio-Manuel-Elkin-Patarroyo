@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_215421) do
+ActiveRecord::Schema.define(version: 2020_10_28_231605) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2020_10_11_215421) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_anotaciones_on_user_id"
+  end
+
+  create_table "asistencias", force: :cascade do |t|
+    t.date "fecha"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "asistencias_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "asistencia_id", null: false
+    t.index ["asistencia_id"], name: "index_asistencias_users_on_asistencia_id"
+    t.index ["user_id"], name: "index_asistencias_users_on_user_id"
   end
 
   create_table "comentarios", force: :cascade do |t|
@@ -42,6 +55,19 @@ ActiveRecord::Schema.define(version: 2020_10_11_215421) do
     t.string "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "curso_id"
+    t.index ["curso_id"], name: "index_materias_on_curso_id"
+    t.index ["user_id"], name: "index_materias_on_user_id"
+  end
+
+  create_table "notas", force: :cascade do |t|
+    t.string "logro"
+    t.decimal "nota"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_notas_on_user_id"
   end
 
   create_table "noticias", force: :cascade do |t|
@@ -78,10 +104,8 @@ ActiveRecord::Schema.define(version: 2020_10_11_215421) do
     t.string "direccion"
     t.integer "curso_id"
     t.string "avatar"
-    t.integer "materia_id"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["materia_id"], name: "index_users_on_materia_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -95,6 +119,8 @@ ActiveRecord::Schema.define(version: 2020_10_11_215421) do
 
   add_foreign_key "anotaciones", "users"
   add_foreign_key "comentarios", "anotaciones"
+  add_foreign_key "materias", "cursos"
+  add_foreign_key "materias", "users"
+  add_foreign_key "notas", "users"
   add_foreign_key "users", "cursos"
-  add_foreign_key "users", "materias"
 end

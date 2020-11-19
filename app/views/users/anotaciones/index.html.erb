@@ -36,9 +36,11 @@
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Observaciones </h5>
+                      <% if current_user.has_role? :admin %>
                     <%= link_to new_user_anotacion_path(@user,@anotacion), class: "btn btn-primary" do %>
                     <%= fa_icon "plus" %>
                     <% end %>
+                    <%end%>
 
                     <div class="ibox-tools">
                         <a class="collapse-link">
@@ -64,15 +66,18 @@
                                 <strong><%= anotacion.titulo%></strong><br> <br>
                                 <p><%= sanitize anotacion.contenido%></p>
                                 <div class="actions">
+                                <% if current_user.has_role? :admin %>
                                     <%= link_to  edit_user_anotacion_path(@user, anotacion), class: "btn btn-xs btn-warning" do %>
                                     <%= fa_icon "pencil-alt" %>
                                     Editar
                                     <% end %>
-
+                                    
+                                    
                                     <%= link_to user_anotacion_path(@user, anotacion),method: :delete,class: "btn btn-danger btn-xs" do %>
                                     <%= fa_icon "trash" %>
                                     Eliminar
                                     <% end %>
+                                    <%end%>
 
                                     <%= link_to anotacion_comentarios_path(anotacion),class: "btn btn-info btn-xs" do %>
                                     <i class="fas fa-comment-dots"></i>

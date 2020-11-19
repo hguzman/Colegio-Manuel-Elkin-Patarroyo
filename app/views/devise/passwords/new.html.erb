@@ -7,34 +7,31 @@
             <%= image_tag("logo_neopa.jpeg", :alt => "Logo neopa", :style => "width: 120px; height: 120px;border-radius: 55%;")%>
           </div>
 
-          <h2 class="text-center">¿Olvidaste tú contraseña?</h2>
+            <h2 class="text-center">¿Olvidaste tú contraseña?</h2>
 
-          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-            <%= f.error_notification %>
-          
-            <div class="form-inputs">
-              <%= f.input :email,
-                          required: true,
-                          autofocus: true,
-                          input_html: { autocomplete: "email" } %>
-            </div>
-            
-            <div class="row">
-              <div class="col">
-                <div class="form-actions">
-                  <%= f.button :submit, "Enviar correo", class: "btn btn-warning btn-sm btn-block" %>
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="forgetbox">
+                <div class="textbox">
+                  <i class="fas fa-envelope icon"></i>
+                  <input autocomplete="on" placeholder="Correo" class="string email optional input2" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" />
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-actions">
+                      <%= f.button :submit, "Enviar correo", class: "btn btn-warning btn-sm btn-block" %>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <%= render "devise/shared/links" %>
+                  </div>
                 </div>
               </div>
-              <div class="col">
-                <%= render "devise/shared/links" %>
-              </div>
-            </div>
-          <% end %>
-          
-
+            <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-

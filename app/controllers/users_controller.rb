@@ -1,25 +1,27 @@
 class UsersController < ApplicationController
+  # before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
-      authorize User
+      # authorize User
       @users=User.all
+      @grafica_user = User.group_by_day(:created_at, format: "%a").count
     end
-  
+
     def show
     end
 
     def new
       @user= User.new
-       authorize @user
+       # authorize @user
     end
 
     def create
       @user = User.new(user_params)
       if @user.save
         redirect_to users_path
-        flash.notice= "User creado"
-
+        flash[:success] = "User creado"
+        # UserMailer.bienvenida_mailer(@user).deliver_now
       else
         render :new
       end
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
     def update
       if @user.update(user_params)
         redirect_to users_path
-        flash.notice="User editado"
+        flash.notice = "User editado"
       else
         render :edit
       end
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
     def destroy
       @user.destroy
       redirect_to users_path
-      flash.alert="User eliminado"
+      flash.alert = "User eliminado"
     end
 
     def edit

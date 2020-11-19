@@ -1,0 +1,16 @@
+<h1 style="text-align: center;">Reporte académico</h1>
+<div style="display: flex; justify-content: center;">
+  <img src="https://raw.githubusercontent.com/hguzman/Colegio-Manuel-Elkin-Patarroyo/master/app/assets/images/logo_neopa.jpeg" alt="Logo NEOPA" width="200" height="200" style="border-radius: 50%; margin: auto;"> 
+</div>
+<h4>Ten un excelente dia,
+  <%= @user.nombres %> <b></b> <%= @user.apellidos %>.
+</h4>
+<br>
+<p>
+  Una nueva anotación ha sido creada a nombre de: <strong><%= @user.nombres %> <b></b> <%= @user.apellidos %></strong>
+  Dentro del sistema de Seguimiento al estudiante, con título
+  <strong> <%= @anotacion.titulo %> </strong>, Favor verificala y si tienes oportunidad comentala dentro de la aplicación, en el boton comentario,realiza tú apresiación de la situación, agradecemos tus comentarios.
+</p>
+<p>
+  Gracias por hacer parte de la familia <strong>NEOPA</strong>
+</p>

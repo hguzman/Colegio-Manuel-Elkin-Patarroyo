@@ -3,16 +3,43 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-nav{
-    background: #2980b9;
-    border-radius: 8px;
-    height: 60px;
-    width: 90%;
-    margin: auto;
-    margin-top: 5px;
+.navbar{
+  padding: .8rem;
 }
 
+.navbar-nav li{
+  padding-right: 13px;
+}
+
+.nav-link{
+  font-size: 1.1em !important;
+}
+#atras{
+  margin-bottom: 20px;
+}
+.plan{
+  margin-left: 350px;
+  justify-content: center;
+  color: black;
+  font-size: 35px;
+  font-family: 'Krona One', sans-serif;
+}
+.plan1{
+  margin-left: 450px;
+  margin-top: 10px;
+  justify-content: center;
+  color: black;
+  font-size: 35px;
+  font-family: 'Krona One', sans-serif;
+}
+.doc{
+  margin-left: 300px;
+  justify-content: center;
+  color: white;
+  font-size: 35px;
+  font-family: 'Krona One', sans-serif;
+
+}
 .label{
     display: flex;
     justify-content: center;
@@ -24,7 +51,7 @@ nav{
 a{
     margin-top: 10px;
     margin-left: 6%;
-    font-size: 20px;
+    font-size: 10px;
     font-family: 'Krona One', sans-serif;
     color: white;
     text-decoration: none !important;

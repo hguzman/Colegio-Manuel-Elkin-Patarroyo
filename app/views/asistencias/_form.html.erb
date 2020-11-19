@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 mx-auto mt-3">
+    <div class="card">
+      <div class="card-body">
+        <div class="box">
+          <%= simple_form_for @asistencia do |m| %>
+           <%= m.input :fecha %>
+          <%= m.association :users, as: :check_boxes, label_method: :email%>
+          <%= m.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

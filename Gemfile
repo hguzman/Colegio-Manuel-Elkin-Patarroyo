@@ -24,6 +24,12 @@ gem 'trix'
 # Gema de permisos
 gem 'pundit', '~> 2.1'
 
+#Gema de graficas
+gem "chartkick"
+
+#Gema complementos de las graficas
+gem 'groupdate'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
