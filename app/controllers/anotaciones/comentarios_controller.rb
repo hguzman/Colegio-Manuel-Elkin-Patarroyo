@@ -35,6 +35,12 @@ class Anotaciones::ComentariosController < ApplicationController
     end
   end
 
+  def destroy
+    @comentario.destroy
+    redirect_to anotacion_comentarios_path(@anotacion)
+    flash[:alert] ="Comentario eliminado"
+  end
+
   private
 
   def set_anotacion

@@ -1,0 +1,11 @@
+<tr>
+    <td class="text-capitalize"><%=user.identifiacion%></td>
+    <td class="text-capitalize"><%=user.nombres%></td>
+    <td class="text-capitalize"><%=user.apellidos%></td>
+    <td class="text-capitalize"><%=user.direccion%></td>
+    <td class="text-capitalize"><%=user.telefono%></td>
+    <td><%=user.email%></td>
+    <td>
+        <%= link_to  "Notas", user_notas_path(user), class: "btn btn-warning" %>
+    </td>
+</tr>

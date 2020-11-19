@@ -1,0 +1,24 @@
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <h1 class="text-center">Materias del docente</h1>
+        <div class="row">
+      
+            <% @materias.each do |materia| %>
+            <div class="col-lg-3">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <h5 class="m-b-md"> <%= materia.nombre%></h5>
+                        <h2 class="text-navy">
+                            <i class="fa fa-play fa-rotate-270"></i> <%= materia.codigo%>
+                        </h2>
+                        <small>Curso: <%= link_to  materia.curso.nombre, curso_users_path(materia.curso.id) %></small>
+                    </div>
+                </div>
+            </div>
+            <%end%>
+
+        </div>
+    </div>
+
+
+
