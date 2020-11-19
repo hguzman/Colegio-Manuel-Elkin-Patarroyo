@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>A.E.S</title>
+	<title>Alfred Nobel</title>
 
 	<!-- Booststrap 4.0.0 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -22,13 +22,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-	<!-- Estilos -->
+	
+	<!-- Estilo nuevo -->
 	<link href="css/estilos.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- Navegación -->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-md navbar-light sticky-top hover" style="background-color: transparent;">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#">A.E.S</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -36,20 +37,20 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="#">Inicio</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Documentación</a>
+				<li class="nav-item active">
+					<a class="nav-link" href="documentacion.html">Documentación</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link active" href="diagramas.html">Diagramas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Diagramas</a>
+					<a class="nav-link active" href="#equipo">Equipo de Desarrollo</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Equipo de Desarrollo</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Contacto</a>
+					<a class="nav-link active" href="#contacto">Contacto</a>
 				</li>
 			</ul>
 		</div>
@@ -57,42 +58,50 @@
 </nav>
 
 <!--- Imagen Slider -->
-<div id="slides" class="carousel slide" data-ride="carousel">
+<div id="slides" class="carousel slide col-12" data-ride="carousel" style="-webkit-box-shadow: 0 3px 6px black; border-radius: 1em; width: 1280px;">
 	<ul class="carousel-indicators">
 		<li data-target="#slides" data-slide-to="0" class="active"></li>
 		<li data-target="#slides" data-slide-to="1"></li>
 		<li data-target="#slides" data-slide-to="2"></li>
+		<li data-target="#slides" data-slide-to="3"></li>
 	</ul>
 	<div class="carousel-inner">
-		<div class="carousel-item active">
-			<img src="img/background.png">
+		<div class="carousel-item active" style="text-align: center;">
+			<img src="img/colegio/colegio-1.jpg" style="height: 590px; width: 100%;">
 			<div class="carousel-caption">
-				<h1 class="dispay-2">Prueba1</h1>
-				<h3>Probando</h3>
-				<button type="button" class="btn btn-outline-light btn-lg">Boton 1 prueba</button>
-				<button type="button" class="btn btn-primary btn-lg">Boton 2 prueba</button>
+				<h1 class="dispay-2">Alfred Nobel</h1>
+				<h3>Una gran Familia.</h3>
 			</div>
 		</div>
-		<div class="carousel-item">
-			<img src="img/background2.png">
+		<div class="carousel-item" style="text-align: center;">
+			<img src="img/colegio/colegio-2.jpg" style="height: 590px; width: 100%;">
+			<div class="carousel-caption">
+				<h1 class="dispay-2" style="font-size: 50px;">Sueños a emprender</h1>
+				<h3>Creatividad avivada en niños.</h3>
+			</div>
 		</div>
-		<div class="carousel-item">
-			<img src="img/background3.png">
+		<div class="carousel-item" style="text-align: center;">
+			<img src="img/colegio/colegio-3.jpg" style="height: 590px; width: 100%;">
+			<div class="carousel-caption">
+				<h1 class="dispay-2" style="font-size: 50px;">Una educacion integral</h1>
+				<h3>Alfred Nobel, buen colegio.</h3>
+			</div>
 		</div>
-	</div>
-</div>
-
-<!--- Jumbotron -->
-<div class="container-fluid">
-	<div class="row jumbotron">
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-			<p class="lead">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum unde doloremque magni commodi ipsa numquam placeat veritatis molestias rerum, qui, accusantium sapiente. Architecto tempore, veniam ab hic repellendus quidem eius!
-			</p>
+		<div class="carousel-item" style="text-align: center;">
+			<img src="img/colegio/colegio-4.jpg" style="height: 590px; width: 100%;">
+			<div class="carousel-caption">
+				<h1 class="dispay-2" style="font-size: 50px;">Cultura colombiana</h1>
+				<h3>Musica, arte y literatura.</h3>
+			</div>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-			<a href="#"><button type="button" class="btn btn-outline-secondary">Boton de prueba</button></a>
-		</div>
+		<a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Anterior</span>
+		  </a>
+		  <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Siguiente</span>
+		  </a>
 	</div>
 </div>
 
@@ -100,21 +109,21 @@
 <div class="container-fluid padding">
 	<div class="row welcome text-center">
 		<div class="col-12">
-			<h1 class="display-4">Subtitulo de prueba</h1>
+			<h1 class="display-4">Bienvenidos</h1>
 		</div>
 		<hr>
 		<div class="col-12">
-			<p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere ab laboriosam eaque magnam repellendus ea quisquam accusamus est accusantium quidem doloribus nobis </p>
+			<p class="lead">¡Un nuevo Año, un nuevo curso escolar! Una nueva oportunidad para construir, para renovar, para recrear, para aprender, para crecer... para escribir...</p>
 		</div>
 	</div>
 </div>
 
 <!--- Sección de cuatro columnas -->
 <div class="container-fluid">
-	<div class="row text-center padding">
+	<div class="row text-center welcome padding">
 		<div class="contenedor">
 			<div class="card">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-6 col-sm-12 col-md-12">
 					<h3>MISIÓN</h3>
 					<img src="img/mision.svg" >
 					<p>Formar al alumno en el respeto por los demás, la solidaridad, la responsabilidad, la participación democrática, amar
@@ -123,7 +132,7 @@
 				</div>	
 			</div>
 			<div class="card">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-6 col-sm-12 col-md-12">
 					<h3>VISIÓN</h3>
 					<img src="img/vision.svg" >
 					<p>El colegio Alfred Nobel, motiva y movilizan, vida institucional aspira a ser una institución líder en la formación de
@@ -133,7 +142,7 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-6 col-sm-12 col-md-12">
 					<h3>ÉNFASIS</h3>
 					<img src="img/enfasis.svg" >
 					<p>comprometidos con las transformaciones sociales en la búsqueda de un mundo más equitativo, democrático y
@@ -141,7 +150,7 @@
 				</div>
 			</div>
 			<div class="card">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-6 col-sm-12 col-md-12">
 					<h3>LEMA</h3>
 					<img src="img/lema.svg" >
 					<p>La educación es la base fundamental de la cultura.</p>
@@ -154,137 +163,235 @@
 
 <!--- Sección de dos columnas -->
 <div class="container-fluid padding">
-	<div class="row padding">
+	<div class="row padding welcome">
 		<div class="col-md-12 col-lg-6">
-			<h2>Subtitulo de prueba</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae raesentium porro ad sunt assu</p>
-			<p>Lorem ipsum dolor sit amet consectetur adip laborum nam?</p>
-			<p>itae repellendus, doloremque corrupti accusaesentium porro ad sunt assumenda, sint impedit ipsa, totam obcaecati error at nihil laborum nam?</p>
+			<h2>Descripción detallada de COLEGIO ALFRED NOBEL:</h2>
+			<p>
+				<b>Estado:</b>
+				ANTIGUO-ACTIVO.
+				<br>
+				<b>Tipo:</b>
+				CENTRO EDUCATIVO.
+				<br>
+				<b>Calendario:</b>
+				A.
+				<br>
+				<b>Zona EE:</b>
+				URBANA.
+				<br>
+				<b>Jornada</b>
+				MAÑANA, TARDE
+				<br>
+				<b>Género</b>
+				MIXTO.
+				<br>
+				<b>Carácter</b>
+				NO APLICA.
+				<br>
+				<b>Matrícula Contratada</b>
+				SI.
+				<br>
+			</p>
+			<h4>Niveles, grados</h4>
+				<b style="font-size: 18px;">Preescolares:</b>
+				<br>
+				Kinders.
+				<br>
+				Transición.
+				<br>
+				Pre Jardines Infantiles.
+				<br>
+				<br>
+				<b style="font-size: 18px;">Prímarias</b>
+				<br>
+				Primarias con 1Er Grado.
+				<br>
+				Primarias con 2Do Grado.
+				<br>
+				Primarias con 3Er Grado.
+				<br>
+				Primarias con 4To Grado.
+				<br>
+				Primarias con 5To Grado.
+				<br>
+				<br>
+				<h3>Idiomas:</h3>
+				Ingles.
+				<br>
+				<br>
+				<h3>Modelos:</h3>
+				Colegios con modelos Educativos para Niños y Jóvenes:
+				<br>
+				Colegios de Educación Tradicional.
+
 		</div>
 		<div class="col-lg-6">
-			<img src="img/desk.png" class="img-fluid">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<img src="img/logo.jpg" class="img-fluid" width="320" height="320">
 		</div>
 	</div>
 	<hr class="my-4">
 </div>
 
-<!--- Fondo fijo -->
-
-
 <!--- Equipo de desarrollo -->
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="equipo">
 	<div class="row welcome text-center">
 		<div class="col-12">
 			<h1 class="display-4">Nuestro Equipo</h1>
 			<span>Equipo de desarrollo A.E.S</span>
 		</div>
-		<hr> 
 	</div>
 </div>
 
 <!--- Tarjetas de equipo de desarrollo-->
 
  <div class="container-fluid padding">
-	<div class="row padding">
+	<div class="row padding welcome jumbotron">
 			<!--- Mateo -->
 		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="card">
-				<img class="card-img-top" src="img/mateo.jpg" style="height: 300px;">
+			<div class="card shadow-lg" style="border-radius: 1em 1em 1em 1em;">
 				<div class="card-body">
-					<h4 class="card-title text-center">Mateo Balza</h4>
-					<p class="card-text text-center">Aprendiz Sena</p>
-					<ul class="list-inline">
-						<li><a href="https://github.com/matking2001" target="_blank"><i class="fab fa-github"></i></a>
-						</li>
-						<li><a href="https://www.facebook.com/mateobalza.valega/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-						</li>
-						<li><a href="https://www.instagram.com/valegamateobalza/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
-						</li>
-					</ul>
-					<a href="" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					<div class="box">
+						<div class="d-flex justify-content-center">
+							<img class="img-responsive rounded-circle" src="img/mateo.jpg" style="height: 250px; width: 200px;">
+						</div>
+							<h4 class="card-title text-center text-primary">Mateo Balza</h4>
+							<p class="card-text text-center">Aprendiz SENA.</p>
+						<ul class="list-inline">
+							<li><a href="https://github.com/matking2001" target="_blank"><i class="fab fa-github"></i></a>
+							</li>
+							<li><a href="https://www.facebook.com/mateobalza.valega/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							</li>
+							<li><a href="https://www.instagram.com/valegamateobalza/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
+							</li>
+						</ul>
+						<a href="mateo.html" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					</div>
 				</div>
 			</div>
 		</div>
 			<!--- Jose -->
 		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="card">
-				<img class="card-img-top" src="img/jose.jpg" style="height: 300px;">
+			<div class="card shadow-lg" style="border-radius: 1em 1em 1em 1em;">
 				<div class="card-body">
-					<h4 class="card-title text-center">Jose Gonzales</h4>
-					<p class="card-text text-center">Aprendiz Sena</p>
-					<ul class="list-inline ">
-						<li><a href="https://github.com/locheMC" target="_blank"><i class="fab fa-github"></i></a>
-						</li>
-						<li><a href="https://www.facebook.com/locheMC" target="_blank"><i class="fab fa-facebook-f"></i></a>
-						</li>
-						<li><a href="https://www.instagram.com/lochemc/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
-						</li>
-					</ul>
-					<a href="" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					<div class="box">
+						<div class="d-flex justify-content-center">
+							<img class="img-responsive rounded-circle" src="img/jose.jpg" style="height: 250px; width: 200px;">
+						</div>
+							<h4 class="card-title text-center text-primary">Jose Gonzales</h4>
+							<p class="card-text text-center">Aprendiz SENA.</p>
+						<ul class="list-inline ">
+							<li><a href="https://github.com/locheMC" target="_blank"><i class="fab fa-github"></i></a>
+							</li>
+							<li><a href="https://www.facebook.com/locheMC" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							</li>
+							<li><a href="https://www.instagram.com/lochemc/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
+							</li>
+						</ul>
+						<a href="jose.html" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					</div>
 				</div>
 			</div>
 		</div>
 			<!--- Jhon -->
 		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="card">
-				<img class="card-img-top" src="img/jhon.jpg" style="height: 300px;">
+			<div class="card shadow-lg" style="border-radius: 1em 1em 1em 1em;">
 				<div class="card-body">
-					<h4 class="card-title text-center">Jhon Dairo</h4>
-					<p class="card-text text-center">Aprendiz Sena</p>
-					<ul class="list-inline social-icon">
-						<li><a href="https://github.com/riverajhon02" target="_blank"><i class="fab fa-github"></i></a>
-						</li>
-						<li><a href="https://www.facebook.com/RiveraJhonDairo" target="_blank"><i class="fab fa-facebook-f"></i></a>
-						</li>
-						<li><a href="https://www.instagram.com/riverajhonda/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
-						</li>
-					</ul>
-					<a href="" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					<div class="box">
+						<div class="d-flex justify-content-center">
+							<img class="img-responsive rounded-circle" src="img/jhon.jpg" style="height: 250px; width: 200px;">
+						</div>
+							<h4 class="card-title text-center text-primary">Jhon Dairo</h4>
+							<p class="card-text text-center">Aprendiz SENA.</p>
+						<ul class="list-inline social-icon">
+							<li><a href="https://github.com/riverajhon02" target="_blank"><i class="fab fa-github"></i></a>
+							</li>
+							<li><a href="https://www.facebook.com/RiveraJhonDairo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							</li>
+							<li><a href="https://www.instagram.com/riverajhonda/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
+							</li>
+						</ul>
+						<a href="jhon.html" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					</div>
 				</div>
 			</div>
 		</div>
 			<!--- Emerson -->
 		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="card">
-				<img class="card-img-top" src="img/emerson.jpg" style="height: 300px;">
+			<div class="card shadow-lg" style="border-radius: 1em 1em 1em 1em;">
 				<div class="card-body">
-					<h4 class="card-title text-center">Emerson Treco</h4>
-					<p class="card-text text-center">Aprendiz Sena</p>
-					<ul class="list-inline social-icon">
-						<li><a href="https://github.com/Thefty" target="_blank"><i class="fab fa-github"></i></a>
-						</li>
-						<li><a href="https://www.facebook.com/Thefty0399" target="_blank"><i class="fab fa-facebook-f"></i></a>
-						</li>
-						<li><a href="https://www.instagram.com/emerson_treco/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
-						</li>
-					</ul>
-					<a href="" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					<div class="box">
+						<div class="d-flex justify-content-center">
+							<img class="img-responsive rounded-circle" src="img/emerson.jpg" style="height: 250px; width: 200px;">
+						</div>
+							<h4 class="card-title text-center text-primary">Emerson Treco</h4>
+							<p class="card-text text-center">Aprendiz SENA.</p>
+						<ul class="list-inline social-icon">
+							<li><a href="https://github.com/Thefty" target="_blank"><i class="fab fa-github"></i></a>
+							</li>
+							<li><a href="https://www.facebook.com/Thefty0399" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							</li>
+							<li><a href="https://www.instagram.com/emerson_treco/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
+							</li>
+						</ul>
+						<a href="emerson.html" class="btn btn-outline-secondary d-flex justify-content-center">Ver el perfil</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<hr class="my-4">
 </div>
 
 
-
-
-<!--- Sección de dos columnas -->
-
-
-<!--- Conectar -->
-
+<!--- Formulario -->
+<section id="contacto">
+	<h1 class="text-center text-primary">Contactanos</h1>
+	<div class="row">
+		<div class="col-md-6 m-auto">
+			<div class="card border-secondary">
+				<div class="card-header"><h4 class="text-center font-italic">Si tienes alguna inquietud puedes contactarnos</h4>
+					<div class="card-body">
+						<div class="box">
+							<form action="guardar.php" method="POST">
+								<div class="form-group">
+									<label class="font-weight-bold" for="">Correo</label>
+									<input class="form-control" type="email" name="correos" placeholder="Example@gmail.com" required><br>
+									<label class="font-weight-bold" for="">Mensaje</label>
+									<textarea name="mensajes" placeholder="Deje su mensaje..." id="ar" class="form-control" rows="3" cols="50"></textarea>
+									<div class="d-flex justify-content-center">
+										<button type="submit" name="enviar" class="btn btn-primary mt-3">Enviar</button>
+								  	</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <!--- Pie de pagina -->
 <footer>
 	<div class="container-fluid padding">
 		<div class="row text-center">
 			<div class="col-md-4">
-				<img src="img/w3newbie.png">
 				<hr class="Light">
-				<p>555-555-555</p>
-				<p>example@gmail.com</p>
-				<p>Calle 00 # 00-00</p>
-				<p>Ciudad, estado</p>
+				<h5>Información y Contacto</h5>
+				<hr class="Light">
+				<p>3752747-30171798935</p>
+				<p>coalno@hotmail.com</p>
+				<p>Cl. 21, Soledad, Atlántico</p>
+				<p>Barranquilla</p>
 			</div>
 			<div class="col-md-4">
 				<hr class="Light">
@@ -303,6 +410,7 @@
 			</div>
 			<div class="col-12">
 				<hr class="Light-100">
+				<br>
 				<h5>&copy;A.E.S Equipo de Desarrollo.</h5>
 			</div>
 		</div>
