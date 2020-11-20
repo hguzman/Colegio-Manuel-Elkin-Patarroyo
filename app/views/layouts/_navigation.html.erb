@@ -2,24 +2,29 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
+                <!---Perfil del usuario-->
                 <div class="dropdown profile-element">
                     <div class="d-flex justify-content-center">
                         <%= image_tag current_user.avatar.thumb.url,class: "img-profile rounded-circle", :style=>"width:100px"%>
                     </div>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">        
                         <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id) %>
+                        <br>
                         <span class="text-white"><%= current_user.email%></span>                  
                     </a>
                 </div>
+                <!--- fin -->
+                <!-- nombre del proyecto-->
                 <div class="logo-element">
                     NEOPA
                 </div>
+                <!-- fin -->
             </li>
             <li>
+            <!-- Inicio de noticias -->
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-
                 <% if current_user.has_role? :admin%>
                     <li><a><%= link_to "Últimas noticias", noticias_path %></a></li>
                     <li><a><%= link_to "Crear noticia", new_noticia_path%></a></li>
@@ -28,6 +33,9 @@
                 <% end %>
                 </ul>
             </li>
+            <!-- fin de noticias -->
+
+            <!-- inicio de curso -->
             <% if current_user.has_role? :admin %>
             <li>
                 <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Cursos</span> <span class="fa arrow"></span></a>
@@ -39,7 +47,9 @@
                 </ul>
             </li>
             <% end %>
+            <!--Fin de curso-->
 
+            <!-- inicio de asistencia -->
             <% if current_user.has_role? :admin %>
             <li>
                 <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Asistencias</span> <span class="fa arrow"></span></a>
@@ -50,8 +60,18 @@
 
                 </ul>
             </li>
-            <% end %>
+            <% elsif current_user.has_role? :docente %>
+            <li>
+                <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Asistencias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to "Crear Asistencia", new_asistencia_path %></a></li>
 
+                    <li><a><%= link_to "Listado Asistencias", asistencias_path%></a></li>
+
+                </ul>
+            </li>
+            <% end %>
+            <!-- fin de asistencia -->
             <% if current_user.has_role? :estudiante %>
             <li>
                 <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Notas</span> <span class="fa arrow"></span></a>
@@ -76,26 +96,46 @@
 
                 </ul>
             </li>
+            <%end%>
+            <!-- inicio de materia -->
+            <% if current_user.has_role? :docente %>
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Materias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Mis materias", user_materias_path(current_user.id) %></a></li>
+                    
+                    <!-- <li><a><%= link_to  "Crear materia", new_materia_path() %></a></li>
 
+                    <li><a><%= link_to  "Lista de materias", materias_path() %></a></li> -->
+                </ul>
+            </li>
+            <% elsif current_user.has_role? :admin %>
             <li>
                 <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Materias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a><%= link_to  "Mis materias", user_materias_path(current_user.id) %></a></li>
                     
                     <li><a><%= link_to  "Crear materia", new_materia_path() %></a></li>
+
+                    <li><a><%= link_to  "Lista de materias", materias_path() %></a></li>
                 </ul>
             </li>
-            <%end%>
+            <% end %>
+            <!-- fin de materia-->
+
+            <!-- inicio de rol -->
+
              <% if current_user.has_role? :admin %>
                 <li>
                     <a href="index.html"><i class="fas fa-key"></i><span class="nav-label">Roles</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a><%= link_to  "Nuevo Rol", new_role_path %></a></li>
                         <li><a><%= link_to  "Listado Roles", roles_path %></a></li>
-
                     </ul>
                 </li>
             <%end%>
+
+            <!-- fin de rol -->
         </ul>
 
     </div>

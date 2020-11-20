@@ -30,7 +30,7 @@ class AsistenciasController < ApplicationController
     @asistencia= Asistencia.new(asistencia_params)
     if @asistencia.save
       redirect_to asistencias_path
-      flash.notice= 'Asistencia creado'
+      flash.notice= 'Asistencia creada'
     else
       render :new
     end
@@ -44,7 +44,7 @@ class AsistenciasController < ApplicationController
   def update
     if @asistencia.update(asistencia_params)
       redirect_to asistencias_path
-      flash.notice= 'Asistencia actualizado'
+      flash.notice= 'Asistencia actualizada'
     else
       render :edit
     end
@@ -53,7 +53,7 @@ class AsistenciasController < ApplicationController
   def destroy
     @asistencia.destroy
     redirect_to asistencias_path
-    flash.alert= 'Asistencia eliminado'
+    flash.alert= 'Asistencia eliminada'
   end
 
   private
