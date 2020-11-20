@@ -58,7 +58,7 @@
                                     <% end %>
 
 
-                                    <%= link_to anotacion_comentario_path(@anotacion, comentario),method: :delete,class: "btn btn-danger btn-xs" do %>
+                                    <%= link_to anotacion_comentario_path(@anotacion, comentario),method: :delete, data: { confirm: "¿Estas seguro de eliminar este comentario?"},class: "btn btn-danger btn-xs" do %>
                                     <%= fa_icon "trash" %>
                                     Eliminar
                                     <% end %>

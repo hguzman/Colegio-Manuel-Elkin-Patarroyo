@@ -1,5 +1,8 @@
-<h1>Todas las notas</h1>
+<h1 class="text-center">Todas las notas</h1>
 
+<% if current_user.has_role? :admin %>
+<div class="col"><%= link_to "Atras", curso_users_path(@user.curso, @user), class: "btn btn-warning mt-2 mb-2"%></div>
+<% end %>
 <%= pie_chart @grafica_notas %>
 <div class="col-md-4 mb-2">
   <div class="row">

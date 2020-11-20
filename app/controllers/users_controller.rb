@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         redirect_to users_path
-        flash[:success] = "User creado"
+        flash[:success] = "Usuario creado"
         # UserMailer.bienvenida_mailer(@user).deliver_now
       else
         render :new
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     def update
       if @user.update(user_params)
         redirect_to users_path
-        flash.notice = "User editado"
+        flash.notice = "Usuario editado"
       else
         render :edit
       end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     def destroy
       @user.destroy
       redirect_to users_path
-      flash.alert = "User eliminado"
+      flash.alert = "Usuario eliminado"
     end
 
     def edit
