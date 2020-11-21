@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
+<p>Bienvenido <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<div style="display: flex; justify-content: center;">
+    <img src="https://raw.githubusercontent.com/hguzman/Colegio-Manuel-Elkin-Patarroyo/master/app/assets/images/logo_neopa.jpeg" alt="Logo NEOPA" width="200" height="200" style="border-radius: 50%; margin: auto;"> 
+</div>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>
+Puede confirmar el correo electrónico de su cuenta a través del siguiente enlace:
+</p>
+
+<p><%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>

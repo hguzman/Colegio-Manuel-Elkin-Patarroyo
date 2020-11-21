@@ -67,19 +67,19 @@
                                 <p><%= sanitize anotacion.contenido%></p>
                                 <div class="actions">
                                 <% if current_user.has_role? :admin %>
-                                    <%= link_to  edit_user_anotacion_path(@user, anotacion), class: "btn btn-xs btn-warning" do %>
+                                    <%= link_to  edit_user_anotacion_path(@user, anotacion), class: "btn btn-sm btn-warning" do %>
                                     <%= fa_icon "pencil-alt" %>
                                     Editar
                                     <% end %>
                                     
                                     
-                                    <%= link_to user_anotacion_path(@user, anotacion),method: :delete,class: "btn btn-danger btn-xs" do %>
+                                    <%= link_to user_anotacion_path(@user, anotacion),method: :delete,class: "btn btn-danger btn-sm" do %>
                                     <%= fa_icon "trash" %>
                                     Eliminar
                                     <% end %>
                                 <%end%>
 
-                                    <%= link_to anotacion_comentarios_path(anotacion),class: "btn btn-info btn-xs" do %>
+                                    <%= link_to anotacion_comentarios_path(anotacion),class: "btn btn-info btn-sm" do %>
                                     <i class="fas fa-comment-dots"></i>
                                     Comentarios
                                     <% end %>

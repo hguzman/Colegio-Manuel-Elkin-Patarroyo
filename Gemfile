@@ -5,6 +5,8 @@ ruby '2.6.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
+# inicio de gemas personalizadas
+
 gem 'bootstrap', '~> 4.5.0'
 gem 'font_awesome5_rails'
 gem 'simple_form'
@@ -24,11 +26,16 @@ gem 'trix'
 # Gema de permisos
 gem 'pundit', '~> 2.1'
 
-#Gema de graficas
+# Gema de graficas
 gem "chartkick"
 
-#Gema complementos de las graficas
+# Gema complementos de las graficas
 gem 'groupdate'
+
+# Gema de recordatorio
+gem 'operator_recordable'
+
+# fin de gemas personalizadas
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'

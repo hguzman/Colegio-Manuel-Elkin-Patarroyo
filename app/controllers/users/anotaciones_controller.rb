@@ -1,5 +1,6 @@
 class Users::AnotacionesController < ApplicationController
     before_action :set_user
+    # before_action :set_operator, only: %i[create update]
     before_action :set_anotacion, only: [:show, :edit, :update, :destroy]
 
 
@@ -35,7 +36,7 @@ class Users::AnotacionesController < ApplicationController
     def update
       if @anotacion.update(anotacion_params)
         flash.notice = "Anotación actualizada"
-        redirect_to  user_anotacion_path(@user, @anotacion)
+        redirect_to  user_anotaciones_path(@user, @anotacion)
       else
         render :edit
       end
@@ -52,6 +53,10 @@ class Users::AnotacionesController < ApplicationController
     def set_anotacion
       @anotacion = @user.anotaciones.find(params[:id])
     end
+
+    # def set_operator
+    #    OperatorRecordable.operator = current_user
+    # end
 
     def set_user
       @user = User.find(params[:user_id])

@@ -10,6 +10,12 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Bienvenido(a) a NEOPA')
     end
 
+    def actualizar_user_mailer(user)
+      @user = User.last
+      mail(to: @user.email, subject: 'Información actualizada')
+    end
+    
+
     def noticia_mailer(user, noticia)
       @user = user
       @noticia = noticia

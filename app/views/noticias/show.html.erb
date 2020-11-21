@@ -30,14 +30,13 @@ Atras
                             Editar
                             <% end %>
 
-                            <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
-                                data-target="#exampleModalCenter">
-                                <%= fa_icon "trash" %>
+                            <%= link_to noticia_path(@noticia.id),method: :delete, data: {confirm: "¿Estas seguro de eliminar esta noticias?"},class: "btn btn-danger btn-xs" do %>
+                              <%= fa_icon "trash" %>
                                 Eliminar
-                            </button>
+                            <% end %>
                          <% end %>   
 
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -51,14 +50,11 @@ Atras
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-info btn-sm" data-dismiss="modal"><i class="fas fa-times-circle mr-1"></i>Cancelar</button>
-                                      <%= link_to noticia_path(@noticia.id),method: :delete,class: "btn btn-danger btn-sm" do %>
-                                      <%= fa_icon "trash" %>
-                                      Eliminar
-                                      <% end %>
+
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </div> -->
                         </div>
                         
                     </div>

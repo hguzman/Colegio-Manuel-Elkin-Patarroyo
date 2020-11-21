@@ -52,7 +52,7 @@
             <!-- inicio de asistencia -->
             <% if current_user.has_role? :admin %>
             <li>
-                <a href="index.html"><i class="fas fa-landmark"></i> <span class="nav-label">Asistencias</span> <span class="fa arrow"></span></a>
+                <a href="index.html"><i class="fas fa-stamp"></i> <span class="nav-label">Asistencias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a><%= link_to "Crear Asistencia", new_asistencia_path %></a></li>
 
@@ -111,7 +111,7 @@
             </li>
             <% elsif current_user.has_role? :admin %>
             <li>
-                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Materias</span> <span class="fa arrow"></span></a>
+                <a href="index.html"><i class="fas fa-certificate"></i><span class="nav-label">Materias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a><%= link_to  "Mis materias", user_materias_path(current_user.id) %></a></li>
                     
