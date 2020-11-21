@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         redirect_to users_path
         flash.notice = "Usuario editado"
+        UserMailer.actualizar_user_mailer(@user).deliver_now
       else
         render :edit
       end
