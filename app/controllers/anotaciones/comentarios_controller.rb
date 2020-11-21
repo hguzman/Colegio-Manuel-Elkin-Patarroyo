@@ -1,5 +1,5 @@
 class Anotaciones::ComentariosController < ApplicationController
-  before_action :set_anotacion
+  before_action :set_anotacion, :set_operator, :set_anotacion_creator
   before_action :set_comentario, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -49,6 +49,14 @@ class Anotaciones::ComentariosController < ApplicationController
 
   def set_comentario
     @comentario = @anotacion.comentarios.find(params[:id])
+  end
+
+  def set_anotacion_creator
+    @user = Anotacion.find(params[:anotacion_id]).creator
+  end
+
+  def set_operator
+    OperatorRecordable.operator = current_user
   end
 
   def comentario_params

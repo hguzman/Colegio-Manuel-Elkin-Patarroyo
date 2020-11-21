@@ -17,5 +17,8 @@
 
     <td>
         <%= user.direccion %>
-    </td>                  
+    </td>
+    <td>
+        <%= link_to  "Anotaciones", user_anotaciones_path(user), class: "btn btn-danger btn-sm btn-block" %>
+    </th>                  
 </tr> 
