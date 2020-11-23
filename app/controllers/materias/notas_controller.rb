@@ -3,6 +3,7 @@ class Materias::NotasController < ApplicationController
     before_action :set_nota, only: [:show, :edit, :update, :destroy]
   
     def index
+      # authorize Nota
       @notas = @materia.notas
       @promedio_estudiante = @materia.notas.average(:nota) || 0
       respond_html_and_csv
@@ -18,10 +19,11 @@ class Materias::NotasController < ApplicationController
     end
   
     def show
-  
+      # authorize @nota
     end
   
     def new
+      # authorize @nota
       @nota = Nota.new
     end
   
@@ -36,7 +38,7 @@ class Materias::NotasController < ApplicationController
     end
   
     def edit
-  
+      # authorize @nota
     end
   
     def update

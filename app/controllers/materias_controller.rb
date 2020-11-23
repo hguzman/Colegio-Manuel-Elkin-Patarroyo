@@ -8,7 +8,7 @@ class MateriasController < ApplicationController
   end
 
   def show
-    # authorize @materia
+    authorize @materia
   end
 
   def new
@@ -27,7 +27,7 @@ class MateriasController < ApplicationController
   end
 
   def edit
-    # authorize @materia
+    authorize @materia
   end
 
   def update

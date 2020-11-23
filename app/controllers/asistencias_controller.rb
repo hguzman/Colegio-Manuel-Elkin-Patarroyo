@@ -4,14 +4,14 @@ class AsistenciasController < ApplicationController
 
   def index
     
-   
+    # authorize Asistencia
     @asistencias = Asistencia.all
     @grafica_asistencia = Asistencia.group_by_day(:created_at).count
 
   end
 
   def show
-
+    # authorize @asistencia
     @users=@asistencia.users
   
 
@@ -20,10 +20,7 @@ class AsistenciasController < ApplicationController
   def new
     
     @asistencia = Asistencia.new
-
-
-    
-
+    # authorize @asistencia
   end
 
   def create
@@ -37,8 +34,7 @@ class AsistenciasController < ApplicationController
   end
 
   def edit
-
-
+    # authorize @asistencia
   end
 
   def update
