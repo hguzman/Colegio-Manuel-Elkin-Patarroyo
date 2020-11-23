@@ -6,6 +6,7 @@ class Users::AnotacionesController < ApplicationController
 
 
     def index
+      authorize Anotacion
       @anotaciones = @user.anotaciones
 
     end
@@ -13,13 +14,17 @@ class Users::AnotacionesController < ApplicationController
 
 
     def show
+      
     end
 
     def edit
+      authorize @anotacion
     end
 
     def new
+      
       @anotacion = @user.anotaciones.new
+      authorize @anotacion
     end
 
     def create

@@ -37,9 +37,13 @@
                 <div class="ibox-title">
                     <h5>Observaciones </h5>
                     <% if current_user.has_role? :admin %>
-                    <%= link_to new_user_anotacion_path(@user,@anotacion), class: "btn btn-primary" do %>
-                    <%= fa_icon "plus" %>
-                    <% end %>
+                        <%= link_to new_user_anotacion_path(@user,@anotacion), class: "btn btn-primary" do %>
+                        <%= fa_icon "plus" %>
+                        <% end %>
+                    <% elsif current_user.has_role? :docente %>
+                        <%= link_to new_user_anotacion_path(@user,@anotacion), class: "btn btn-primary" do %>
+                        <%= fa_icon "plus" %>
+                        <% end %>    
                     <%end%>
 
                     <div class="ibox-tools">
