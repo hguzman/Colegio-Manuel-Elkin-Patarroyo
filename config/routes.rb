@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
- 
+
+#  get 'tareas/index'
+#  get 'tareas/new'
+#  get 'tareas/show'
+#  get 'tareas/edit'
+resources :tareas
   namespace :materias do
     get 'users/index'
   end
@@ -7,11 +12,11 @@ Rails.application.routes.draw do
     get 'users/index'
   end
 
-  
- 
+
+
   # Ruta por defecto
   root to: 'noticias#index'
- 
+
   devise_for :users
   resources :noticias
   resources :roles
@@ -40,10 +45,10 @@ Rails.application.routes.draw do
   resources :anotaciones do
     resources :comentarios, module: :anotaciones
   end
-  
 
 
 
-  
+
+
 
 end
