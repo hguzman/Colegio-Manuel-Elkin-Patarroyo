@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_create :user_mailer
   devise :database_authenticatable,
-         :recoverable, :rememberable, :validatable, :timeoutable, :registerable
+         :recoverable, :rememberable, :validatable, :timeoutable
 
          has_many :anotaciones
          belongs_to :curso, optional: true
