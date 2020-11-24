@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="box">
           <%= simple_form_for @tarea  do |f| %>
-            <div class="col"><%= f.association :user , prompt: "Seleccionar docente", label_method: :email %></div>
+            <%= f.association :user , prompt: "Seleccionar docente", label_method: :email %>
             <%= f.input :tarea %>
             <%= f.input :solucion %>
             <label for="">Cargar evidencia:</label><br>
