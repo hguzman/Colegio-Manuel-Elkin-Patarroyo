@@ -3,6 +3,7 @@ class Users::NotasController < ApplicationController
   before_action :set_nota, only: [:show, :edit, :update, :destroy]
 
   def index
+    # authorize Nota
     @notas = @user.notas
     @grafica_notas = Nota.group_by_day(:created_at).count
     @promedio_estudiante = @user.notas.average(:nota) || 0
@@ -19,9 +20,11 @@ class Users::NotasController < ApplicationController
   end
 
   def show
+    # authorize @nota
   end
 
   def new
+    # authorize @nota
     @nota = Nota.new
   end
 
@@ -36,12 +39,13 @@ class Users::NotasController < ApplicationController
   end
 
   def edit
+    # authorize @nota
   end
 
   def update
     if @nota.update(nota_params)
       flash.notice = "Nota actualizada"
-      redirect_to edit_user_nota_path(@user,@nota)
+      redirect_to user_nota_path(@user,@nota)
     else
       render edit
     end

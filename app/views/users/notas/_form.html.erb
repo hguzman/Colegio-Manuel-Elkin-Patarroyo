@@ -7,10 +7,8 @@
           <%= simple_form_for [@user, @nota]  do |f| %>
             <%= f.input :logro %>
             <%= f.input :nota %>
-            <div class="row">
-              <div class="col"><%= f.button :submit, class:"btn btn-primary btn-block" %></div>
-              <div class="col"><%= link_to "Atras", user_notas_path(@user, @nota), class: "btn btn-warning btn-block"%></div>
-            </div>
+            <%= f.button :submit, class:"btn btn-primary btn-block" %>
+              
             
             
           <% end %>

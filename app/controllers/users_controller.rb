@@ -3,17 +3,18 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
-      # authorize User
+      authorize User
       @users=User.all
       @grafica_user = User.group_by_day(:created_at, format: "%a").count
     end
 
     def show
+      authorize @user
     end
 
     def new
       @user= User.new
-       # authorize @user
+      authorize @user
     end
 
     def create
@@ -45,6 +46,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+      authorize @user
     end
 
     def set_user
