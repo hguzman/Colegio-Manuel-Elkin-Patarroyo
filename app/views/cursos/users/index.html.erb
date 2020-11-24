@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col-md-12">
     <h1 >Estudiantes del curso: <strong class="text-capitalize"> <%=@curso.nombre%></strong></h1>
+    <%= link_to new_tarea_path, class:"btn btn-info btn-sm mb-2" do %>Nueva Tarea
+    <%= fa_icon "plus" %>
+    <% end %>
       <div class="card shadow-lg">
             <div class="card-body">
             <div class="box">
@@ -14,16 +17,16 @@
                                 <th>Correo</th>
                                 <th>Dirección</th>
                                 <th class="text-danger">Anotaciones</th>
-                            </tr>    
+                            </tr>
                         </thead>
                         <tbody>
                             <%= render @users %>
                         </tbody>
                     </table>
-                    
+
                 </div>
-            
+
             </div>
-        </div>    
+        </div>
     </div>
-</div>    
+</div>
