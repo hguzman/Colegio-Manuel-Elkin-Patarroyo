@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
          has_and_belongs_to_many :asistencias
   def user_mailer
-    UserMailer.bienvenida_mailer(@user).deliver_now
+    UserMailer.bienvenida_mailer(@user).deliver_later
   end
 
   # validates :identifiacion, :nombres, :apellidos, :telefono, :direccion, :email, :password, presence: true
@@ -28,4 +28,9 @@ class User < ApplicationRecord
   # validates :identifiacion, length: { maximum: 10 }
   # validates :nombre, :apellido, format: { with: /\A[a-zA-Z]+\z/,
   #  message: "Solo se permiten letras" }
+
+  # Trabajos en segundo plano
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end
