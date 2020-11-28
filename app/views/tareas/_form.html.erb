@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <div class="box">
+          <%= simple_form_for @tarea  do |f| %>
+            <%= f.association :user , prompt: "Seleccionar docente", label_method: :email %>
+            <%= f.input :tarea %>
+            <%= f.input :solucion %>
+            <label for="">Cargar evidencia:</label><br>
+            <%= f.file_field :adjunto %>
+            <br>
+            <%= f.button :submit, class:"btn btn-primary mt-2" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

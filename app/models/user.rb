@@ -18,6 +18,8 @@ class User < ApplicationRecord
          has_many :anotaciones, dependent: :destroy
 
          has_and_belongs_to_many :asistencias
+
+         has_many :tareas
   def user_mailer
     UserMailer.bienvenida_mailer(@user).deliver_later
   end

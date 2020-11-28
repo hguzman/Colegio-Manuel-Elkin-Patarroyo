@@ -4,14 +4,11 @@
     <div class="card">
       <div class="card-body">
         <div class="box">
-          <%= simple_form_for @materia do |m| %>
-            <%= m.input :codigo %>
-            <%= m.input :nombre %>
-            <div class="row">
-              <div class="col"><%= m.association :user , prompt: "Seleccionar docente", label_method: :nombres %></div>
-              <div class="col"><%= m.association :curso , prompt: "Seleccionar curso", label_method: :nombre %></div>
-            </div>            
-            <%= m.button :submit, class: "btn btn-primary" %>
+          <%= simple_form_for @materia do |a| %>
+           <%= a.input :codigo %>
+          <%= a.input :nombre %>
+          <%= a.association :users, as: :check_boxes, label_method: :email%>
+          <%= a.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>

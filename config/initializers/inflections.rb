@@ -12,6 +12,7 @@
     inflect.irregular "anotacion" , "anotaciones"
     inflect.irregular "comentario" , "comentarios"
     inflect.irregular "asistencia" , "asistencias"
+    inflect.irregular "tarea" , "tareas"
   #   inflect.uncountable %w( fish sheep )
  end
 
