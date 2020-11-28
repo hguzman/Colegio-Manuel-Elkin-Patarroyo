@@ -35,6 +35,9 @@ gem 'groupdate'
 # Gema de recordatorio
 gem 'operator_recordable'
 
+# Gema de trabajos en segundo plano
+gem 'delayed_job_active_record'
+
 # fin de gemas personalizadas
 
 # Use sqlite3 as the database for Active Record
