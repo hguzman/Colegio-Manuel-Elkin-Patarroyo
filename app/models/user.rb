@@ -18,9 +18,9 @@ class User < ApplicationRecord
          has_many :anotaciones, dependent: :destroy
 
          has_and_belongs_to_many :asistencias
-  def user_mailer
-    UserMailer.bienvenida_mailer(@user).deliver_later
-  end
+  # def user_mailer
+  #   UserMailer.bienvenida_mailer(@user).deliver_later
+  # end
 
   # validates :identifiacion, :nombres, :apellidos, :telefono, :direccion, :email, :password, presence: true
   # validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
