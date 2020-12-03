@@ -32,7 +32,7 @@ class Users::NotasController < ApplicationController
     @nota = @user.notas.new(nota_params)
     if @nota.save
       flash[:success] = "Nota creada"
-      redirect_to edit_user_nota_path(@user,@nota)
+      redirect_to user_notas_path(@user,@notas)
     else
       render :new
     end
@@ -69,6 +69,6 @@ class Users::NotasController < ApplicationController
   end
 
   def nota_params
-    params.require(:nota).permit(:logro,:nota)
+    params.require(:nota).permit(:logro,:nota,:materia_id)
   end
 end

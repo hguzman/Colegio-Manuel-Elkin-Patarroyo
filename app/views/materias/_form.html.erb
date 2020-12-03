@@ -7,7 +7,11 @@
           <%= simple_form_for @materia do |a| %>
            <%= a.input :codigo %>
           <%= a.input :nombre %>
-          <%= a.association :users, as: :check_boxes, label_method: :email%>
+          <div class="row">
+            <%= a.association :curso,prompt:"Seleccionar curso", label_method: :nombre%>
+            <%= a.association :user,prompt:"Seleccionar docente", label_method: :email%>
+           
+          </div>
           <%= a.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>

@@ -7,25 +7,31 @@
     </td>
 
     <td>
-      <%= link_to  user_nota_path(@user, nota), class: "btn btn-success btn-sm" do %>
-      <%= fa_icon "eye" %>
-      <% end %>
+      <%= nota.materia_id%>
     </td>
 
-    <td>
-      <%= link_to  edit_user_nota_path(@user, nota), class: "btn btn-warning btn-sm" do %>
-      <%= fa_icon "pencil-alt" %>
-      <% end %>
-    </td>
+    <% if current_user.has_role? :admin %>
+
+      <td>
+        <%= link_to  user_nota_path(@user, nota), class: "btn btn-success btn-sm" do %>
+        <%= fa_icon "eye" %>
+        <% end %>
+      </td>
+
+      <td>
+        <%= link_to  edit_user_nota_path(@user, nota), class: "btn btn-warning btn-sm" do %>
+        <%= fa_icon "pencil-alt" %>
+        <% end %>
+      </td>
 
 
-    <td>
-            <%= link_to user_nota_path(@user, nota), class: "btn btn-danger btn-md" , method: :delete, data: { confirm: "¿Estas seguro de eliminar esta nota?" } do %>
-            <%= fa_icon "trash" %>
-            <% end %>
-    </td>
+      <td>
+              <%= link_to user_nota_path(@user, nota), class: "btn btn-danger btn-md" , method: :delete, data: { confirm: "¿Estas seguro de eliminar esta nota?" } do %>
+              <%= fa_icon "trash" %>
+              <% end %>
+      </td>
 
-        <!-- Modal
+    <%end%>   <!-- Modal
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

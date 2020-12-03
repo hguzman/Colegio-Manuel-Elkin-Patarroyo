@@ -21,7 +21,7 @@ class UserPolicy
     end
 
     def edit?
-    @users.has_role? :admin
+    @user.has_role? :admin
 
     end
 end
