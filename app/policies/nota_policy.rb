@@ -20,7 +20,7 @@ class NotaPolicy
     
 
     def edit?
-      @user.has_role? :admin or :docente
+      @user.has_role? :admin
     end
     
 end

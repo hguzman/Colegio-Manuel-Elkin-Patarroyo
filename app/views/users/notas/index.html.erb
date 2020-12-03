@@ -8,7 +8,7 @@
 <% end %>
 <div class="col-md-4 mb-2">
   <div class="row">
-   <% if current_user.has_role? :admin %>
+   <% if current_user.has_role? :docente %>
     <div class="col">
       <%= link_to new_user_nota_path(@user,@nota), class: "btn btn-info btn-block" do %>
         Nueva nota
@@ -38,9 +38,12 @@
                 <tr>
                     <th>Logro</th>
                     <th>Nota</th>
-                    <th class="text-success">Mostrar</th>
-                    <th class="text-warning">Editar</th>
-                    <th class="text-danger">Eliminar</th>
+                    <th>Materia</th>
+                     <% if current_user.has_role? :admin %>
+                      <th class="text-success">Mostrar</th>
+                      <th class="text-warning">Editar</th>
+                      <th class="text-danger">Eliminar</th>
+                    <%end%>
                 </tr>
               </thead>
               <tbody>

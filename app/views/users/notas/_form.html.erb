@@ -7,10 +7,8 @@
           <%= simple_form_for [@user, @nota]  do |f| %>
             <%= f.input :logro %>
             <%= f.input :nota %>
+             <%= f.association :materia,prompt:"Seleccionar curso", label_method: :nombre%>
             <%= f.button :submit, class:"btn btn-primary btn-block" %>
-              
-            
-            
           <% end %>
         </div>
       </div>
