@@ -22,9 +22,9 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Nuevo evento')
     end
 
-    def noticia_mailer(user, tarea)
-      @user = user
-      @tarea = tarea
-      mail(to: @user.email, subject: 'Nueva tarea asignada')
-    end
+    # def noticia_mailer(user, tarea)
+    #   @user = user
+    #   @tarea = tarea
+    #   mail(to: @user.email, subject: 'Nueva tarea asignada')
+    # end
 end
