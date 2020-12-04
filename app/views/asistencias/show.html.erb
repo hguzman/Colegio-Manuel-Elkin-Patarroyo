@@ -10,7 +10,9 @@
                             <tr>  
                                 <th>Identificacion</th>
                                 <th>Nombres</th>
-                                <th>Apellidos</th>       
+                                <th>Segundo nombre</th>
+                                <th>Apellidos</th>  
+                                <th>Segundo apellido</th>     
                             </tr>
                         </thead>
                         <tr>
@@ -21,10 +23,15 @@
                             <td>
                                 <%= user.nombres%>
                             </td>
-
+                            <td>
+                                <%= user.segundo_nombre%>
+                            </td>
                             <td>
                                 <%= user.apellidos %>
                             </td> 
+                            <td>
+                                <%= user.segundo_apellido%>
+                            </td>
                         </tr> 
                         <%end %>
 
