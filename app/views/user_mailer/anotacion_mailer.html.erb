@@ -3,13 +3,11 @@
   <img src="https://raw.githubusercontent.com/hguzman/Colegio-Manuel-Elkin-Patarroyo/master/app/assets/images/logo_neopa.jpeg" alt="Logo NEOPA" width="200" height="200" style="border-radius: 50%; margin: auto;"> 
 </div>
 <h4>Ten un excelente dia,
-  <%= @user.nombres %> <b></b> <%= @user.apellidos %>.
+  <h2><strong><%= @user.nombres %> <b></b> <%= @user.segundo_nombre %> <b></b> <%= @user.apellidos %> <b></b> <%= @user.segundo_apellido %> </strong></h2>
 </h4>
 <br>
 <p>
-  Una nueva anotacion se ha creado dentro del sistema de Seguimiento al estudiante, con título
-  <strong> <%= @anotacion.titulo %> </strong> y descripción <%= sanitize @anotacion.contenido %>. 
-  <br>
+  Una nueva anotacion se ha creado dentro del sistema de Seguimiento al estudiante, con título <strong> <%= @anotacion.titulo %> </strong> y descripción <strong><%= sanitize @anotacion.contenido %></strong>
   Favor verificala y si tienes oportunidad comentala dentro de la aplicación, en el boton comentario,realiza tú apresiación de la situación, agradecemos tus comentarios.
 </p>
 <p>
