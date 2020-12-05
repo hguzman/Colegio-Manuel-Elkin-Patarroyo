@@ -8,7 +8,7 @@
                         <%= image_tag current_user.avatar.thumb.url,class: "img-profile rounded-circle", :style=>"width:100px"%>
                     </div>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">        
-                        <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id) %>
+                        <%= link_to  current_user.primer_nombre + " " + current_user.primer_apellido, user_path(current_user.id) %>
                         <br>
                         <span class="text-white"><%= current_user.email%></span>                  
                     </a>

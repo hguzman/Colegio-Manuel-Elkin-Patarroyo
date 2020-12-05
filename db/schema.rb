@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_235324) do
+ActiveRecord::Schema.define(version: 2020_12_05_183325) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -124,9 +124,9 @@ ActiveRecord::Schema.define(version: 2020_12_03_235324) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "identifiacion"
-    t.string "nombres"
-    t.string "apellidos"
+    t.integer "identificacion"
+    t.string "primer_nombre"
+    t.string "primer_apellido"
     t.integer "telefono"
     t.string "direccion"
     t.integer "curso_id"
