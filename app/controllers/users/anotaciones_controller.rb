@@ -3,15 +3,11 @@ class Users::AnotacionesController < ApplicationController
     # before_action :set_operator, only: %i[create update]
     before_action :set_anotacion, only: [:show, :edit, :update, :destroy]
 
-
-
     def index
       authorize Anotacion
       @anotaciones = @user.anotaciones
 
     end
-
-
 
     def show
       
@@ -31,7 +27,7 @@ class Users::AnotacionesController < ApplicationController
       @anotacion = @user.anotaciones.new(anotacion_params)
       if @anotacion.save
         flash[:success] = "Anotación creada"
-        redirect_to user_anotaciones_path(@user, @anotacion)
+        redirect_to user_anotaciones_path(@user, @anotaciones)
         UserMailer.anotacion_mailer(@user, @anotacion).deliver_now
       else
         render :new
