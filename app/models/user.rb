@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
  # validates :identifiacion, :nombres, :apellidos,:segundo_apellido, :telefono, :direccion, :email, :password, presence: true
-  validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
-  validates :identificacion, :email, uniqueness: true
-  validates :identificacion, length: { maximum: 10 }
+  # validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
+  # validates :identificacion, :email, uniqueness: true
+  # validates :identificacion, length: { maximum: 10 }
 end
