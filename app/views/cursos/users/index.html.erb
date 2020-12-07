@@ -1,9 +1,25 @@
 <div class="row">
     <div class="col-md-12">
     <h1 >Estudiantes del curso: <strong class="text-capitalize"> <%=@curso.nombre%></strong></h1>
-    <%= link_to new_tarea_path, class:"btn btn-info btn-sm mb-2" do %>Nueva Tarea
-    <%= fa_icon "plus" %>
-    <% end %>
+    <!-- Inicio de asistencia -->
+    <% if current_user.has_role? :admin %>
+        <%= link_to new_asistencia_path, class:"btn btn-warning btn-sm mb-2" do %>Asistencia
+        <%= fa_icon "plus" %>
+        <% end %>
+
+        <%= link_to asistencias_path, class:"btn btn-warning btn-sm mb-2" do %>Ver asistencia
+        <%= fa_icon "eye" %>
+        <% end %>
+    <% elsif current_user.has_role? :docente  %>    
+        <%= link_to new_asistencia_path, class:"btn btn-warning btn-sm mb-2" do %>Asistencia
+        <%= fa_icon "plus" %>
+        <% end %>
+
+        <%= link_to asistencias_path, class:"btn btn-success btn-sm mb-2" do %>Ver asistencia
+        <%= fa_icon "eye" %>
+        <% end %>
+    <% end %>  
+    <!-- Fin de asistencia -->  
       <div class="card shadow-lg">
             <div class="card-body">
             <div class="box">
@@ -12,9 +28,9 @@
                         <thead>
                             <tr>
                                 <th>Identificacion</th>
-                                <th>Nombres</th>
+                                <th>Primer nombre</th>
                                 <th>Segundo nombre</th>
-                                <th>Apellido</th>
+                                <th>Primer apellido</th>
                                 <th>Segundo apellido</th>
                                 <th>Correo</th>
                                 <th>Dirección</th>
