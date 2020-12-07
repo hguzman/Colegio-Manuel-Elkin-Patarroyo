@@ -31,7 +31,7 @@ class Materias::NotasController < ApplicationController
       @nota = @materia.notas.new(nota_params)
       if @nota.save
         flash[:success] = "Nota creada"
-        redirect_to edit_materia_nota_path(@materia, @nota)
+        redirect_to edit_materia_nota_path(@materia)
       else
         render :new
       end
@@ -44,7 +44,7 @@ class Materias::NotasController < ApplicationController
     def update
       if @nota.update(nota_params)
         flash[:notice] = "Nota actualizada"
-        redirect_to edit_materia_nota_path(@materia,@nota)
+        redirect_to edit_materia_nota_path(@materia)
       else
   
         render edit

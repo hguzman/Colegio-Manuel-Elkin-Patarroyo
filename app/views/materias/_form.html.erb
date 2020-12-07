@@ -5,11 +5,10 @@
       <div class="card-body">
         <div class="box">
           <%= simple_form_for @materia do |a| %>
-           <%= a.input :codigo %>
+          <%= a.input :codigo %>
           <%= a.input :nombre %>
-          <div class="row">
-            <div class="col"><%= a.association :curso,prompt:"Seleccionar curso", label_method: :nombre%></div>
-            <div class="col"><%= a.association :user,prompt:"Seleccionar docente", label_method: :email%></div>
+          <%= a.association :curso,prompt:"Seleccionar curso", label_method: :nombre%>
+          <%= a.association :user,prompt:"Seleccionar docente", :label_method => lambda {|user| "#{user.identificacion} | #{user.primer_nombre} #{user.segundo_nombre} #{user.primer_apellido} #{user.segundo_apellido} "} %>
           </div>
           <%= a.button :submit, class: "btn btn-primary" %>
           <% end %>

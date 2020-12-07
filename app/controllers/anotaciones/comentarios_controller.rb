@@ -1,5 +1,5 @@
 class Anotaciones::ComentariosController < ApplicationController
-  before_action :set_anotacion, :set_operator, :set_anotacion_creator
+  before_action :set_anotacion
   before_action :set_comentario, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,7 +17,7 @@ class Anotaciones::ComentariosController < ApplicationController
     @comentario = @anotacion.comentarios.new(comentario_params)
     if @comentario.save
       flash[:success] = "Comentario creado"
-      redirect_to anotacion_comentarios_path(@anotacion, @comentario)
+      redirect_to anotacion_comentarios_path(@anotacion)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Anotaciones::ComentariosController < ApplicationController
   def update
     if @comentario.update(comentario_params)
       flash[:notice] = "Comentario actualizado"
-      redirect_to anotacion_comentarios_path(@anotacion, @comentario)
+      redirect_to anotacion_comentarios_path(@anotacion)
     else
       render edit
     end
@@ -49,14 +49,6 @@ class Anotaciones::ComentariosController < ApplicationController
 
   def set_comentario
     @comentario = @anotacion.comentarios.find(params[:id])
-  end
-
-  def set_anotacion_creator
-    @user = Anotacion.find(params[:anotacion_id]).creator
-  end
-
-  def set_operator
-    OperatorRecordable.operator = current_user
   end
 
   def comentario_params

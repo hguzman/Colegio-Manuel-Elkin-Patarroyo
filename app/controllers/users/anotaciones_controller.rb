@@ -27,7 +27,7 @@ class Users::AnotacionesController < ApplicationController
       @anotacion = @user.anotaciones.new(anotacion_params)
       if @anotacion.save
         flash[:success] = "Anotación creada"
-        redirect_to user_anotaciones_path(@user, @anotaciones)
+        redirect_to user_anotaciones_path(@user)
         UserMailer.anotacion_mailer(@user, @anotacion).deliver_now
       else
         render :new
@@ -37,7 +37,7 @@ class Users::AnotacionesController < ApplicationController
     def update
       if @anotacion.update(anotacion_params)
         flash.notice = "Anotación actualizada"
-        redirect_to  user_anotaciones_path(@user, @anotacion)
+        redirect_to  user_anotaciones_path(@user)
       else
         render :edit
       end
