@@ -23,7 +23,6 @@ class NoticiasController < ApplicationController
       if @noticia.save
         redirect_to noticias_path
         flash[:success] = 'Noticia creada'
-        UserMailer.noticia_mailer(current_user, @noticia).deliver_now
       else
         render :new
       end
