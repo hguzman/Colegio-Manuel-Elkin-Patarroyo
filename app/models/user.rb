@@ -27,7 +27,7 @@ class User < ApplicationRecord
     UserMailer.bienvenida_mailer(@user).deliver_now
   end
 
-  validates :identificacion, :primer_nombre, :primer_apellido,:segundo_apellido, :telefono, :direccion, presence: true
+  validates :identificacion, :primer_nombre, :primer_apellido,:segundo_apellido, :direccion, presence: true
   validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
   validates :identificacion, :email, uniqueness: true
   validates :identificacion, length: { maximum: 10 }
