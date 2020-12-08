@@ -149,6 +149,7 @@ GEM
     operator_recordable (1.0.0)
       activerecord (>= 5.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.1)
     puma (4.2.1)
@@ -275,6 +276,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.10, >= 4.10.1)
   operator_recordable
+  pg
   puma (~> 4.1)
   pundit (~> 2.1)
   rails (~> 6.0.1)
