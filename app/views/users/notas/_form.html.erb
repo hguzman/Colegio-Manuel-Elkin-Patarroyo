@@ -1,13 +1,14 @@
 
 <div class="row">
-  <div class="col-md-6 mx-auto">
+  <div class="col-md-5 mx-auto">
     <div class="card shadow-lg">
       <div class="card-body">
         <div class="box">
           <%= simple_form_for [@user, @nota]  do |f| %>
             <%= f.input :logro %>
             <%= f.input :nota %>
-            <%= f.button :submit, class:"btn btn-primary" %>
+             <%= f.association :materia,prompt:"Seleccionar curso", label_method: :nombre%>
+            <%= f.button :submit, class:"btn btn-primary btn-block" %>
           <% end %>
         </div>
       </div>

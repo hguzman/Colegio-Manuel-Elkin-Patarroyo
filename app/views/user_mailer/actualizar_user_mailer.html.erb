@@ -1,0 +1,23 @@
+<h1 style="text-align: center;">Información actualizada</h1>
+
+<div style="display: flex; justify-content: center;">
+    <img src="https://raw.githubusercontent.com/hguzman/Colegio-Manuel-Elkin-Patarroyo/master/app/assets/images/logo_neopa.jpeg" alt="Logo NEOPA" width="200" height="200" style="border-radius: 50%; margin: auto;"> 
+</div>
+
+<h2><strong>Hola! <%= @user.primer_nombre %> <b></b> <%= @user.primer_apellido %> </strong></h2>
+
+<% if @resource.try(:update_email?) %>
+<p>
+    Tú correo ha sido actualizada correctamente, si tienes alguna inquietud comunicate con los encargados en la institución
+</p>
+<p>
+    Ten un exelente dia gracias por pertenecer a la familia <strong>NEOPA</strong>
+</p>
+<% else %>
+<p>
+    Tú Información ha sido actualizada correctamente, si tienes alguna inquietud comunicate con los encargados en la institución
+</p>
+<p>
+    Ten un exelente dia gracias por pertenecer a la familia <strong>NEOPA</strong>
+</p>
+<% end %>

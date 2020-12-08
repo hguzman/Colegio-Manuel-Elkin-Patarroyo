@@ -1,7 +1,9 @@
 <tr>
-    <td class="text-capitalize"><%= user.identifiacion%></td>
-    <td class="text-capitalize"><%= user.nombres%></td>
-    <td class="text-capitalize"><%= user.apellidos%></td>
+    <td class="text-capitalize"><%= user.identificacion%></td>
+    <td class="text-capitalize"><%= user.primer_nombre%></td>
+        <td class="text-capitalize"><%= user.segundo_nombre%></td>
+    <td class="text-capitalize"><%= user.primer_apellido%></td>
+    <td class="text-capitalize"><%= user.segundo_apellido%></td>
     <td class="text-capitalize"><%= user.direccion%></td>
     <td class="text-capitalize"><%= user.telefono%></td>
     <td><%=user.email%></td>
@@ -16,14 +18,14 @@
         <% end %>
     </td>
     <td>
-        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#exampleModalCenter">
-            <%= fa_icon "trash" %>
-        </button>
+          <%= link_to user_path(user), class: "btn btn-danger btn-md" , method: :delete, data: { confirm: "¿Estas seguro de eliminar este usuario?" } do %>
+          <%= fa_icon "trash" %>
+          <% end %>
     </td>
 
 </tr>
 
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -39,9 +41,8 @@
           <button type="button" class="btn btn-info btn-sm" data-dismiss="modal"><i class="fas fa-times-circle mr-1"></i>Cancelar</button>
           <%= link_to user_path(user), class: "btn btn-danger btn-sm" , method: :delete do %>
           <%= fa_icon "trash" %>
-          Eliminar
           <% end %>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

@@ -1,6 +1,11 @@
-<h1>Todas las notas</h1>
+<h1 class="text-center">Todas las notas</h1>
 
-<%= pie_chart @grafica_notas %>
+<% if current_user.has_role? :admin %>
+<div class="col"><%= link_to "Atras", curso_users_path(@user.curso, @user), class: "btn btn-warning mt-2 mb-2"%></div>
+<% end %>
+<% if current_user.has_role? :admin %>
+  <%= column_chart @grafica_notas %>
+<% end %>
 <div class="col-md-4 mb-2">
   <div class="row">
    <% if current_user.has_role? :admin %>
@@ -10,13 +15,27 @@
         <%= fa_icon "plus" %>
       <% end %>
     </div>
-   <%end%>
     <div class="col">
       <%= link_to user_notas_path(format: 'xlsx'), class: "btn btn-primary btn-block" do %>
         <i class="fas fa-file-excel"></i>
          Generar Excel
       <% end %>
     </div>
+   <% elsif current_user.has_role? :docente %> 
+       <div class="col">
+      <%= link_to new_user_nota_path(@user,@nota), class: "btn btn-info btn-block" do %>
+        Nueva nota
+        <%= fa_icon "plus" %>
+      <% end %>
+    </div>
+    <div class="col">
+      <%= link_to user_notas_path(format: 'xlsx'), class: "btn btn-primary btn-block" do %>
+        <i class="fas fa-file-excel"></i>
+         Generar Excel
+      <% end %>
+    </div>
+   <%end%>
+
  
   </div>
 </div>
@@ -32,9 +51,16 @@
                 <tr>
                     <th>Logro</th>
                     <th>Nota</th>
-                    <th class="text-success">Mostrar</th>
-                    <th class="text-warning">Editar</th>
-                    <th class="text-danger">Eliminar</th>
+                    <th>Materia</th>
+                     <% if current_user.has_role? :admin %>
+                      <th class="text-success">Mostrar</th>
+                      <th class="text-warning">Editar</th>
+                      <th class="text-danger">Eliminar</th>
+                    <% elsif current_user.has_role? :docente %>
+                      <th class="text-success">Mostrar</th>
+                      <th class="text-warning">Editar</th>
+                      <th class="text-danger">Eliminar</th>
+                    <%end%>
                 </tr>
               </thead>
               <tbody>

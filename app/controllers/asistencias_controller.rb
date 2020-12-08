@@ -4,14 +4,14 @@ class AsistenciasController < ApplicationController
 
   def index
     
-   
+    # authorize Asistencia
     @asistencias = Asistencia.all
     @grafica_asistencia = Asistencia.group_by_day(:created_at).count
 
   end
 
   def show
-
+    # authorize @asistencia
     @users=@asistencia.users
   
 
@@ -20,31 +20,27 @@ class AsistenciasController < ApplicationController
   def new
     
     @asistencia = Asistencia.new
-
-
-    
-
+    # authorize @asistencia
   end
 
   def create
     @asistencia= Asistencia.new(asistencia_params)
     if @asistencia.save
       redirect_to asistencias_path
-      flash.notice= 'Asistencia creado'
+      flash.notice= 'Asistencia creada'
     else
       render :new
     end
   end
 
   def edit
-
-
+    # authorize @asistencia
   end
 
   def update
     if @asistencia.update(asistencia_params)
       redirect_to asistencias_path
-      flash.notice= 'Asistencia actualizado'
+      flash.notice= 'Asistencia actualizada'
     else
       render :edit
     end
@@ -53,7 +49,7 @@ class AsistenciasController < ApplicationController
   def destroy
     @asistencia.destroy
     redirect_to asistencias_path
-    flash.alert= 'Asistencia eliminado'
+    flash.alert= 'Asistencia eliminada'
   end
 
   private

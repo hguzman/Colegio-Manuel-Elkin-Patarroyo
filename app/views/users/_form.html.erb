@@ -8,10 +8,15 @@
                         <%= simple_form_for @user do |f| %>
 
                         <h4>Datos Personales</h4>
+                        <%= f.input :identificacion %>
                         <div class="row">
-                            <div class="col"><%= f.input :identifiacion %></div>
-                            <div class="col"><%= f.input :nombres %></div>
-                            <div class="col"><%= f.input :apellidos %></div>
+                            <div class="col"><%= f.input :primer_nombre %></div>
+                            <div class="col"><%= f.input :segundo_nombre %></div>                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col"><%= f.input :primer_apellido %></div>
+                            <div class="col"><%= f.input :segundo_apellido %></div>
                         </div>
 
                         <h4>Información de contacto</h4>

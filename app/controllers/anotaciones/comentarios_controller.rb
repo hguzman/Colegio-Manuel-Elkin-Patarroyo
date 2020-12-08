@@ -17,7 +17,7 @@ class Anotaciones::ComentariosController < ApplicationController
     @comentario = @anotacion.comentarios.new(comentario_params)
     if @comentario.save
       flash[:success] = "Comentario creado"
-      redirect_to anotacion_comentarios_path(@anotacion, @comentario)
+      redirect_to anotacion_comentarios_path(@anotacion)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Anotaciones::ComentariosController < ApplicationController
   def update
     if @comentario.update(comentario_params)
       flash[:notice] = "Comentario actualizado"
-      redirect_to anotacion_comentarios_path(@anotacion, @comentario)
+      redirect_to anotacion_comentarios_path(@anotacion)
     else
       render edit
     end

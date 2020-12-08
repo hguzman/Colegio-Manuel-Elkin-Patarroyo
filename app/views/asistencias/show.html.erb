@@ -10,21 +10,28 @@
                             <tr>  
                                 <th>Identificacion</th>
                                 <th>Nombres</th>
-                                <th>Apellidos</th>       
+                                <th>Segundo nombre</th>
+                                <th>Apellidos</th>  
+                                <th>Segundo apellido</th>     
                             </tr>
                         </thead>
                         <tr>
                             <% @users.each do |user| %>
                             <td>
-                                <%= user.identifiacion%>
+                                <%= user.identificacion%>
                             </td>
                             <td>
-                                <%= user.nombres%>
+                                <%= user.primer_nombre%>
                             </td>
-
                             <td>
-                                <%= user.apellidos %>
+                                <%= user.segundo_nombre%>
+                            </td>
+                            <td>
+                                <%= user.primer_apellido %>
                             </td> 
+                            <td>
+                                <%= user.segundo_apellido%>
+                            </td>
                         </tr> 
                         <%end %>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_231605) do
+ActiveRecord::Schema.define(version: 2020_12_05_183325) do
 
   create_table "anotaciones", force: :cascade do |t|
     t.date "fecha"
@@ -50,6 +50,21 @@ ActiveRecord::Schema.define(version: 2020_10_28_231605) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
   create_table "materias", force: :cascade do |t|
     t.integer "codigo"
     t.string "nombre"
@@ -67,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_10_28_231605) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "materia_id"
+    t.index ["materia_id"], name: "index_notas_on_materia_id"
     t.index ["user_id"], name: "index_notas_on_user_id"
   end
 
@@ -89,6 +106,16 @@ ActiveRecord::Schema.define(version: 2020_10_28_231605) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "tareas", force: :cascade do |t|
+    t.string "tarea"
+    t.text "solucion"
+    t.string "adjunto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_tareas_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -97,13 +124,15 @@ ActiveRecord::Schema.define(version: 2020_10_28_231605) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "identifiacion"
-    t.string "nombres"
-    t.string "apellidos"
+    t.integer "identificacion"
+    t.string "primer_nombre"
+    t.string "primer_apellido"
     t.integer "telefono"
     t.string "direccion"
     t.integer "curso_id"
     t.string "avatar"
+    t.string "segundo_nombre"
+    t.string "segundo_apellido"
     t.index ["curso_id"], name: "index_users_on_curso_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -121,6 +150,8 @@ ActiveRecord::Schema.define(version: 2020_10_28_231605) do
   add_foreign_key "comentarios", "anotaciones"
   add_foreign_key "materias", "cursos"
   add_foreign_key "materias", "users"
+  add_foreign_key "notas", "materias"
   add_foreign_key "notas", "users"
+  add_foreign_key "tareas", "users"
   add_foreign_key "users", "cursos"
 end

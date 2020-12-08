@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
          has_many :anotaciones
          belongs_to :curso, optional: true
+         
 
          mount_uploader :avatar, AvatarUploader, optional: true
 
@@ -18,7 +19,16 @@ class User < ApplicationRecord
          has_many :anotaciones, dependent: :destroy
 
          has_and_belongs_to_many :asistencias
+
+         has_many :tareas
+
+        
   def user_mailer
     UserMailer.bienvenida_mailer(@user).deliver_now
   end
+
+  validates :identificacion, :primer_nombre, :primer_apellido,:segundo_apellido, :telefono, :direccion, presence: true
+  validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
+  validates :identificacion, :email, uniqueness: true
+  validates :identificacion, length: { maximum: 10 }
 end

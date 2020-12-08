@@ -12,7 +12,7 @@
                          <%= image_tag @user.avatar.thumb.url,class: "img-fluid ml-4 mb-2", :style=> " border-radius: 50%; "%>
                     </div>
                     <div class="ibox-content profile-content">
-                        <h4 class="text-capitalize"><strong><%=@user.nombres%> <%=@user.apellidos%></strong></h4>
+                        <h4 class="text-capitalize"><strong><%=@user.primer_nombre%> <%=@user.segundo_nombre%> <%=@user.primer_apellido%> <%=@user.segundo_apellido%></strong></h4>
                         <p><i class="fas fa-map-marker-alt"></i> <%=@user.direccion%></p>
                         <p><i class="fas fa-phone-alt"></i> <%=@user.telefono%></p>
                         <p><i class="fas fa-envelope"></i> <%=@user.email%></p>
@@ -20,12 +20,14 @@
                             Acción
                         </h5>
                         <div class="row">
+                            <% if current_user.has_role? :admin%>
                             <div class="col">           
                                 <%= link_to  edit_user_path(@user), class: "btn btn-sm btn-warning btn-block" do %>
                                     <%= fa_icon "pencil-alt" %>
                                     Editar
                                 <% end %>
                             </div>
+                            <% end %>
                             <div class="col">
                                 <%= link_to  user_anotaciones_path(@user, @anotacion), class: "btn btn-sm btn-info btn-block" do %>
                                     <i class="fas fa-memory"></i>

@@ -1,14 +1,22 @@
 <tr>
                             
     <td>
-        <%= link_to user.identifiacion, user_notas_path(user) %>
+        <%= link_to user.identificacion, user_notas_path(user) %>
     </td>
     <td>
-        <%= user.nombres%>
+        <%= user.primer_nombre%>
     </td>
 
     <td>
-        <%= user.apellidos %>
+        <%= user.segundo_nombre%>
+    </td>
+
+    <td>
+        <%= user.primer_apellido %>
+    </td>
+
+    <td>
+        <%= user.segundo_apellido %>
     </td>
 
     <td>
@@ -17,5 +25,8 @@
 
     <td>
         <%= user.direccion %>
-    </td>                  
+    </td>
+    <td>
+        <%= link_to  "Anotaciones", user_anotaciones_path(user), class: "btn btn-danger btn-sm btn-block" %>
+    </th>                  
 </tr> 
