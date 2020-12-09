@@ -22,11 +22,9 @@
         <div class="col-md-8">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <% if current_user.has_role? :admin %>
                     <%= link_to new_anotacion_comentario_path(@anotacion, @comentario), class: "btn btn-primary" do %>
                     <%= fa_icon "plus" %>
                     <% end %>
-                    <%end%>
 
                     <div class="ibox-tools">
                         <a class="collapse-link">
