@@ -2,9 +2,8 @@ class User < ApplicationRecord
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  after_create :user_mailer
-  devise :database_authenticatable,
-         :recoverable, :rememberable, :validatable, :timeoutable
+  # after_create :user_mailer
+  devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
 
          has_many :anotaciones
          belongs_to :curso, optional: true
@@ -23,12 +22,12 @@ class User < ApplicationRecord
          has_many :tareas
 
         
-  def user_mailer
-    UserMailer.bienvenida_mailer(@user).deliver_now
-  end
+  # def user_mailer
+  #   UserMailer.bienvenida_mailer(@user).deliver_now
+  # end
 
-  validates :identificacion, :primer_nombre, :primer_apellido,:segundo_apellido,:telefono, :direccion, presence: true
-  validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
-  validates :identificacion, :email, uniqueness: true
-  validates :identificacion, length: { maximum: 10 }
+  # validates :identificacion, :primer_nombre, :primer_apellido,:segundo_apellido,:telefono, :direccion, presence: true
+  # validates :telefono,numericality: { only_integer: true }, length: { maximum: 10 }
+  # validates :identificacion, :email, uniqueness: true
+  # validates :identificacion, length: { maximum: 10 }
 end
